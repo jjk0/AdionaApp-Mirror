@@ -18,6 +18,8 @@ import {
   View,
 } from 'react-native';
 
+import { NativeBaseProvider, Box } from "native-base";
+
 import {
   Colors,
   DebugInstructions,
@@ -41,23 +43,9 @@ const App = () => {
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      
-      {/* <SafeAreaView style={backgroundStyle}>
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={backgroundStyle}>
-          <Header />
-          <View
-            style={{
-              backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            }}>
-            <Text style={styles.text}>HELLLLLLLO THERE</Text> */}
-            <Navigations></Navigations>
-          {/* </View>
-        </ScrollView>
-      </SafeAreaView>
-       */}
+      <NativeBaseProvider>
+        <Navigations></Navigations>
+      </NativeBaseProvider>
     </GestureHandlerRootView>
   );
 };

@@ -1,28 +1,27 @@
 import React, { useEffect, useState } from 'react';
-// import {
-//     ScrollView,
-//     VStack,
-//     Heading,
-//     Text,
-//     HStack,
-//     Pressable,
-//     Skeleton,
-//     View,
-//     Image,
-//     Center,
-//     ChevronRightIcon,
-//   } from 'native-base';
 import {
-    SafeAreaView,
+    Box,
     ScrollView,
-    StatusBar,
-    StyleSheet,
+    VStack,
+    Heading,
     Text,
-    useColorScheme,
+    HStack,
+    Pressable,
+    Skeleton,
     View,
+    Image,
+    Center,
+    ChevronRightIcon,
+  } from 'native-base';
+import {
+    StyleSheet,
   } from 'react-native';
+
+
+import GrMapLocation from 'react-icons/gr'
+
+import ProgressCircle from 'react-native-progress-circle'
   
-import { TouchableOpacity } from 'react-native';
 
 
   const Home = ({ navigation }) => {
@@ -31,7 +30,22 @@ import { TouchableOpacity } from 'react-native';
     return (
         <ScrollView style={styles.sectionContainer}>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text style={styles.text}>Home Screen</Text>
+            <ProgressCircle
+                percent={72}
+                radius={120}
+                borderWidth={18}
+                color="#3399FF"
+                shadowColor="#999"
+                bgColor="#fff"
+        >
+            <Text alignSelf='center' fontSize='48'>{72}</Text>
+        </ProgressCircle>
+                <Pressable borderRadius='2xl' justifyContent='center' textAlign='center' width='100%' bg='danger.400' p='50' m='10'>
+                    <Text fontSize='24' alignSelf='center' color='black'>Alert</Text>
+                </Pressable>
+                <Pressable borderRadius='2xl' bg='warning.100' p='50' m='10'>
+                    <Text color='black'>Info</Text>
+                </Pressable>
             </View>
         </ScrollView>
     )
