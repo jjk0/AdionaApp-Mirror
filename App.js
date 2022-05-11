@@ -32,6 +32,10 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import Navigations from './src/navigations';
 
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+
+Icon.loadFont();
+
 
 
 const App = () => {

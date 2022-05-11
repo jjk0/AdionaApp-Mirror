@@ -17,10 +17,16 @@ import {
     StyleSheet,
   } from 'react-native';
 
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import GrMapLocation from 'react-icons/gr'
 
 import ProgressCircle from 'react-native-progress-circle'
+
+
+
+ const submit = () => {
+     console.log('submitted')
+ }
   
 
 
@@ -40,7 +46,8 @@ import ProgressCircle from 'react-native-progress-circle'
         >
             <Text alignSelf='center' fontSize='48'>{72}</Text>
         </ProgressCircle>
-                <Pressable borderRadius='2xl' justifyContent='center' textAlign='center' width='100%' bg='danger.400' p='50' m='10'>
+        <Icon name="map-marker-radius-outline" size={30} color="black" />
+                <Pressable borderRadius='2xl' justifyContent='center' textAlign='center' width='100%' bg='danger.400' p='50' m='10' onPress={submit}>
                     <Text fontSize='24' alignSelf='center' color='black'>Alert</Text>
                 </Pressable>
                 <Pressable borderRadius='2xl' bg='warning.100' p='50' m='10'>
