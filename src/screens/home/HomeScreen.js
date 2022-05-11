@@ -26,8 +26,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 
 import ProgressCircle from 'react-native-progress-circle'
-import { constant } from 'lodash';
-
+import HomeIconButton from '../../components/HomeIconButton';
 
 
  const submit = () => {
@@ -43,7 +42,7 @@ import { constant } from 'lodash';
     
     return (
         <ScrollView style={styles.sectionContainer}>
-            <Box pb='5' bgColor='info.500' m='0'>
+            <Box bgColor='info.500' m='0'>
                 
                 <HStack alignSelf='center'>
                     <VStack>
@@ -65,6 +64,12 @@ import { constant } from 'lodash';
                         </HStack>
                     </VStack>
                 </HStack>
+                <Pressable borderRadius='100' m='5' bgColor='white' height='10' width='1/3' alignSelf='flex-end' onPress={() => navigation.navigate('Overall Trends')}>
+                    <HStack alignSelf='center'  m='2'>
+                        <Text m='0.5' color='black' fontSize='16'>See trends</Text>
+                        <Icon name='arrow-right' size={28} alignSelf='flex-end' color='info.500'></Icon>
+                    </HStack>
+                </Pressable>
             </Box>
                 <VStack px='4'>
                     <Pressable borderRadius='2xl' justifyContent='center' textAlign='center' width='100%' bg='danger.400' p='25' mt='10' mb='10' onPress={submit}>
@@ -82,33 +87,9 @@ import { constant } from 'lodash';
                     </Pressable>
 
                     <VStack marginY='5' alignSelf='flex-start'>
-                        <HStack>
-                            <Pressable borderRadius='2xl' bg='info.500' mb='5' p='25'>
-                                <Icon name="trending-up" size={60} color="white" />
-                            </Pressable>
-                            <VStack>
-                                <Text pl='6.5' fontSize={30} color='black'>Tips and Trends</Text>
-                                <Text pl='6.5' fontSize={20} color='black'>John hasn't been sleep</Text>
-                            </VStack>
-                        </HStack>
-                        <HStack>
-                            <Pressable borderRadius='2xl' bg='info.200' mb='5' p='25'>
-                                <Icon name="map-marker-radius-outline" size={60} color="white" />
-                            </Pressable>
-                            <VStack>
-                                <Text pl='6.5' fontSize={30} color='black'>Tips and Trends</Text>
-                                <Text pl='6.5' fontSize={20} color='black'>John hasn't been sleep</Text>
-                            </VStack>
-                        </HStack>
-                        <HStack>
-                            <Pressable borderRadius='2xl' bg='warning.200' mg='20' p='25'>
-                                <Icon name="notebook-outline" size={60} color="white" />
-                            </Pressable>
-                            <VStack>
-                                <Text pl='6.5' fontSize={30} color='black'>Tips and Trends</Text>
-                                <Text pl='6.5' fontSize={20} color='black'>John hasn't been sleep</Text>
-                            </VStack>
-                        </HStack>
+                        <HomeIconButton navigateToPage='Overall Trends' buttonColor='info.500' iconTitle='trending-up' mainText='Tips and Trends' tipText='John could get more sleep'/>
+                        <HomeIconButton buttonColor='info.200' iconTitle='map-marker-radius-outline' mainText='Tips and Trends' tipText='John could get more sleep'/>
+                        <HomeIconButton buttonColor='warning.200' iconTitle='notebook-outline' mainText='Tips and Trends' tipText='John could get more sleep'/>
                     </VStack>
 
                     <HStack marginY='10'>

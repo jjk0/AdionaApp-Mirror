@@ -39,6 +39,8 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
 Icon.loadFont();
 FontAwesome5.getStyledIconSet('solid').loadFont();
+FontAwesome5.getStyledIconSet('regular').loadFont();
+FontAwesome5.getStyledIconSet('brands').loadFont();
 
 
 
