@@ -21,6 +21,7 @@ import {
 
 
 import TrendBarIcon from '../../components/TrendBarIcon';
+import BackButton from '../../components/BackButton';
 
 
 //clean up import code here
@@ -28,7 +29,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import ProgressCircle from 'react-native-progress-circle'
-import { constant } from 'lodash';
+
 
 
 
@@ -43,11 +44,7 @@ import { constant } from 'lodash';
     return (
         <ScrollView style={styles.sectionContainer}>
             <Box bgColor='info.500' m='0'>
-                <Pressable alignSelf='flex-start'>
-                    <Circle bgColor='white'>
-                        <Icon name="chevron-left" size={40} color="black" />
-                    </Circle>
-                </Pressable>
+                <BackButton/>
                 <Center>
                     <HStack>
                         <VStack py='10' alignSelf='center'>

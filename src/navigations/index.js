@@ -5,6 +5,7 @@ import { GestureHandlerRootView,gestureHandlerRootHOC } from 'react-native-gestu
 import HomeScreen from '../screens/home/HomeScreen';
 import OverallTrends from '../screens/trends/OverallTrends';
 import ActivityScreen from '../screens/trends/ActivityScreen';
+import DiaryMainScreen from '../screens/diary/DiaryMainScreen';
 
 
 
@@ -28,6 +29,7 @@ function App() {
       <Stack.Screen screenOptions={{headerShown: false}} name="Home" component={HomeScreen} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Overall Trends" component={OverallTrends} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Activity Screen" component={ActivityScreen} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Diary Main Screen" component={DiaryMainScreen} />
     </Stack.Navigator>
   </NavigationContainer>
 

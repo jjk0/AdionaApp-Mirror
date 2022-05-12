@@ -26,6 +26,7 @@ import {
 
 
 import ProgressBar from 'react-native-progress/Bar';
+import ScreenTop from '../../components/ScreenTop';
 
 
 //clean up import code here
@@ -37,44 +38,20 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const ActivityScreen = ({navigation}) => {
 
+    //this code can be used later to set labels for the yValues. Look into scaling further
+    // function* yLabel() {
+    //     yield* [minValue,4000,6000,8000,10000];
+    // }
 
-    function* yLabel() {
-        yield* [0,2000,4000,6000,8000];
-    }
-
-    const yLabelIterator = yLabel();
-
+    // const minValue = 2459;
+    // const yLabelIterator = yLabel();
+    // const datapoints = [2459,4392,4121,5994,6342,3111,2790].map(
+    //     (datapoint) => datapoint - minValue - 1,
+    // );
 
     return(
         <ScrollView>
-            <Box bgColor='success.400' m='0' pb='10'>
-                <Pressable m='5' alignSelf='flex-start'>
-                    <Circle bgColor='white'>
-                        <Icon name="chevron-left" size={40} color="black" />
-                    </Circle>
-                </Pressable>
-                <Center>
-                    <VStack>
-                        <Text alignSelf='center' width='100%' color='white' fontSize={40} mb='10'>Activity</Text>
-                        <HStack>
-                            <FontAwesome5 name='walking' size={150} color='white' />
-                            <VStack ml='10%' mt='10%'>
-                                <Text width='100%' color='white' fontSize={30}>7592</Text>
-                                <Text width='100%' color='white' fontSize={20}>steps today</Text>
-                            </VStack>
-                        </HStack>
-
-                    </VStack>
-                </Center>
-
-                <Pressable borderRadius='100' m='5' p='5' bgColor='white' alignSelf='flex-end'>
-                    <Center>
-                        <HStack>
-                            <ProgressBar unfilledColor='#e5e5e5' borderColor='#FFFFFF' color='#E3E577' progress={.4} width={200} />
-                        </HStack>
-                    </Center>
-                </Pressable>
-            </Box>
+            <ScreenTop backgroundColor='#4ADE80' screenTitle='Activity' statistic='7592' supportingText='steps today' progressNumber='.8' iconName='walking'/>
             <VStack mx='8'>
                 <Box borderRadius='2xl' mt='10' w='100%' bgColor='success.400' pt='2'>
                     <Text mx='5' bold alignItems='flex-start' fontSize={25}>Activity Tip</Text>
@@ -86,15 +63,7 @@ const ActivityScreen = ({navigation}) => {
                 <Box mt='5'>
                     <BarChart
                         data={{
-                            labels: [
-                            '5/4',
-                            '5/5',
-                            '5/6',
-                            '5/7',
-                            '5/8',
-                            '5/9',
-                            '5/10'
-                            ],
+                            labels: ['5/4','5/5','5/6','5/7','5/8','5/9','5/10'],
                             datasets: [
                             {
                                 data: [2459,4392,4121,5994,6342,3111,2790],
@@ -105,7 +74,6 @@ const ActivityScreen = ({navigation}) => {
                         height={250}
                         fromZero={true}
                         segments={4}
-                        xArisLabel={'Date'}
                         chartConfig={{
                             backgroundColor: 'white',
                             backgroundGradientFrom: 'white',
@@ -117,10 +85,10 @@ const ActivityScreen = ({navigation}) => {
                             fillShadowGradientFromOffset: 0,
                             decimalPlaces:0,
                             barPercentage:.5,
+                            //formatYLabel: () => yLabelIterator.next().value,
                             color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
                             
                         }}
-                        formatYLabel={() => yLabelIterator.next().value()}
                         style={{
                             marginVertical: 16,
                             borderRadius: 16,
@@ -131,6 +99,4 @@ const ActivityScreen = ({navigation}) => {
     </ScrollView>
     )
 }
-
-
 export default ActivityScreen

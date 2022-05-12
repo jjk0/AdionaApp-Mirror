@@ -89,7 +89,7 @@ import HomeIconButton from '../../components/HomeIconButton';
                     <VStack marginY='5' alignSelf='flex-start'>
                         <HomeIconButton navigateToPage='Overall Trends' buttonColor='info.500' iconTitle='trending-up' mainText='Tips and Trends' tipText='John could get more sleep'/>
                         <HomeIconButton buttonColor='info.200' iconTitle='map-marker-radius-outline' mainText='Tips and Trends' tipText='John could get more sleep'/>
-                        <HomeIconButton buttonColor='warning.200' iconTitle='notebook-outline' mainText='Tips and Trends' tipText='John could get more sleep'/>
+                        <HomeIconButton navigateToPage='Diary Main Screen'buttonColor='warning.200' iconTitle='notebook-outline' mainText='Daily Diary' tipText='Log important info here'/>
                     </VStack>
 
                     <HStack marginY='10'>
