@@ -49,32 +49,30 @@ import { constant } from 'lodash';
                     </Circle>
                 </Pressable>
                 <Center>
-                <HStack>
-                    <VStack py='10' alignSelf='center'>
-                    <Text ml='17' w='200' fontSize={20} h='10' color='white'>John's Wellness Score</Text>
-                            <HStack>
-                                <Circle size={250} bg='white'>
-                                    <ProgressCircle
-                                        percent={72}
-                                        radius={100}
-                                        borderWidth={18}
-                                        color="#3399FF"
-                                        shadowColor="#fff"
-                                        bgColor="#FFFFFF"
-                                    >
-                                        <Text alignSelf='center' color='blue' fontSize='48'>{72}</Text>
-                                    </ProgressCircle>
-                                </Circle>
-                            </HStack>
-                        
-                    </VStack>
-                    
-                </HStack>
+                    <HStack>
+                        <VStack py='10' alignSelf='center'>
+                        <Text ml='17' w='200' fontSize={20} h='10' color='white'>John's Wellness Score</Text>
+                                <HStack>
+                                    <Circle size={250} bg='white'>
+                                        <ProgressCircle
+                                            percent={72}
+                                            radius={100}
+                                            borderWidth={18}
+                                            color="#3399FF"
+                                            shadowColor="#fff"
+                                            bgColor="#FFFFFF"
+                                        >
+                                            <Text alignSelf='center' color='blue' fontSize='48'>{72}</Text>
+                                        </ProgressCircle>
+                                    </Circle>
+                                </HStack>
+                        </VStack>
+                    </HStack>
                 </Center>
             </Box>
             <VStack px='10'>
                 <VStack marginY='10' alignItems='flex-start'>
-                    <TrendBarIcon title='Activity' iconTitle='walking' progressText='Keep going!' progressNumber='.4' iconColor="#94E557" />
+                    <TrendBarIcon title='Activity' iconTitle='walking' progressText='Keep going!' progressNumber='.4' iconColor="#94E557" navigateToPage='Activity Screen'/>
                     <TrendBarIcon title='Sleep' iconTitle='moon' progressText='John might need a nap' progressNumber='.2' iconColor="#84C1FF" />
                     <TrendBarIcon title='Agitation' iconTitle='exclamation-circle' progressText='None today!' progressNumber='.8' iconColor="#E16547" />
                     <TrendBarIcon title='Mobility' iconTitle='location-arrow' progressText="John's Balance is great" progressNumber='.8' iconColor="#FFB15A" />

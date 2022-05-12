@@ -118,22 +118,6 @@ import HomeIconButton from '../../components/HomeIconButton';
       backgroundColor:'white',
       paddingBottom: 50
     },
-    sectionTitle: {
-      fontSize: 24,
-      fontWeight: '600',
-    },
-    sectionDescription: {
-      marginTop: 8,
-      fontSize: 18,
-      fontWeight: '400',
-    },
-    highlight: {
-      fontWeight: '700',
-    },
-    text: {
-      color:'#000000',
-      textAlign: 'center',
-    }
   });
 
   export default Home;

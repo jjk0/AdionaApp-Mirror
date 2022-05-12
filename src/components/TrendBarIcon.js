@@ -10,11 +10,14 @@ import {
 
 //clean up import code here
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import ProgressBar from 'react-native-progress/Bar'
+import ProgressBar from 'react-native-progress/Bar';
+import { useNavigation } from '@react-navigation/native';
 
 const TrendBarIcon = (props) => {
 
     const [progressColor, setProgressColor] = useState('');
+
+    const navigation = useNavigation();
 
 
     useEffect(() => {
@@ -29,7 +32,7 @@ const TrendBarIcon = (props) => {
     }, [props.progressNumber])
 
     return (
-    <Pressable my='2'>
+    <Pressable my='2' onPress={() => navigation.navigate((props.navigateToPage))}>
         <HStack>
             <Box borderRadius='2xl' size={70} bg='muted.200'>
                 <Center my='4'>
