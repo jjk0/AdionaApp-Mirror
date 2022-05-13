@@ -6,7 +6,8 @@ import HomeScreen from '../screens/home/HomeScreen';
 import OverallTrends from '../screens/trends/OverallTrends';
 import ActivityScreen from '../screens/trends/ActivityScreen';
 import DiaryMainScreen from '../screens/diary/DiaryMainScreen';
-
+import GeneralTips from '../screens/tips/GeneralTips';
+import ActivityTips from '../screens/tips/ActivityTips';
 
 
 const Stack = createNativeStackNavigator();
@@ -30,6 +31,8 @@ function App() {
       <Stack.Screen screenOptions={{headerShown: false}} name="Overall Trends" component={OverallTrends} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Activity Screen" component={ActivityScreen} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Diary Main Screen" component={DiaryMainScreen} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="General Tips" component={GeneralTips} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Activity Tips" component={ActivityTips} />
     </Stack.Navigator>
   </NavigationContainer>
 

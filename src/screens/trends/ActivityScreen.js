@@ -27,6 +27,7 @@ import {
 
 import ProgressBar from 'react-native-progress/Bar';
 import ScreenTop from '../../components/ScreenTop';
+import ClickableTextBox from '../../components/ClickableTextBox';
 
 
 //clean up import code here
@@ -53,13 +54,7 @@ const ActivityScreen = ({navigation}) => {
         <ScrollView>
             <ScreenTop backgroundColor='#4ADE80' screenTitle='Activity' statistic='7592' supportingText='steps today' progressNumber='.8' iconName='walking'/>
             <VStack mx='8'>
-                <Box borderRadius='2xl' mt='10' w='100%' bgColor='success.400' pt='2'>
-                    <Text mx='5' bold alignItems='flex-start' fontSize={25}>Activity Tip</Text>
-                    <Text mx='5' alignItems='flex-start' fontSize={25}>Try some of these activities to keep John active</Text>
-                    <Pressable mb='2' alignSelf='flex-end'>
-                            <Icon name="chevron-right" size={40} color="black" />
-                    </Pressable>
-                </Box>
+                <ClickableTextBox backgroundColor='success.400' mainText='Activity Tip' secondaryText='Try some of these activities to keep John Active'/>
                 <Box mt='5'>
                     <BarChart
                         data={{

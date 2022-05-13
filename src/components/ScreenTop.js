@@ -29,6 +29,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 
 const ScreenTop = (props) => {
+
     return (
         <View>
             <Box bgColor={props.backgroundColor}>
@@ -46,9 +47,11 @@ const ScreenTop = (props) => {
 
                         </VStack>
                     </Center>
+                    {props.progressNumber && 
                     <Box mb='-10'>
                         <ProgressBarBox progressNumber={props.progressNumber}/>
                     </Box>
+                    }
             </Box>
         </View>
     )

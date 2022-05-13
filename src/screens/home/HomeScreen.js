@@ -27,6 +27,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import ProgressCircle from 'react-native-progress-circle'
 import HomeIconButton from '../../components/HomeIconButton';
+import TallIconButton from '../../components/TallIconButon';
 
 
  const submit = () => {
@@ -43,12 +44,14 @@ import HomeIconButton from '../../components/HomeIconButton';
     return (
         <ScrollView style={styles.sectionContainer}>
             <Box bgColor='info.500' m='0'>
-                
+                <HStack>
+                    <Icon name="menu" size={40} color="white" />
+                    <Text ml='10' alignSelf='center' color='white' fontSize={25}>John's Wellness Score</Text>
+                </HStack>
                 <HStack alignSelf='center'>
                     <VStack>
-                    <Icon name="menu" size={40} color="white" />
                         <HStack>
-                            <Text alignSelf='center' justifySelf='center' color='white' flexWrap='wrap' m='2'>{date.toDateString()}</Text>
+                            <Text alignSelf='center' color='white' flexWrap='wrap' m='2'>{date.toDateString()}</Text>
                             <Card borderRadius='100' bg='white'>
                                 <ProgressCircle
                                     percent={72}
@@ -58,7 +61,7 @@ import HomeIconButton from '../../components/HomeIconButton';
                                     shadowColor="#fff"
                                     bgColor="#FFFFFF"
                                 >
-                                    <Text alignSelf='center' color='info.500' fontSize='48'>{72}</Text>
+                                    <Text alignSelf='center' color='#0ea5e9' fontSize={48}>72</Text>
                                 </ProgressCircle>
                             </Card>
                         </HStack>
@@ -72,18 +75,21 @@ import HomeIconButton from '../../components/HomeIconButton';
                 </Pressable>
             </Box>
                 <VStack px='4'>
-                    <Pressable borderRadius='2xl' justifyContent='center' textAlign='center' width='100%' bg='danger.400' p='25' mt='10' mb='10' onPress={submit}>
+                    <Pressable borderRadius='2xl' justifyContent='center' textAlign='center' width='100%' bg='error.700' p='25' mt='10' mb='10' onPress={submit}>
                         <HStack>
                             <Icon name="alert-circle-outline" size={30} color="white" alignSelf='start' />
-                            <Text fontSize='20' alignSelf='center' ml='3' color='white'>Alert</Text>
+                            <Text fontSize={25} alignSelf='center' ml='3' color='white'>Alert</Text>
                         </HStack>
+                        <Text fontSize={20} color='white'>John might get agitated soon. Tap to see our recommendations</Text>
                     </Pressable>
 
                     <Pressable borderRadius='2xl' justifyContent='center' textAlign='center' width='100%' bg='warning.200' mb='10' p='25' onPress={submit}>
                         <HStack>
-                            <Icon name="note-edit-outline" size={30} color="white" alignSelf='start' />
-                            <Text fontSize='20' alignSelf='center' ml='3' color='white'>Info</Text>
+                            <Icon name="note-edit-outline" size={30} color="black" alignSelf='start' />
+                            <Text fontSize={25} alignSelf='center' ml='3' color='black'>Info</Text>
                         </HStack>
+                        <Text fontSize={20} color='black'>Tap here to log an agitation episode as it happens</Text>
+                        <Text></Text>
                     </Pressable>
 
                     <VStack marginY='5' alignSelf='flex-start'>
@@ -93,23 +99,14 @@ import HomeIconButton from '../../components/HomeIconButton';
                     </VStack>
 
                     <HStack marginY='10'>
-                        <Pressable borderRadius='2xl' bg='info.500' height='200' m='2' p='5'>
-                                <FontAwesome5 alignSelf='center'name="brain" size={60} color="white" />
-                        </Pressable>
-                        <Pressable borderRadius='2xl' bg='warning.200' height='200' m='2' p='5'>
-                                <Icon alignSelf='center'name='clipboard-outline' size={60} color="white" />
-                        </Pressable>
-                        <Pressable borderRadius='2xl' bg='info.200' height='200' m='2' p='5'>
-                                <Icon alignSelf='center'name='lightbulb-outline' size={60} color="white" />
-                        </Pressable>
-
+                        <TallIconButton iconTitle='brain' backgroundColor='info.400' buttonText='Symptoms'/>
+                        <TallIconButton iconTitle='clipboard-outline' backgroundColor='warning.200' buttonText='Full Report'/>
+                        <TallIconButton iconTitle='lightbulb-outline' backgroundColor='info.200' buttonText='Care Tips' navigateToPage='General Tips'/>
                     </HStack>
                 </VStack>
         </ScrollView>
     )
   }
-
-
 
   const styles = StyleSheet.create({
     sectionContainer: {
