@@ -40,7 +40,7 @@ const ScreenTop = (props) => {
                             <HStack>
                                 <FontAwesome5 name={props.iconName} size={150} color='white' />
                                 <VStack ml='10%' mt='10%'>
-                                    <Text width='100%' color='white' fontSize={30}>{props.statistic}</Text>
+                                    <Text width='100%' color='white' fontSize={50}>{props.statistic}</Text>
                                     <Text width='100%' color='white' fontSize={20}>{props.supportingText}</Text>
                                 </VStack>
                             </HStack>

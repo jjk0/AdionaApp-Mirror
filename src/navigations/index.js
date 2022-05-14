@@ -5,9 +5,11 @@ import { GestureHandlerRootView,gestureHandlerRootHOC } from 'react-native-gestu
 import HomeScreen from '../screens/home/HomeScreen';
 import OverallTrends from '../screens/trends/OverallTrends';
 import ActivityScreen from '../screens/trends/ActivityScreen';
+import HeartScreen from '../screens/trends/HeartScreen';
 import DiaryMainScreen from '../screens/diary/DiaryMainScreen';
 import GeneralTips from '../screens/tips/GeneralTips';
 import ActivityTips from '../screens/tips/ActivityTips';
+import MainLocation from '../screens/location/MainLocation';
 
 
 const Stack = createNativeStackNavigator();
@@ -30,9 +32,11 @@ function App() {
       <Stack.Screen screenOptions={{headerShown: false}} name="Home" component={HomeScreen} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Overall Trends" component={OverallTrends} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Activity Screen" component={ActivityScreen} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Heart Screen" component={HeartScreen} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Diary Main Screen" component={DiaryMainScreen} />
       <Stack.Screen screenOptions={{headerShown: false}} name="General Tips" component={GeneralTips} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Activity Tips" component={ActivityTips} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Main Location" component={MainLocation} />
     </Stack.Navigator>
   </NavigationContainer>
 

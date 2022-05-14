@@ -26,6 +26,7 @@
     "react-native": "0.68.1",
     "react-native-chart-kit": "^6.12.0",
     "react-native-gesture-handler": "^1.10.3",
+    "react-native-maps": "^0.31.1",
     "react-native-progress": "^5.0.0",
     "react-native-progress-circle": "^2.1.0",
     "react-native-reanimated": "^2.8.0",
@@ -33,7 +34,8 @@
     "react-native-screens": "^3.13.1",
     "react-native-svg": "^12.3.0",
     "react-native-vector-icons": "^9.1.0",
-    "react-navigation-stack": "^2.10.4"
+    "react-navigation-stack": "^2.10.4",
+    "victory-native": "^36.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
