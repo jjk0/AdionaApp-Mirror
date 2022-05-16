@@ -25,7 +25,6 @@ import {
   } from 'react-native-chart-kit'
 
 
-import ProgressBar from 'react-native-progress/Bar';
 import ScreenTop from '../../components/ScreenTop';
 import ClickableTextBox from '../../components/ClickableTextBox';
 
@@ -33,6 +32,8 @@ import ClickableTextBox from '../../components/ClickableTextBox';
 //clean up import code here
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+
+import { VictoryBar, VictoryChart, VictoryTheme,VictoryLine,VictoryScatter,VictoryBoxPlot,VictoryAxis } from "victory-native";
 
 
 
@@ -50,6 +51,17 @@ const ActivityScreen = ({navigation}) => {
     //     (datapoint) => datapoint - minValue - 1,
     // );
 
+    const data = [
+        { date: '3/21', steps: 6480 },
+        { date: '3/22', steps: 6000 },
+        { date: '3/23', steps:  7242},
+        { date: '3/24', steps: 7591 },
+        { date: '3/25', steps: 4551 },
+        { date: '3/26', steps: 5264 },
+        { date: '3/27', steps: 9141 },
+        { date: '3/28', steps: 7500 },
+      ];
+
     return(
         <ScrollView>
             <ScreenTop backgroundColor='#4ADE80' screenTitle='Activity' statistic='7592' supportingText='steps today' progressNumber='.8' iconName='walking'/>
@@ -57,7 +69,23 @@ const ActivityScreen = ({navigation}) => {
                 <ClickableTextBox backgroundColor='success.400' mainText='Activity Tip' secondaryText='Try some of these activities to keep John Active'/>
                 <Box bgColor='green.400' borderRadius='2xl' my='5'>
                     <Text color='black' mt='2' fontSize={24} alignSelf='center'>John's Step Count</Text>
-                    <BarChart
+                    <Box bgColor='white' borderRadius='2xl'>
+                        <VictoryChart width={350} theme={VictoryTheme.grayscale} domainPadding={{ x: 15 }}>
+                            <VictoryAxis crossAxis />
+                            <VictoryAxis dependentAxis crossAxis
+                            style={{grid: {stroke:"#C3C3C3", strokeWidth:1.5 }}}/>
+                            <VictoryBar data={data} x="date" y="steps" 
+                            cornerRadius={{ top: ({ datum }) =>  7 }}
+                            style={{
+                                data: { fill: "#4ADE80" }
+                                }}
+
+                            
+                            >
+                            </VictoryBar>
+                        </VictoryChart>
+                    </Box>
+                    {/* <BarChart
                         data={{
                             labels: ['5/4','5/5','5/6','5/7','5/8','5/9','5/10'],
                             datasets: [
@@ -97,7 +125,7 @@ const ActivityScreen = ({navigation}) => {
                             marginVertical: 16,
                             borderRadius: 16,
                         }}
-                        />
+                        /> */}
                 </Box>
             </VStack>
     </ScrollView>

@@ -74,7 +74,7 @@ import ProgressCircle from 'react-native-progress-circle'
                     <TrendBarIcon title='Agitation' iconTitle='exclamation-circle' progressText='None today!' progressNumber='.8' iconColor="#E16547" />
                     <TrendBarIcon title='Mobility' iconTitle='location-arrow' progressText="John's Balance is great" progressNumber='.8' iconColor="#FFB15A" />
                     <TrendBarIcon title='Heart' iconTitle='heartbeat' progressText='Metrics look normal' progressNumber='1.0' iconColor="#FE987D" navigateToPage='Heart Screen'/>
-                    <TrendBarIcon title='Respiratory' iconTitle='lungs' progressText='Metrics look normal' progressNumber='.9' iconColor="#517FF3" />
+                    <TrendBarIcon title='Respiratory' iconTitle='lungs' progressText='Metrics look normal' progressNumber='.9' iconColor="#517FF3" navigateToPage='Respiratory Screen'/>
                 </VStack>
             </VStack>
                 

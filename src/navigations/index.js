@@ -10,6 +10,7 @@ import DiaryMainScreen from '../screens/diary/DiaryMainScreen';
 import GeneralTips from '../screens/tips/GeneralTips';
 import ActivityTips from '../screens/tips/ActivityTips';
 import MainLocation from '../screens/location/MainLocation';
+import RespiratoryScreen from '../screens/trends/RespiratorySreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -37,6 +38,7 @@ function App() {
       <Stack.Screen screenOptions={{headerShown: false}} name="General Tips" component={GeneralTips} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Activity Tips" component={ActivityTips} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Main Location" component={MainLocation} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Respiratory Screen" component={RespiratoryScreen} />
     </Stack.Navigator>
   </NavigationContainer>
 

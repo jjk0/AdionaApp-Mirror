@@ -70,7 +70,7 @@ import TallIconButton from '../../components/TallIconButon';
                 <Pressable borderRadius='100' m='5' bgColor='white' height='10' width='1/3' alignSelf='flex-end' onPress={() => navigation.navigate('Overall Trends')}>
                     <HStack alignSelf='center'  m='2'>
                         <Text m='0.5' color='black' fontSize='16'>See trends</Text>
-                        <Icon name='arrow-right' size={28} alignSelf='flex-end' color='info.500'></Icon>
+                        <Icon name='arrow-right' size={28} alignSelf='flex-end' color='black'></Icon>
                     </HStack>
                 </Pressable>
             </Box>
