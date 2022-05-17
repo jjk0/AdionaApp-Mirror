@@ -79,8 +79,6 @@ const ActivityScreen = ({navigation}) => {
                             style={{
                                 data: { fill: "#4ADE80" }
                                 }}
-
-                            
                             >
                             </VictoryBar>
                         </VictoryChart>

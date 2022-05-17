@@ -12,8 +12,14 @@ import ActivityTips from '../screens/tips/ActivityTips';
 import MainLocation from '../screens/location/MainLocation';
 import RespiratoryScreen from '../screens/trends/RespiratorySreen';
 
+import {
+    createDrawerNavigator,
+    DrawerContentScrollView,
+  } from "@react-navigation/drawer";
+
 
 const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const backToHomeRoutes = [
     'Cognition',
@@ -24,12 +30,28 @@ const backToHomeRoutes = [
   ];
 
 
+function Root() {
+    return (
+        <Drawer.Navigator>
+            <Drawer.Screen name="Home Screen" component={HomeScreen} />
+            <Drawer.Screen name="Profile" component={ActivityScreen} />
+            <Stack.Screen name="Settings" component={HeartScreen} />
+        </Drawer.Navigator>
+    );
+    }
+
+
 function App() {
 
     return (
     
   <NavigationContainer>
-    <Stack.Navigator initialRouteName='Home' options={{ title: 'Overview' }}>
+    <Stack.Navigator initialRouteName='Root' options={{ title: 'Overview' }}>
+    <Stack.Screen
+          name="Root"
+          component={Root}
+          options={{ headerShown: false }}
+        />
       <Stack.Screen screenOptions={{headerShown: false}} name="Home" component={HomeScreen} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Overall Trends" component={OverallTrends} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Activity Screen" component={ActivityScreen} />

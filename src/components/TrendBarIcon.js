@@ -34,9 +34,9 @@ const TrendBarIcon = (props) => {
     return (
     <Pressable my='2' onPress={() => navigation.navigate((props.navigateToPage))}>
         <HStack>
-            <Box borderRadius='2xl' size={70} bg='muted.200'>
+            <Box borderRadius='2xl' size={70} bg={props.iconColor}>
                 <Center my='4'>
-                    <FontAwesome5 name={props.iconTitle} size={40} color={props.iconColor} />
+                    <FontAwesome5 name={props.iconTitle} size={40} color="#E5E5E5" />
                 </Center>
             </Box>
             <VStack my='-1' mx='5'>

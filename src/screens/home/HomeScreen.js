@@ -30,6 +30,11 @@ import HomeIconButton from '../../components/HomeIconButton';
 import TallIconButton from '../../components/TallIconButon';
 
 
+import {
+    createDrawerNavigator,
+    DrawerContentScrollView,
+  } from "@react-navigation/drawer";
+
  const submit = () => {
      console.log('submitted')
  }
@@ -39,14 +44,19 @@ import TallIconButton from '../../components/TallIconButon';
 
 
   const Home = ({ navigation }) => {
+    const [modalVisible, setModalVisible] = useState(false);
+
     
     
     return (
         <ScrollView style={styles.sectionContainer}>
+            <DrawerContentScrollView style={{margin:-25}}/>
             <Box bgColor='info.500' m='0'>
                 <HStack>
-                    <Icon name="menu" size={40} color="white" />
-                    <Text ml='10' alignSelf='center' color='white' fontSize={25}>John's Wellness Score</Text>
+                    <Pressable>
+                        <Icon name="menu" size={40} color="white" />
+                        <Text ml='10' alignSelf='center' color='white' fontSize={25}>John's Wellness Score</Text>
+                    </Pressable>
                 </HStack>
                 <HStack alignSelf='center'>
                     <VStack>

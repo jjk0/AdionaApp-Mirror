@@ -42,6 +42,11 @@ FontAwesome5.getStyledIconSet('solid').loadFont();
 FontAwesome5.getStyledIconSet('regular').loadFont();
 FontAwesome5.getStyledIconSet('brands').loadFont();
 
+import {
+  createDrawerNavigator,
+  DrawerContentScrollView,
+} from "@react-navigation/drawer";
+
 
 
 const App = () => {

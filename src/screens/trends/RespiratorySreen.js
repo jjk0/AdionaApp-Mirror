@@ -39,15 +39,15 @@ import { VictoryBar, VictoryChart, VictoryTheme,VictoryLine,VictoryScatter,Victo
 
 
 const data = [
-  { x: new Date(2016, 6, 1), open: 5, close: 10, high: 10, low: 5 },
+  { x: new Date(2016, 6, 1), open: 15, close: 10, high: 15, low: 10 },
   { x: new Date(2016, 6, 2), open: 10, close: 15, high: 15, low: 10 },
   { x: new Date(2016, 6, 3), open: 15, close: 20, high: 20, low: 15 },
-  { x: new Date(2016, 6, 4), open: 20, close: 10, high: 20, low: 10 },
+  { x: new Date(2016, 6, 4), open: 22, close: 10, high: 22, low: 10 },
   { x: new Date(2016, 6, 5), open: 20, close: 10, high: 20, low: 10 },
-  { x: new Date(2016, 6, 6), open: 20, close: 10, high: 20, low: 10 },
-  { x: new Date(2016, 6, 7), open: 20, close: 10, high: 20, low: 10 },
-  { x: new Date(2016, 6, 8), open: 20, close: 10, high: 20, low: 10 },
-  { x: new Date(2016, 6, 9), open: 20, close: 10, high: 20, low: 10 },
+  { x: new Date(2016, 6, 6), open: 24, close: 16, high: 24, low: 16 },
+  { x: new Date(2016, 6, 7), open: 22, close: 19, high: 22, low: 19 },
+  { x: new Date(2016, 6, 8), open: 23, close: 10, high: 23, low: 10 },
+  { x: new Date(2016, 6, 9), open: 25, close: 12, high: 25, low: 12 },
   { x: new Date(2016, 6, 10), open: 20, close: 10, high: 20, low: 10 },
   { x: new Date(2016, 6, 11), open: 20, close: 10, high: 20, low: 10},
   { x: new Date(2016, 6, 5), open: 10, close: 8, high: 10, low: 8 }
@@ -67,7 +67,7 @@ const RespiratoryScreen = () => {
                     <VictoryChart width={350} domainPadding={{ x: 15 }}>
                         <VictoryCandlestick data={data} 
                                 cornerRadius={{ bottom: ({ datum }) =>  10 }}
-                                style={{data: { stroke: "black" }}}
+                                style={{data: { stroke: "black", cornerRadius: { bottom: () =>  10 }}}}
                                 candleColors={{ positive: "black", negative: "black" }}/>
                     </VictoryChart>
                 </Box>
