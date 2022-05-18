@@ -15,14 +15,14 @@ const GeneralTips = () => {
         <ScrollView>
             <ScreenTop backgroundColor='info.600' screenTitle='Caregiver Tips' supportingText="All of Adiona's tips in one place"/>
             <VStack mx='8'>
-                <ClickableTextBox backgroundColor='info.500' mainText='General Tips' secondaryText='Learn more about caregiving and dementia'/>
-                <ClickableTextBox navigateToPage='Activity Tips' backgroundColor='success.400' mainText='Activity Tips'/>
-                <ClickableTextBox backgroundColor='lightBlue.300' mainText='Sleep Tips'/>
-                <ClickableTextBox backgroundColor='error.500' mainText='Agitation Tips'/>
-                <ClickableTextBox backgroundColor='orange.300' mainText='Mobility Tips'/>
-                <ClickableTextBox backgroundColor='red.300' mainText='Heart Health Tips'/>
-                <ClickableTextBox backgroundColor='blue.300' mainText='Respiration Tips'/>
-                <ClickableTextBox backgroundColor='purple.300' mainText='Cognition Tips'/>
+                <ClickableTextBox textColor='white' backgroundColor='info.500' mainText='General Tips' secondaryText='Learn more about caregiving and dementia'/>
+                <ClickableTextBox textColor='white' navigateToPage='Activity Tips' backgroundColor='#E55CE5' mainText='Activity Tips'/>
+                <ClickableTextBox textColor='white' navigateToPage='Sleep Tips' backgroundColor='#2E6BA8' mainText='Sleep Tips'/>
+                <ClickableTextBox textColor='white' navigateToPage='Agitation Tips'backgroundColor='red.700' mainText='Agitation Tips'/>
+                <ClickableTextBox textColor='white' navigateToPage='Mobility Tips'backgroundColor='#D87E2A' mainText='Mobility Tips'/>
+                <ClickableTextBox textColor='white' navigateToPage='Heart Tips'backgroundColor='#EE61A7' mainText='Heart Health Tips'/>
+                <ClickableTextBox textColor='white' navigateToPage='Respiratory Tips' backgroundColor='#5499E0' mainText='Respiration Tips'/>
+                <ClickableTextBox textColor='white' navigateToPage='Cognition Tips' backgroundColor='emerald.600' mainText='Cognition Tips'/>
             </VStack>
         </ScrollView>
     )

@@ -52,10 +52,10 @@ const ActivityScreen = ({navigation}) => {
 
     return(
         <ScrollView>
-            <ScreenTop backgroundColor='#FE987D' screenTitle='Heart Health' statistic='74' supportingText='avg bpm today' progressNumber='1' iconName='heartbeat'/>
+            <ScreenTop backgroundColor='#E75480' screenTitle='Heart Health' statistic='74' supportingText='avg bpm today' progressNumber='1' iconName='heartbeat'/>
             <VStack mx='8'>
-                <ClickableTextBox backgroundColor='red.300' mainText='Summary' secondaryText='Avg. Resting HR: 67 bpm Avg. HRV: 67ms'/>
-                <Box bgColor='red.300' borderRadius='2xl' my='5'>
+                <ClickableTextBox backgroundColor='#FED7D7' mainText='Summary' secondaryText='Avg. Resting HR: 67 bpm Avg. HRV: 67ms'/>
+                <Box bgColor='#FED7D7' borderRadius='2xl' my='5'>
                     <Text color='black' my='2' fontSize={24} alignSelf='center'>John's Daily Heart Rate</Text>
                 <Box borderRadius='2xl' bgColor='white'>
                     <VictoryChart width={350}>

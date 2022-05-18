@@ -11,6 +11,13 @@ import GeneralTips from '../screens/tips/GeneralTips';
 import ActivityTips from '../screens/tips/ActivityTips';
 import MainLocation from '../screens/location/MainLocation';
 import RespiratoryScreen from '../screens/trends/RespiratorySreen';
+import RespiratoryTips from '../screens/tips/RespiratoryTips';
+import AgitationTips from '../screens/tips/AgitationTips';
+import SleepTips from '../screens/tips/SleepTips';
+import CognitionTips from '../screens/tips/CognitionTips';
+import HeartTips from '../screens/tips/HeartTips';
+import MobilityTips from '../screens/tips/MobilityTips';
+
 
 import {
     createDrawerNavigator,
@@ -59,6 +66,12 @@ function App() {
       <Stack.Screen screenOptions={{headerShown: false}} name="Diary Main Screen" component={DiaryMainScreen} />
       <Stack.Screen screenOptions={{headerShown: false}} name="General Tips" component={GeneralTips} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Activity Tips" component={ActivityTips} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Respiratory Tips" component={RespiratoryTips} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Heart Tips" component={HeartTips} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Mobility Tips" component={MobilityTips} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Sleep Tips" component={SleepTips} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Cognition Tips" component={CognitionTips} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Agitation Tips" component={AgitationTips} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Main Location" component={MainLocation} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Respiratory Screen" component={RespiratoryScreen} />
     </Stack.Navigator>

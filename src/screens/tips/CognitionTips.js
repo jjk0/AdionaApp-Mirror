@@ -8,15 +8,15 @@ import ScreenTop from '../../components/ScreenTop';
 import ClickableTextBox from '../../components/ClickableTextBox';
 
 
-const ActivityTips = () => {
+const CognitionTips = () => {
     return(
         <ScrollView>
-            <ScreenTop backgroundColor='#E55CE5' screenTitle='Activity Tips'/>
+            <ScreenTop backgroundColor='emerald.700' screenTitle='Cognition Tips'/>
             <VStack mx='8'>
-                <ClickableTextBox textColor='white' backgroundColor='#F9A8D4' 
+                <ClickableTextBox textColor='white' backgroundColor='emerald.300' 
                                 mainText='How exercise improves sleep' 
                                 secondaryText='Exercise improves daytime activity which helps nighttime sleep'/>
-                <ClickableTextBox textColor='white' backgroundColor='#F9A8D4' 
+                <ClickableTextBox textColor='white' backgroundColor='emerald.300' 
                                 mainText='A Few Ways to improve exercise'
                                 secondaryText='Tap to find out a few ways to help John exercise'/>
             </VStack>
@@ -24,4 +24,4 @@ const ActivityTips = () => {
     )
 }
 
-export default ActivityTips;
+export default CognitionTips;
