@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useCallback } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
 import {
     Box,
     Card,
@@ -34,33 +35,30 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import { VictoryBar, VictoryChart, VictoryTheme,VictoryLine,VictoryScatter,VictoryBoxPlot,VictoryAxis } from "victory-native";
+import { DataStore } from 'aws-amplify';
+import { UserInfo,ActivityInfo } from '../../models';
 
+
+    
+    
 
 
 
 const ActivityScreen = ({navigation}) => {
 
-    //this code can be used later to set labels for the yValues. Look into scaling further
-    // function* yLabel() {
-    //     yield* [minValue,4000,6000,8000];
-    // }
 
-    // const minValue = 2000;
-    // const yLabelIterator = yLabel();
-    // const datapoints = [2459,4392,4121,5994,6342,3111,2790].map(
-    //     (datapoint) => datapoint - minValue - 1,
-    // );
+    const [data,setData] = useState()
 
-    const data = [
-        { date: '3/21', steps: 6480 },
-        { date: '3/22', steps: 6000 },
-        { date: '3/23', steps:  7242},
-        { date: '3/24', steps: 7591 },
-        { date: '3/25', steps: 4551 },
-        { date: '3/26', steps: 5264 },
-        { date: '3/27', steps: 9141 },
-        { date: '3/28', steps: 7500 },
-      ];
+
+    async function addItem() {
+        const models = await DataStore.query(UserInfo,"94887492-1853-42e6-a259-e37ebd2b33e9");
+        setData((models['activityData']))
+    }
+
+    useEffect(() => {
+            addItem();
+          }, [])
+    
 
     return(
         <ScrollView>
@@ -74,13 +72,13 @@ const ActivityScreen = ({navigation}) => {
                             <VictoryAxis crossAxis />
                             <VictoryAxis dependentAxis crossAxis
                             style={{grid: {stroke:"#C3C3C3", strokeWidth:1.5 }}}/>
-                            <VictoryBar data={data} x="date" y="steps" 
+                            {data && <VictoryBar data={data} x="date" y="rate" 
                             cornerRadius={{ top: ({ datum }) =>  7 }}
                             style={{
                                 data: { fill: "#E55CE5" }
                                 }}
                             >
-                            </VictoryBar>
+                            </VictoryBar>}
                         </VictoryChart>
                     </Box>
                 </Box>

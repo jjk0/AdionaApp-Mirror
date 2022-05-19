@@ -1,0 +1,11 @@
+type ActivityInfo {
+  date: AWSDateTime
+  rate: Int
+}
+
+type UserInfo @model @auth(rules: [{allow: public}]) {
+  id: ID
+  name: String
+  activityData: [ActivityInfo]
+}
+ 
