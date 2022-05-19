@@ -11,12 +11,12 @@ import ClickableTextBox from '../../components/ClickableTextBox';
 const CognitionTips = () => {
     return(
         <ScrollView>
-            <ScreenTop backgroundColor='emerald.700' screenTitle='Cognition Tips'/>
+            <ScreenTop backgroundColor='#517FF3' screenTitle='Cognition Tips'/>
             <VStack mx='8'>
-                <ClickableTextBox textColor='white' backgroundColor='emerald.300' 
+                <ClickableTextBox textColor='white' backgroundColor='#517FF3' 
                                 mainText='How exercise improves sleep' 
                                 secondaryText='Exercise improves daytime activity which helps nighttime sleep'/>
-                <ClickableTextBox textColor='white' backgroundColor='emerald.300' 
+                <ClickableTextBox textColor='white' backgroundColor='#517FF3' 
                                 mainText='A Few Ways to improve exercise'
                                 secondaryText='Tap to find out a few ways to help John exercise'/>
             </VStack>

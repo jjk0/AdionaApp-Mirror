@@ -20,11 +20,14 @@ const ProgressBarBox = (props) => {
 
     useEffect(() => {
     if (props.progressNumber <=.3) {
-        setProgressColor('#ED0707');
+        // setProgressColor('#ED0707');
+        setProgressColor("#517FF3")
     } else if (props.progressNumber>.3 && props.progressNumber<.6) {
-        setProgressColor('#E3E577');
+        // setProgressColor('#E3E577');
+        setProgressColor("#517FF3")
     } else {
-        setProgressColor("#47E169")
+        // setProgressColor("#47E169")
+        setProgressColor("#517FF3")
 
     }
     }, [props.progressNumber])

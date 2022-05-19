@@ -58,10 +58,10 @@ const data = [
 const RespiratoryScreen = () => {
     return (
         <ScrollView>
-            <ScreenTop backgroundColor='#517FF3' screenTitle='Respiratory Health' statistic='97' supportingText='% SpO2' progressNumber='.9' iconName='lungs'/>
+            <ScreenTop backgroundColor='#84C1FF' screenTitle='Respiratory Health' statistic='97' supportingText='% SpO2' progressNumber='.9' iconName='lungs'/>
             <VStack mx='8'>
-                <ClickableTextBox backgroundColor='blue.200' mainText='Summary' secondaryText='Avg. SpO2: 96% Avg. Breathing Rate: 21/min'/>
-                <Box bgColor='blue.200' borderRadius='2xl' my='5'>
+                <ClickableTextBox backgroundColor='#D0F1FC' mainText='Summary' secondaryText='Avg. SpO2: 96% Avg. Breathing Rate: 21/min'/>
+                <Box bgColor='white' borderRadius='2xl' my='5'>
                     <Text color='black' my='2' fontSize={24} alignSelf='center'>John's SpO2</Text>
                 <Box borderRadius='2xl' bgColor='white'>
                     <VictoryChart width={350} domainPadding={{ x: 15 }}>

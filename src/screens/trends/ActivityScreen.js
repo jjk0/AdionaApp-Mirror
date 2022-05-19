@@ -62,10 +62,10 @@ const ActivityScreen = ({navigation}) => {
 
     return(
         <ScrollView>
-            <ScreenTop backgroundColor='#E55CE5' screenTitle='Activity' statistic='7592' supportingText='steps today' progressNumber='.8' iconName='walking'/>
+            <ScreenTop backgroundColor='#94E577' screenTitle='Activity' statistic='7592' supportingText='steps today' progressNumber='.8' iconName='walking'/>
             <VStack mx='8'>
-                <ClickableTextBox backgroundColor='#F9A8D4' mainText='Activity Tip' secondaryText='Try some of these activities to keep John Active'/>
-                <Box bgColor='pink.300' borderRadius='2xl' my='5'>
+                <ClickableTextBox backgroundColor='#A0E787' mainText='Activity Tip' secondaryText='Try some of these activities to keep John Active'/>
+                <Box bgColor='white' borderRadius='2xl' my='5'>
                     <Text color='black' mt='2' fontSize={24} alignSelf='center'>John's Step Count</Text>
                     <Box bgColor='white' borderRadius='2xl'>
                         <VictoryChart width={350} theme={VictoryTheme.grayscale} domainPadding={{ x: 15 }}>
@@ -74,9 +74,7 @@ const ActivityScreen = ({navigation}) => {
                             style={{grid: {stroke:"#C3C3C3", strokeWidth:1.5 }}}/>
                             {data && <VictoryBar data={data} x="date" y="rate" 
                             cornerRadius={{ top: ({ datum }) =>  7 }}
-                            style={{
-                                data: { fill: "#E55CE5" }
-                                }}
+                            style={{data: { fill: "#94E577" }}}
                             >
                             </VictoryBar>}
                         </VictoryChart>

@@ -43,7 +43,7 @@ import ProgressCircle from 'react-native-progress-circle'
     
     return (
         <ScrollView style={styles.sectionContainer}>
-            <Box bgColor='info.500' m='0'>
+            <Box bgColor='#517FF3' m='0'>
                 <BackButton/>
                 <Center>
                     <HStack>
@@ -69,12 +69,12 @@ import ProgressCircle from 'react-native-progress-circle'
             </Box>
             <VStack px='10'>
                 <VStack marginY='10' alignItems='flex-start'>
-                    <TrendBarIcon title='Activity' iconTitle='walking' progressText='Keep going!' progressNumber='.4' iconColor="#E55CE5" navigateToPage='Activity Screen'/>
-                    <TrendBarIcon title='Sleep' iconTitle='moon' progressText='John might need a nap' progressNumber='.2' iconColor="#2E6BA8"/>
-                    <TrendBarIcon title='Agitation' iconTitle='exclamation-circle' progressText='None today!' progressNumber='.8' iconColor="#B97AE0" />
-                    <TrendBarIcon title='Mobility' iconTitle='location-arrow' progressText="John's Balance is great" progressNumber='.8' iconColor="#D87E2A" />
-                    <TrendBarIcon title='Heart' iconTitle='heartbeat' progressText='Metrics look normal' progressNumber='1.0' iconColor="#EE61A7" navigateToPage='Heart Screen'/>
-                    <TrendBarIcon title='Respiratory' iconTitle='lungs' progressText='Metrics look normal' progressNumber='.9' iconColor="#5499E0" navigateToPage='Respiratory Screen'/>
+                    <TrendBarIcon title='Activity' iconTitle='walking' progressText='Keep going!' progressNumber='.4' iconColor="#94E577" navigateToPage='Activity Screen'/>
+                    <TrendBarIcon title='Sleep' iconTitle='moon' progressText='John might need a nap' progressNumber='.2' iconColor="#5499E0"/>
+                    <TrendBarIcon title='Agitation' iconTitle='exclamation-circle' progressText='None today!' progressNumber='.8' iconColor="#E16547" />
+                    <TrendBarIcon title='Mobility' iconTitle='location-arrow' progressText="John's Balance is great" progressNumber='.8' iconColor="#F3952D" />
+                    <TrendBarIcon title='Heart' iconTitle='heartbeat' progressText='Metrics look normal' progressNumber='1.0' iconColor="#E75480" navigateToPage='Heart Screen'/>
+                    <TrendBarIcon title='Respiratory' iconTitle='lungs' progressText='Metrics look normal' progressNumber='.9' iconColor="#84C1FF" navigateToPage='Respiratory Screen'/>
                 </VStack>
             </VStack>
                 

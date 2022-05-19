@@ -56,7 +56,7 @@ import {
     return (
         <ScrollView style={styles.sectionContainer}>
             <DrawerContentScrollView style={{margin:-25}}/>
-            <Box bgColor='info.500' m='0'>
+            <Box bgColor='#517FF3' m='0'>
                 <Center>
                     <HStack>
                             <Pressable>
