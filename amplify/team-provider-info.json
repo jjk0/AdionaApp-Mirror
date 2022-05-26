@@ -10,6 +10,11 @@
       "StackName": "amplify-adionaapp-dev-210455",
       "StackId": "arn:aws:cloudformation:us-east-1:779792650170:stack/amplify-adionaapp-dev-210455/8d0acbe0-ccd8-11ec-ac38-128e225e90f7",
       "AmplifyAppId": "d2gmp680vbcv4"
+    },
+    "categories": {
+      "auth": {
+        "adionaappbdf26d35": {}
+      }
     }
   }
 }

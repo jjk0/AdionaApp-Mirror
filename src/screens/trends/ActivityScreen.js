@@ -35,7 +35,9 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import { VictoryBar, VictoryChart, VictoryTheme,VictoryLine,VictoryScatter,VictoryBoxPlot,VictoryAxis } from "victory-native";
-import { DataStore } from 'aws-amplify';
+// import { DataStore } from 'aws-amplify';
+
+import { API } from 'aws-amplify';
 import { UserInfo,ActivityInfo } from '../../models';
 
 

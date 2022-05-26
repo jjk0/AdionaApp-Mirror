@@ -6,6 +6,7 @@
  * @flow strict-local
  */
 import 'react-native-gesture-handler';
+import { withAuthenticator } from 'aws-amplify-react-native';
 import React from 'react';
 
 import {
@@ -88,4 +89,8 @@ const styles = StyleSheet.create({
   }
 });
 
-export default App;
+export default withAuthenticator(App, {
+  // Render a sign out button once logged in
+  includeGreetings: true,
+  // Show only certain components
+});;
