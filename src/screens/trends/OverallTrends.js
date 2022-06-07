@@ -28,7 +28,10 @@ import BackButton from '../../components/BackButton';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-import ProgressCircle from 'react-native-progress-circle'
+import ProgressCircle from 'react-native-progress-circle';
+import { Auth, API, graphqlOperation} from 'aws-amplify';
+import { createUserInfo } from '../../graphql/mutations';
+import { UserInfo,ActivityInfo } from '../../models';
 
 
 
@@ -39,6 +42,42 @@ import ProgressCircle from 'react-native-progress-circle'
 
 
   const OverallTrends = ({ navigation }) => {
+
+    const addUser = async () => {
+
+        try {
+            const user = await Auth.currentAuthenticatedUser();
+            console.log('user',user.username)
+
+            // const response = await API.graphql(
+            //     graphqlOperation(createUserInfo, {
+            //     input: {
+            //         id: user.attributes.sub,
+            //         name: user.username,
+            //         activityData: []
+            //     },
+            //     }),
+            // );
+            // console.log('Response :\n');
+            // console.log(response);
+        
+        
+
+        
+            // useEffect(() => {
+            //         addItem();
+            //       }, [])
+        
+            } catch (e) {
+                console.log(e.message);
+            }
+        
+
+    }
+
+    useEffect(() => {
+        addUser();
+        }, [])
     
     
     return (

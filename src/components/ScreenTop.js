@@ -16,25 +16,28 @@ import {
   } from 'native-base';
 import {
     StyleSheet,
+    Dimensions
   } from 'react-native';
 
 import BackButton from './BackButton';
 import ProgressBar from 'react-native-progress/Bar';
 import ProgressBarBox from './ProgressBarBox';
+import TrendScreenBackground from "./TrendScreenBackground";
 
 
 //clean up import code here
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-
+const screenWidth = Dimensions.get('window').width;
 const ScreenTop = (props) => {
 
     return (
-        <View>
-            <Box bgColor={props.backgroundColor}>
+        <View mb="10" style={{width: Dimensions.get('window').width}}>
+            <TrendScreenBackground/>
+            <Box width={screenWidth} style={{position:'absolute', top:-20}}>
                     <BackButton/>
-                    <Center>
+                    <Center mb='-3'>
                         <VStack>
                             <Text alignSelf='center' width='100%' color='white' fontSize={40}>{props.screenTitle}</Text>
                             <HStack>
@@ -48,7 +51,7 @@ const ScreenTop = (props) => {
                         </VStack>
                     </Center>
                     {props.progressNumber && 
-                    <Box mb='-10'>
+                    <Box>
                         <ProgressBarBox progressNumber={props.progressNumber}/>
                     </Box>
                     }
