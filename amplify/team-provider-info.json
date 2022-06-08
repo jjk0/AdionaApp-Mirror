@@ -13,7 +13,14 @@
     },
     "categories": {
       "auth": {
-        "adionaappbdf26d35": {}
+        "adionaappbdf26d35": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "UserInfoFunction": {
+          "deploymentBucketName": "amplify-adionaapp-dev-210455-deployment",
+          "s3Key": "amplify-builds/UserInfoFunction-5756526a727633705571-build.zip"
+        }
       }
     }
   }
