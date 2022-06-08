@@ -23,6 +23,9 @@ import {
   } from 'react-native';
 
 
+
+
+
 //clean up import code here
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -35,6 +38,9 @@ import TallIconButton from '../../components/TallIconButon';
 import AgitationModal from '../../components/AgitationModal';
 // import SVGImg from '../../assets/Group 39.svg';
 import HomeScreenBackground from '../../components/HomeScreenBackground';
+import BubbleLarge from '../../components/BubbleLarge';
+import Vector9 from '../../components/shapeSVGs/Vector8';
+import Vector8 from '../../components/shapeSVGs/Vector9';
 
 
 import {
@@ -97,9 +103,16 @@ import {
             </Box>
                 <VStack px='4' mr='2'>
                     <Pressable borderRadius='2xl' justifyContent='center' onPress={() => navigation.navigate('Overall Trends')} >
-                        <Box mt='4' style={{width: Dimensions.get('window').width}}>
-                            <HomeScreenBackground width={Dimensions.get("window").width} height={Dimensions.get("window").width/2}/>
-                            <Box style={{position:'absolute'}} my="8" mx="4" width='90%'>
+                        <Box bgColor='#F0402A' my='4' borderRadius='2xl'>
+                                <View style={{position:'absolute', right:50}} size={200}>
+                                    <Vector8/>
+                                </View>
+                                <View style={{position:'absolute', top:-100, right:-40}} size={400}>
+                                    <Vector9/>
+                                </View>
+                            {/* <HomeScreenBackground width={Dimensions.get("window").width} height={Dimensions.get("window").width/2}/> */}
+                            {/* <Box style={{position:'absolute'}} my="8" mx="4" width='90%'> */}
+                            <Box my="8" mx="4" width='90%'>
                                 <VStack>
                                     <HStack>
                                         <Icon name="alert-circle-outline" size={30} color="white" alignSelf='start' />
