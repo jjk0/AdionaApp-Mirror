@@ -91,6 +91,6 @@ const styles = StyleSheet.create({
 
 export default withAuthenticator(App, {
   // Render a sign out button once logged in
-  includeGreetings: true,
+  //includeGreetings: true,
   // Show only certain components
 });;

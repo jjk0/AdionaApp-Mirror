@@ -83,7 +83,7 @@ const ActivityScreen = ({navigation}) => {
         <ScrollView>
             <ScreenTop backgroundColor='#94E577' screenTitle='Activity' statistic='7592' supportingText='steps today' progressNumber='.8' iconName='walking'/>
             <VStack mx='8'>
-                <ClickableTextBox backgroundColor='#A0E787' mainText='Activity Tip' secondaryText='Try some of these activities to keep John Active'/>
+                <ClickableTextBox textColor='white' backgroundColor='#517FF3' mainText='Activity Tip' secondaryText='Try some of these activities to keep John Active'/>
                 <Box bgColor='white' borderRadius='2xl' my='5'>
                     {data && <Text color='black' mt='2' fontSize={24} alignSelf='center'>{data['name']}</Text>}
                     <Box bgColor='white' borderRadius='2xl'>
