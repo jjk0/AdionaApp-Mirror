@@ -19,6 +19,7 @@ import {
   } from 'native-base';
 import {
     StyleSheet,
+    Dimensions
   } from 'react-native';
 
 
@@ -32,12 +33,15 @@ import ProgressCircle from 'react-native-progress-circle'
 import HomeIconButton from '../../components/HomeIconButton';
 import TallIconButton from '../../components/TallIconButon';
 import AgitationModal from '../../components/AgitationModal';
+// import SVGImg from '../../assets/Group 39.svg';
+import HomeScreenBackground from '../../components/HomeScreenBackground';
 
 
 import {
     createDrawerNavigator,
     DrawerContentScrollView,
   } from "@react-navigation/drawer";
+
 
  const submit = () => {
      console.log('submitted')
@@ -91,13 +95,23 @@ import {
                     </HStack>
                 </Pressable>
             </Box>
-                <VStack px='4'>
-                    <Pressable borderRadius='2xl' justifyContent='center' textAlign='center' width='100%' bg='error.700' p='25' mt='10' mb='10' onPress={() => navigation.navigate('Overall Trends')}>
-                        <HStack>
-                            <Icon name="alert-circle-outline" size={30} color="white" alignSelf='start' />
-                            <Text fontSize={25} alignSelf='center' ml='3' color='white'>Alert</Text>
-                        </HStack>
-                        <Text fontSize={20} color='white'>John might get agitated soon. Tap to see our recommendations</Text>
+                <VStack px='4' mr='2'>
+                    <Pressable borderRadius='2xl' justifyContent='center' onPress={() => navigation.navigate('Overall Trends')} >
+                        <Box mt='4' style={{width: Dimensions.get('window').width}}>
+                            <HomeScreenBackground width={Dimensions.get("window").width} height={Dimensions.get("window").width/2}/>
+                            <Box style={{position:'absolute'}} my="8" mx="4" width='90%'>
+                                <VStack>
+                                    <HStack>
+                                        <Icon name="alert-circle-outline" size={30} color="white" alignSelf='start' />
+                                        <Text fontSize={25} alignSelf='center' ml='3' color='white'>Alert</Text>
+                                    </HStack>
+
+                                    <Text fontSize={20} color='white'>John might get agitated soon. Tap to see our recommendations</Text>
+                                </VStack>
+                            </Box>
+                        </Box>
+                            
+                            
                     </Pressable>
 
                     <Pressable borderRadius='2xl' justifyContent='center' textAlign='center' width='100%' bg='warning.200' mb='10' p='25' onPress={() => setShowAgitationModal(true)}>

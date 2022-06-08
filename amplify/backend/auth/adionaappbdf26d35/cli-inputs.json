@@ -26,13 +26,16 @@
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
+      "family_name",
+      "name",
+      "phone_number",
       "email"
     ],
     "userpoolClientReadAttributes": [
       "email"
     ],
     "userpoolClientLambdaRole": "adionabdf26d35_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": false,
+    "userpoolClientSetAttributes": true,
     "sharedId": "bdf26d35",
     "resourceName": "adionaappbdf26d35",
     "authSelections": "identityPoolAndUserPool",
