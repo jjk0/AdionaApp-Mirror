@@ -14,8 +14,8 @@ type UserInfoMetaData = {
 
 export declare class UserInfo {
   readonly id: string;
-  readonly name?: string | null;
-  readonly activityData?: (ActivityInfo | null)[] | null;
+  readonly username: string;
+  readonly email: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<UserInfo, UserInfoMetaData>);

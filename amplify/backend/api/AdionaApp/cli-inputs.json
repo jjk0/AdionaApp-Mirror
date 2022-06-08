@@ -3,7 +3,7 @@
   "serviceConfiguration": {
     "apiName": "AdionaApp",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/Users/varunpatel/Desktop/AdionaApp/amplify/backend/api/AdionaApp/schema.graphql",
+    "gqlSchemaPath": "/Users/joshuakim/Documents/AdionaApp/amplify/backend/api/AdionaApp/schema.graphql",
     "defaultAuthType": {
       "mode": "AMAZON_COGNITO_USER_POOLS",
       "cognitoUserPoolId": "authadionaappbdf26d35"
