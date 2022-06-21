@@ -19,7 +19,7 @@
       "function": {
         "UserInfoFunction": {
           "deploymentBucketName": "amplify-adionaapp-dev-210455-deployment",
-          "s3Key": "amplify-builds/UserInfoFunction-5756526a727633705571-build.zip"
+          "s3Key": "amplify-builds/UserInfoFunction-316c5654674e362f4733-build.zip"
         }
       }
     }

@@ -24,6 +24,20 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
+                "patientName": {
+                    "name": "patientName",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "caregiverName": {
+                    "name": "caregiverName",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -103,5 +117,5 @@ export const schema = {
             }
         }
     },
-    "version": "24d443eabca9779efd01bdf5c0d98af6"
+    "version": "34e4a67d36dab20ff8f849f997d83447"
 };

@@ -3,7 +3,7 @@
   "serviceConfiguration": {
     "apiName": "AdionaApp",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/Users/joshuakim/Documents/AdionaApp/amplify/backend/api/AdionaApp/schema.graphql",
+    "gqlSchemaPath": "/tmp/amplify-1fdb3d5d-6ff3-4386-a0f4-82666d88b6b3/amplify/backend/api/AdionaApp/schema.graphql",
     "defaultAuthType": {
       "mode": "AMAZON_COGNITO_USER_POOLS",
       "cognitoUserPoolId": "authadionaappbdf26d35"
@@ -11,11 +11,6 @@
     "additionalAuthTypes": [
       {
         "mode": "AWS_IAM"
-      },
-      {
-        "mode": "API_KEY",
-        "expirationTime": 30,
-        "keyDescription": "api key description"
       }
     ],
     "conflictResolution": {

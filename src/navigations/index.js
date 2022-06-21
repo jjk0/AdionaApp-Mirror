@@ -17,6 +17,7 @@ import SleepTips from '../screens/tips/SleepTips';
 import CognitionTips from '../screens/tips/CognitionTips';
 import HeartTips from '../screens/tips/HeartTips';
 import MobilityTips from '../screens/tips/MobilityTips';
+import UserRegistration from '../screens/registration/UserRegistration';
 
 
 import {
@@ -43,6 +44,7 @@ function Root() {
             <Drawer.Screen name="Home Screen" component={HomeScreen} />
             <Drawer.Screen name="Profile" component={ActivityScreen} />
             <Stack.Screen name="Settings" component={HeartScreen} />
+            <Stack.Screen name="Register" component={UserRegistration} />
         </Drawer.Navigator>
     );
     }

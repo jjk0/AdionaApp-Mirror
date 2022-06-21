@@ -16,6 +16,8 @@ export declare class UserInfo {
   readonly id: string;
   readonly username: string;
   readonly email: string;
+  readonly patientName?: string | null;
+  readonly caregiverName?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<UserInfo, UserInfoMetaData>);

@@ -89,8 +89,37 @@ const styles = StyleSheet.create({
   }
 });
 
+const signUpConfig = {
+  header: 'Customized Sign Up',
+  //hideAllDefaults: true,
+  defaultCountryCode: '1',
+  signUpFields: [
+    {
+      label: 'Patient Name',
+      key: 'custom:patientName',
+      required: true,
+      displayOrder: 5,
+      type: 'string'
+    },
+    {
+      label: 'Cargiver Name',
+      key: 'custom:caregiverName',
+      required: true,
+      displayOrder: 6,
+      type: 'string'
+    }
+  ]
+};
+
+// export default withAuthenticator(App, {
+//   // Render a sign out button once logged in
+//   includeGreetings: true,
+//   hideAllDefaults: true,
+//   signUpFields: [ { key: 'custom::patientName' }, { key: 'password' } ]
+  
+//   // Show only certain components
+// });;
 export default withAuthenticator(App, {
-  // Render a sign out button once logged in
-  //includeGreetings: true,
-  // Show only certain components
-});;
+  includeGreetings:true,
+  signUpConfig,
+});
