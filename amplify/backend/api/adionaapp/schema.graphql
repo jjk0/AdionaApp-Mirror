@@ -1,0 +1,22 @@
+type RegisteredInfo @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userId: String
+  livingSituation: String
+  mobility: String
+  diagnosis: String
+  diagnosisDate: String
+  patientName: String
+  caregiverName: String
+  caregiverRelationship: String
+}
+
+type UserInfo @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  username: String
+  email: String
+  patientName: String
+  caregiverName: String
+  hasWatchSetup: Boolean
+  hasPatientInfo: Boolean
+}
+ 

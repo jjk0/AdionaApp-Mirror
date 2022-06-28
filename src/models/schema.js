@@ -1,5 +1,113 @@
 export const schema = {
     "models": {
+        "RegisteredInfo": {
+            "name": "RegisteredInfo",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "userId": {
+                    "name": "userId",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "livingSituation": {
+                    "name": "livingSituation",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "mobility": {
+                    "name": "mobility",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "diagnosis": {
+                    "name": "diagnosis",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "diagnosisDate": {
+                    "name": "diagnosisDate",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "patientName": {
+                    "name": "patientName",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "caregiverName": {
+                    "name": "caregiverName",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "caregiverRelationship": {
+                    "name": "caregiverRelationship",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "RegisteredInfos",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "UserInfo": {
             "name": "UserInfo",
             "fields": {
@@ -14,14 +122,14 @@ export const schema = {
                     "name": "username",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": true,
+                    "isRequired": false,
                     "attributes": []
                 },
                 "email": {
                     "name": "email",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": true,
+                    "isRequired": false,
                     "attributes": []
                 },
                 "patientName": {
@@ -35,6 +143,20 @@ export const schema = {
                     "name": "caregiverName",
                     "isArray": false,
                     "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "hasWatchSetup": {
+                    "name": "hasWatchSetup",
+                    "isArray": false,
+                    "type": "Boolean",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "hasPatientInfo": {
+                    "name": "hasPatientInfo",
+                    "isArray": false,
+                    "type": "Boolean",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -67,27 +189,13 @@ export const schema = {
                     "properties": {
                         "rules": [
                             {
-                                "groupClaim": "cognito:groups",
-                                "provider": "userPools",
-                                "allow": "groups",
-                                "groups": [
-                                    "Admin"
-                                ],
+                                "allow": "public",
                                 "operations": [
                                     "create",
                                     "update",
                                     "delete",
                                     "read"
                                 ]
-                            },
-                            {
-                                "provider": "userPools",
-                                "ownerField": "username",
-                                "allow": "owner",
-                                "operations": [
-                                    "read"
-                                ],
-                                "identityClaim": "cognito:username"
                             }
                         ]
                     }
@@ -96,26 +204,6 @@ export const schema = {
         }
     },
     "enums": {},
-    "nonModels": {
-        "ActivityInfo": {
-            "name": "ActivityInfo",
-            "fields": {
-                "date": {
-                    "name": "date",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "rate": {
-                    "name": "rate",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": false,
-                    "attributes": []
-                }
-            }
-        }
-    },
-    "version": "34e4a67d36dab20ff8f849f997d83447"
+    "nonModels": {},
+    "version": "ac6cd93fc3a1582ae7ff8ef3b7dbe071"
 };

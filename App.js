@@ -7,6 +7,7 @@
  */
 import 'react-native-gesture-handler';
 import { withAuthenticator } from 'aws-amplify-react-native';
+//import { withAuthenticator } from '@aws-amplify/ui-react';
 import React from 'react';
 
 import {
@@ -110,6 +111,7 @@ const signUpConfig = {
     }
   ]
 };
+
 
 // export default withAuthenticator(App, {
 //   // Render a sign out button once logged in

@@ -1,54 +1,50 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getUserInfo = /* GraphQL */ `
-  query GetUserInfo($id: ID!) {
-    getUserInfo(id: $id) {
+export const getTodo = /* GraphQL */ `
+  query GetTodo($id: ID!) {
+    getTodo(id: $id) {
       id
       name
-      activityData {
-        date
-        rate
-      }
+      description
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
-export const listUserInfos = /* GraphQL */ `
-  query ListUserInfos(
-    $filter: ModelUserInfoFilterInput
+export const listTodos = /* GraphQL */ `
+  query ListTodos(
+    $filter: ModelTodoFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listUserInfos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         name
+        description
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
       }
       nextToken
       startedAt
     }
   }
 `;
-export const syncUserInfos = /* GraphQL */ `
-  query SyncUserInfos(
-    $filter: ModelUserInfoFilterInput
+export const syncTodos = /* GraphQL */ `
+  query SyncTodos(
+    $filter: ModelTodoFilterInput
     $limit: Int
     $nextToken: String
     $lastSync: AWSTimestamp
   ) {
-    syncUserInfos(
+    syncTodos(
       filter: $filter
       limit: $limit
       nextToken: $nextToken
@@ -57,12 +53,12 @@ export const syncUserInfos = /* GraphQL */ `
       items {
         id
         name
+        description
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
       }
       nextToken
       startedAt

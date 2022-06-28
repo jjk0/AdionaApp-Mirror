@@ -1,66 +1,54 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createUserInfo = /* GraphQL */ `
-  mutation CreateUserInfo(
-    $input: CreateUserInfoInput!
-    $condition: ModelUserInfoConditionInput
+export const createTodo = /* GraphQL */ `
+  mutation CreateTodo(
+    $input: CreateTodoInput!
+    $condition: ModelTodoConditionInput
   ) {
-    createUserInfo(input: $input, condition: $condition) {
+    createTodo(input: $input, condition: $condition) {
       id
       name
-      activityData {
-        date
-        rate
-      }
+      description
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
-export const updateUserInfo = /* GraphQL */ `
-  mutation UpdateUserInfo(
-    $input: UpdateUserInfoInput!
-    $condition: ModelUserInfoConditionInput
+export const updateTodo = /* GraphQL */ `
+  mutation UpdateTodo(
+    $input: UpdateTodoInput!
+    $condition: ModelTodoConditionInput
   ) {
-    updateUserInfo(input: $input, condition: $condition) {
+    updateTodo(input: $input, condition: $condition) {
       id
       name
-      activityData {
-        date
-        rate
-      }
+      description
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
-export const deleteUserInfo = /* GraphQL */ `
-  mutation DeleteUserInfo(
-    $input: DeleteUserInfoInput!
-    $condition: ModelUserInfoConditionInput
+export const deleteTodo = /* GraphQL */ `
+  mutation DeleteTodo(
+    $input: DeleteTodoInput!
+    $condition: ModelTodoConditionInput
   ) {
-    deleteUserInfo(input: $input, condition: $condition) {
+    deleteTodo(input: $input, condition: $condition) {
       id
       name
-      activityData {
-        date
-        rate
-      }
+      description
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
