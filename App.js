@@ -9,6 +9,7 @@ import 'react-native-gesture-handler';
 import { withAuthenticator } from 'aws-amplify-react-native';
 //import { withAuthenticator } from '@aws-amplify/ui-react';
 import React from 'react';
+import UserContext from './src/contexts/UserContext';
 
 import {
   SafeAreaView,
@@ -60,9 +61,11 @@ const App = () => {
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <NativeBaseProvider>
-        <Navigations></Navigations>
-      </NativeBaseProvider>
+      <UserContext>
+        <NativeBaseProvider>
+          <Navigations></Navigations>
+        </NativeBaseProvider>
+      </UserContext>
     </GestureHandlerRootView>
   );
 };

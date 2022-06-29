@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useEffect, useState,useCallback, useRef } from 'react';
+import { useEffect, useState,useCallback, useRef , useContext} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { GestureHandlerRootView,gestureHandlerRootHOC } from 'react-native-gesture-handler';
@@ -20,6 +20,8 @@ import HeartTips from '../screens/tips/HeartTips';
 import MobilityTips from '../screens/tips/MobilityTips';
 import UserRegistration from '../screens/registration/UserRegistration';
 import { RegisteredInfo, UserInfo} from '../models';
+//import { useUserContext } from '../contexts/UserContext'
+import {useUserContext} from '../contexts/UserContext'
 
 import {
     createDrawerNavigator,
@@ -53,38 +55,12 @@ function Root() {
 
 
 function App() {
-  const [initialRoute, setInitialRoute] = useState("")
-
-  const initialRouteDecider = async () => {
-    const user = await Auth.currentAuthenticatedUser();
-    const person = await DataStore.query(UserInfo, c => c.username("eq", user.attributes.sub));
-    console.log('person from nav:',person[0]['hasPatientInfo'])
-    if (person[0]['hasPatientInfo']==true) {
-      console.log('yes')
-      setInitialRoute("Root")
-    }
-    else {
-      console.log('no')
-      setInitialRoute("Register")
-    }
-
-
-
-  };
-
-  useEffect(() => {
-    initialRouteDecider();
-  });
-
-    return (
-    
+  const { user,userChecked } = useUserContext();
+  
+  return (  
   <NavigationContainer>
-    <Stack.Navigator initialRouteName={initialRoute} options={{ title: 'Overview' }}>
-    <Stack.Screen
-          name="Root"
-          component={Root}
-          options={{ headerShown: false }}
-        />
+    <Stack.Navigator initialRouteName={userChecked? "Root": "Register"} options={{ title: 'Overview' }}>
+      <Stack.Screen screenOptions={{headerShown: false}} name="Root" component={Root}/>
       <Stack.Screen screenOptions={{headerShown: false}} name="Register" component={UserRegistration} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Home" component={HomeScreen} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Overall Trends" component={OverallTrends} />
