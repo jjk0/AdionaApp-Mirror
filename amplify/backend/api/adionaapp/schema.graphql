@@ -1,6 +1,6 @@
 type RegisteredInfo @model @auth(rules: [{allow: public}]) {
   id: ID!
-  userId: String
+  userId: String!
   livingSituation: String
   mobility: String
   diagnosis: String

@@ -59,7 +59,7 @@ function App() {
   
   return (  
   <NavigationContainer>
-    <Stack.Navigator initialRouteName={userChecked? "Root": "Register"} options={{ title: 'Overview' }}>
+    <Stack.Navigator initialRouteName={ "Root"} options={{ title: 'Overview' }}>
       <Stack.Screen screenOptions={{headerShown: false}} name="Root" component={Root}/>
       <Stack.Screen screenOptions={{headerShown: false}} name="Register" component={UserRegistration} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Home" component={HomeScreen} />

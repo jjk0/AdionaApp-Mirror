@@ -70,6 +70,12 @@
     "UserInfo": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
+    },
+    "adionaapp10ac144c": {
+      "service": "S3",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
     }
   },
   "function": {

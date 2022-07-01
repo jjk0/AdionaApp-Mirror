@@ -14,7 +14,7 @@ export const schema = {
                     "name": "userId",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": false,
+                    "isRequired": true,
                     "attributes": []
                 },
                 "livingSituation": {
@@ -205,5 +205,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "ac6cd93fc3a1582ae7ff8ef3b7dbe071"
+    "version": "77504ad17328a485b34bd26cf78d0e12"
 };

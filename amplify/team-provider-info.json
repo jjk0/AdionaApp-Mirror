@@ -21,6 +21,12 @@
           "deploymentBucketName": "amplify-adionaapp-dev-210455-deployment",
           "s3Key": "amplify-builds/UserInfoFunction-316c5654674e362f4733-build.zip"
         }
+      },
+      "storage": {
+        "adionaapp10ac144c": {
+          "bucketName": "processed-adiona-watch-app-data",
+          "region": "us-east-1"
+        }
       }
     }
   }

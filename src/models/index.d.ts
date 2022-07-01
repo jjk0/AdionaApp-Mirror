@@ -14,7 +14,7 @@ type UserInfoMetaData = {
 
 export declare class RegisteredInfo {
   readonly id: string;
-  readonly userId?: string | null;
+  readonly userId: string;
   readonly livingSituation?: string | null;
   readonly mobility?: string | null;
   readonly diagnosis?: string | null;
