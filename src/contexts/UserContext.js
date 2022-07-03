@@ -19,7 +19,6 @@ export default function UserContextProvider ({children}) {
           const user = await Auth.currentAuthenticatedUser();
           if (user) {
             const person = await DataStore.query(UserInfo, c => c.username("eq", user.attributes.sub));
-            console.log('person',person)
             // set the user in state
             setUser(person);
             setUserChcked(true)

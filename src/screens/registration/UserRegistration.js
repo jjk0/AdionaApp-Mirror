@@ -25,43 +25,12 @@ import * as Yup from 'yup';
 
 import {RegisteredInfo, UserInfo} from '../../models';
 import { DataStore, Auth, Hub, Logger } from 'aws-amplify';
-//Amplify.Logger.LOG_LEVEL = 'DEBUG';
+import { useUserContext } from '../../contexts/UserContext';
 import Swiper from 'react-native-swiper'
 import NextSwipeButton from '../../components/NextSwipeButton';
 import PrevSwipeButton from '../../components/PrevSwipeButton';
 
 const logger = new Logger('foo', 'DEBUG');
-
-const styles = StyleSheet.create({
-    wrapper: {},
-    slide1: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#9DD6EB'
-    },
-    slide2: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#97CAE5'
-    },
-    slide3: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#92BBD9'
-    },
-    text: {
-      color: '#fff',
-      fontSize: 30,
-      fontWeight: 'bold'
-    },
-    input: {
-        backgroundColor:'white',
-    },
-  })
-
 
 
 
@@ -70,35 +39,12 @@ const styles = StyleSheet.create({
 
 const UserRegistration = ({navigation}) => {
 
-    // const listener = Hub.listen('datastore', async hubData => {
-    //     const  { event, data } = hubData.payload;
-    //     if (event === 'networkStatus') {
-    //       console.log(`User has a network connection: ${data.active}`)
-    //     }
-    //   })
-      
-    //   // Remove listener
-    // listener();
-
-    
-    // const restart = async () => {
-    //     const user = await Auth.currentAuthenticatedUser();
-    //     hubSubscription = Hub.listen([HubChannel.DataStore], (msg) = async () => { 
-    //         if (msg.eventName == "ready") { 
-    //             console.log('ready')
-    //             const original = await DataStore.query(UserInfo, user.attributes.sub)
-    //           // logic to start query to get data for rendering
-    //           console.log('restarted original',original)
-    //         } 
-    //       }); 
-    //     hubSubscription();
-    //     await DataStore.start()
-        
-    // }
-
-    // restart();
-
     const swiperRef = useRef(null);
+    const { user, userChecked } =  useUserContext();
+    const [postRoute, setPostRoute] = useState('');
+    const [ postNavigator, setPostNavigator] = useState('');
+    
+    
     const next = () => {
         if (!!swiperRef) {
           swiperRef.current.scrollBy(1);
@@ -111,12 +57,14 @@ const UserRegistration = ({navigation}) => {
     };
 
     const registerUser = async (values) => {
+        console.log('post route', postRoute)
         try {
-            // await DataStore.start()
             const user = await Auth.currentAuthenticatedUser();
             await DataStore.save(new RegisteredInfo({ 'userId':user.attributes.sub, ...values }))
-            await updateFlag();
+            await updateFlag()
+            navigation.navigate(postRoute);
             console.log('submitted!')
+            
         }
         catch (e) {
             logger.error('error happened', e);
@@ -134,12 +82,29 @@ const UserRegistration = ({navigation}) => {
                 updated.hasPatientInfo = true;
             }))
             console.log('updated!')
-
         } catch (e) {
             console.log('not updated!')
-            console.log(e.message);
+        }}
+    
+    
+    
+    const postRouteDecider = async () => {
+        if (!userChecked) return;
+        if (user[0]['hasWatchSetup']) {
+            setPostRoute('Home Screen');
+            setPostNavigator('Root')
+        return;
         }
-      }
+        else {
+            setPostRoute('Watch Setup');
+            setPostNavigator('Root')
+        }
+    };
+    
+    useEffect(() => {
+        postRouteDecider();
+    }, [user, userChecked]);
+    
 
     return(
         <Formik
@@ -158,10 +123,10 @@ const UserRegistration = ({navigation}) => {
             caregiverName: Yup.string()
               .required(),
             patientName: Yup.string()
-              .min(3)
               .required(),
             diagnosisDate: Yup.string()
               .min(4)
+              .max(4)
               .required()
           })}
         >
@@ -184,6 +149,9 @@ const UserRegistration = ({navigation}) => {
                                     <FormControl.Label>
                                         <Text color='white' fontSize={20}>First Name</Text></FormControl.Label>
                                     <Input size={20} value={values.caregiverName} onChangeText={handleChange('caregiverName')} bgColor='white' errors={errors} variant="underlined" p={2} placeholder="Name" />
+                                    {touched.caregiverName && errors.caregiverName &&
+                                    <Text style={{ fontSize: 12, color: "white" }}>Please fill out your first name</Text>
+                                    }   
                                 </Stack>
                                 <Stack mx='5'>
                                     <FormControl.Label>
@@ -218,8 +186,8 @@ const UserRegistration = ({navigation}) => {
                         <PrevSwipeButton onNextPressed={() => prev()}/>
                     </VStack>
                 </ScrollView>
-                <ScrollView flex='1' bgColor="#517FF3">
-                    <View alignItems='center' mb='10'>
+                <ScrollView bgColor="#517FF3" >
+                    <View alignItems='center' >
                             <Text fontSize={30} textAlign='center' color='white'>Tell Adiona a little bit about your loved one</Text>
                         <FormControl>
                             <Stack mt='5' space={5}>
@@ -227,6 +195,9 @@ const UserRegistration = ({navigation}) => {
                                     <FormControl.Label>
                                         <Text color='white' fontSize={20}>Patient Name</Text></FormControl.Label>
                                     <Input size={20} value={values.patientName} onChangeText={handleChange('patientName')} errors={errors} bgColor='white' variant="underlined" p={2} placeholder="Name" />
+                                    {errors.patientName &&
+                                    <Text style={{ fontSize: 12, color: "white" }}>Please fill out patient name</Text>
+                                    }   
                                 </Stack>
                                 {/* <Stack mx='5'>
                                     <FormControl.Label font>Birthday</FormControl.Label>
@@ -244,7 +215,10 @@ const UserRegistration = ({navigation}) => {
                                 <Stack mx='5'>
                                     <FormControl.Label>
                                         <Text color='white' fontSize={20}>Diagnosis Date</Text></FormControl.Label>
-                                    <Input size={20} value={values.diagosisDate} bgColor='white' onChangeText={handleChange('diagnosisDate')} variant="underlined" p={2} placeholder="yyyy" />
+                                    <Input size={20} value={values.diagnosisDate} bgColor='white' onChangeText={handleChange('diagnosisDate')} variant="underlined" p={2} placeholder="yyyy" />
+                                    {errors.diagnosisDate &&
+                                    <Text style={{ fontSize: 12, color: "white" }}>Please fill out the correct year of diagnosis</Text>
+                                    }
                                 </Stack>
                                 <Stack mx='5'>
                                     <FormControl.Label>
@@ -262,15 +236,16 @@ const UserRegistration = ({navigation}) => {
                         </FormControl>
                     </View>
                     
-                    <VStack flex="1" mt='8' justifyContent="flex-end">
-                    <Pressable m='2' onPress={handleSubmit}>
-                        <Center>
-                            <Box borderRadius='2xl' bgColor='white' height="50" width="80%">
-                                <Text alignSelf="center" justifyContent="center" fontSize={26} m='1' bold color="black">Submit</Text>
-                            </Box>
-                        </Center>
-                    </Pressable>
-                        <PrevSwipeButton onNextPressed={() => prev()}/>
+                    <VStack flex="1" mt='8' justifyContent="flex-end" pb='10'>
+                    {/* {!isValid && alert('Please check the form for error messages')} */}
+                        <Pressable m='2' onPress={handleSubmit}>
+                            <Center>
+                                <Box borderRadius='2xl' bgColor='white' height="50" width="80%">
+                                    <Text alignSelf="center" justifyContent="center" fontSize={26} m='1' bold color="black">Submit</Text>
+                                </Box>
+                            </Center>
+                        </Pressable>
+                            <PrevSwipeButton onNextPressed={() => prev()}/>
                     </VStack>
                 </ScrollView>
             </Swiper>

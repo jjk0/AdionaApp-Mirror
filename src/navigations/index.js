@@ -19,8 +19,7 @@ import CognitionTips from '../screens/tips/CognitionTips';
 import HeartTips from '../screens/tips/HeartTips';
 import MobilityTips from '../screens/tips/MobilityTips';
 import UserRegistration from '../screens/registration/UserRegistration';
-import { RegisteredInfo, UserInfo} from '../models';
-//import { useUserContext } from '../contexts/UserContext'
+import WatchRegistration from '../screens/registration/WatchRegistration'
 import {useUserContext} from '../contexts/UserContext'
 
 import {
@@ -28,6 +27,9 @@ import {
     DrawerContentScrollView,
   } from "@react-navigation/drawer";
 import { DataStore,Auth, Logger } from 'aws-amplify';
+
+import  {VStack,Skeleton}  from "native-base"
+  
 
 
 const Stack = createNativeStackNavigator();
@@ -44,22 +46,51 @@ const backToHomeRoutes = [
 
 function Root() {
     return (
-        <Drawer.Navigator>
+        <Drawer.Navigator name='Drawer'>
             <Drawer.Screen name="Home Screen" component={HomeScreen} />
             <Drawer.Screen name="Profile" component={ActivityScreen} />
-            <Stack.Screen name="Settings" component={HeartScreen} />
-            <Stack.Screen name="Register" component={UserRegistration} />
+            <Drawer.Screen name="Settings" component={HeartScreen} />
+            <Drawer.Screen name="Register" component={UserRegistration} />
+            <Drawer.Screen name="Watch Setup" component={WatchRegistration} />
+            {/* <Stack.Screen screenOptions={{headerShown: false}} name="Root" component={Root} /> */}
         </Drawer.Navigator>
     );
     }
 
-
 function App() {
-  const { user,userChecked } = useUserContext();
-  
+
+  const { user, userChecked } =  useUserContext();
+  const [initialRoute, setInitialRoute] = useState('');
+
+
+  const initialRouteDecider = async () => {
+    console.log('userChecked',userChecked)
+    if (!userChecked) return;
+    if (user[0]['hasPatientInfo']) {
+      setInitialRoute('Root');
+      return;
+    }
+    else {
+      setInitialRoute('Register');
+    }
+  };
+
+  useEffect(() => {
+    initialRouteDecider();
+  }, [user, userChecked]);
+  if (!initialRoute) {
+    return (
+      <VStack space={4} mt="20" ml="10%" width="80%">
+        <Skeleton variant="text" height="10%" />
+        <Skeleton variant="text" height="60%" />
+        <Skeleton variant="text" height="10%" />
+      </VStack>
+    );
+  }
   return (  
+
   <NavigationContainer>
-    <Stack.Navigator initialRouteName={ "Root"} options={{ title: 'Overview' }}>
+    <Stack.Navigator name="Stack" initialRouteName={initialRoute} options={{ title: 'Overview' }}>
       <Stack.Screen screenOptions={{headerShown: false}} name="Root" component={Root}/>
       <Stack.Screen screenOptions={{headerShown: false}} name="Register" component={UserRegistration} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Home" component={HomeScreen} />
@@ -79,11 +110,6 @@ function App() {
       <Stack.Screen screenOptions={{headerShown: false}} name="Respiratory Screen" component={RespiratoryScreen} />
     </Stack.Navigator>
   </NavigationContainer>
-
-
-      
-
-
 )}
 
 export default App;
