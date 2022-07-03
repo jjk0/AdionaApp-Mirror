@@ -49,6 +49,10 @@ import {
   createDrawerNavigator,
   DrawerContentScrollView,
 } from "@react-navigation/drawer";
+import { AmplifyTheme } from 'aws-amplify-react-native';
+
+
+
 
 
 
@@ -93,8 +97,12 @@ const styles = StyleSheet.create({
   }
 });
 
+const MyButton = Object.assign({}, AmplifyTheme.button, { backgroundColor: '#517FF3', alignItems: 'center', padding: 16 });
+const MySectionFooter = Object.assign({}, AmplifyTheme.sectionFooterLink, { fontSize: 14, color: '#517FF3', alignItems: 'baseline',textAlign: 'center'},);
+const MyTheme = Object.assign({}, AmplifyTheme, { button: MyButton, sectionFooterLink: MySectionFooter  });
+
 const signUpConfig = {
-  header: 'Customized Sign Up',
+  header: 'Adiona User Sign Up',
   //hideAllDefaults: true,
   defaultCountryCode: '1',
   signUpFields: [
@@ -127,4 +135,5 @@ const signUpConfig = {
 export default withAuthenticator(App, {
   includeGreetings:true,
   signUpConfig,
+  theme: MyTheme
 });
