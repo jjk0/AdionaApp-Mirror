@@ -37,10 +37,11 @@ import HomeIconButton from '../../components/HomeIconButton';
 import TallIconButton from '../../components/TallIconButon';
 import AgitationModal from '../../components/AgitationModal';
 // import SVGImg from '../../assets/Group 39.svg';
-import HomeScreenBackground from '../../components/HomeScreenBackground';
-import BubbleLarge from '../../components/BubbleLarge';
 import Vector9 from '../../components/shapeSVGs/Vector8';
 import Vector8 from '../../components/shapeSVGs/Vector9';
+import ErrorModal from '../../components/ErrorModal';
+
+import { GradientCircularProgress } from "react-native-circular-gradient-progress";
 
 
 import {
@@ -62,9 +63,11 @@ import {
 
   const Home = ({ navigation }) => {
     const [showAgitationModal, setShowAgitationModal] = useState(false);
+    const [showErrorModal , setShowErrorModal] = useState(false)
     
     return (
         <ScrollView style={styles.sectionContainer}>
+            <ErrorModal isOpen={showErrorModal} handleClose={() => setShowErrorModal(false)} errorText="Sorry, an error occurred. Please try again"/>
             <DrawerContentScrollView style={{margin:-25}}/>
             <Box bgColor='#517FF3' m='0'>
                 <Center>
@@ -80,16 +83,23 @@ import {
                         <HStack>
                             <Text alignSelf='center' width='30%' fontSize={20} color='white' flexWrap='wrap' m='2'>{date.toDateString()}</Text>
                             <Circle bgColor='white' size={250}>
-                                <ProgressCircle
+                                {/* <ProgressCircle
                                     percent={72}
                                     radius={100}
                                     borderWidth={18}
                                     color="#3399FF"
                                     shadowColor="#fff"
                                     bgColor="#FFFFFF"
-                                >
-                                    <Text alignSelf='center' color='#0ea5e9' fontSize={48}>72</Text>
-                                </ProgressCircle>
+                                > */}
+                                <GradientCircularProgress
+                                        startColor="#517FF3"
+                                        endColor='white'
+                                        middleColor='#7393B3'
+                                        progress={72}
+                                        size={220}>
+                                    <Text position='absolute' top='10' alignSelf='center' color='#517FF3' fontSize={100}>72</Text>
+                                </GradientCircularProgress>
+                                {/* </ProgressCircle> */}
                             </Circle>
                         </HStack>
                     </VStack>

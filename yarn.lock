@@ -10041,6 +10041,11 @@
     "paths-js" "^0.4.10"
     "point-in-polygon" "^1.0.1"
 
+"react-native-circular-gradient-progress@^1.0.6":
+  "integrity" "sha512-A/MoqkPi0hPVIAb6E+WF+xX6lSdTNybCAqvsbn4KtNG+tDUp9bBJ2qdfvPQxZEVBdo7i/RHIhUd8CeUFAJY8ew=="
+  "resolved" "https://registry.npmjs.org/react-native-circular-gradient-progress/-/react-native-circular-gradient-progress-1.0.6.tgz"
+  "version" "1.0.6"
+
 "react-native-codegen@^0.0.13":
   "integrity" "sha512-rCh1P+s0Q4N6vNgS97ckafbhJRztz22+0l0VZoyQC06F07J98kI5cUByH0ATypPRIdpkMbAZc59DoPdDFc01bg=="
   "resolved" "https://registry.npmjs.org/react-native-codegen/-/react-native-codegen-0.0.13.tgz"
