@@ -2,6 +2,7 @@ import React from 'react';
 import {
     Text,
     Pressable,
+    Center,
   } from 'native-base';
 import { useNavigation } from '@react-navigation/native';
 
@@ -17,9 +18,11 @@ const TallIconButton = (props) => {
     const navigation = useNavigation();
 
     return (
-        <Pressable onPress={() => navigation.navigate(props.navigateToPage)} w='30%' borderRadius='2xl' bg={props.backgroundColor} height='200' m='2' p='5'>
-                <Icon alignSelf='center'name={props.iconTitle} size={60} color="white" />
-                <Text fontSize={16} width='80%' color='white'>{props.buttonText}</Text>
+        <Pressable onPress={() => navigation.navigate(props.navigateToPage)} w='40%' borderRadius='2xl' bg='white' shadow='1' height='200' m='2' p='5'>
+            <Center>
+                <Icon alignSelf='center'name={props.iconTitle} size={60} color="#517FF3" />
+                <Text fontSize={16} color='black'>{props.buttonText}</Text>
+             </Center>
         </Pressable>
     )
 }

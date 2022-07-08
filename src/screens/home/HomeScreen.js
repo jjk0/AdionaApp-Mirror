@@ -24,7 +24,7 @@ import {
 
 
 
-
+import Carousel from 'react-native-snap-carousel';
 
 //clean up import code here
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -48,6 +48,7 @@ import {
     createDrawerNavigator,
     DrawerContentScrollView,
   } from "@react-navigation/drawer";
+import HomeCarousel from '../../components/HomeCarousel';
 
 
  const submit = () => {
@@ -83,14 +84,6 @@ import {
                         <HStack>
                             <Text alignSelf='center' width='30%' fontSize={20} color='white' flexWrap='wrap' m='2'>{date.toDateString()}</Text>
                             <Circle bgColor='white' size={250}>
-                                {/* <ProgressCircle
-                                    percent={72}
-                                    radius={100}
-                                    borderWidth={18}
-                                    color="#3399FF"
-                                    shadowColor="#fff"
-                                    bgColor="#FFFFFF"
-                                > */}
                                 <GradientCircularProgress
                                         startColor="#517FF3"
                                         endColor='white'
@@ -120,8 +113,6 @@ import {
                                 <View style={{position:'absolute', top:-100, right:-40}} size={400}>
                                     <Vector9/>
                                 </View>
-                            {/* <HomeScreenBackground width={Dimensions.get("window").width} height={Dimensions.get("window").width/2}/> */}
-                            {/* <Box style={{position:'absolute'}} my="8" mx="4" width='90%'> */}
                             <Box my="8" mx="4" width='90%'>
                                 <VStack>
                                     <HStack>
@@ -154,10 +145,15 @@ import {
                         <HomeIconButton navigateToPage='Diary Main Screen'buttonColor='warning.200' iconTitle='notebook-outline' mainText='Daily Diary' tipText='Log important info here'/>
                     </VStack>
 
-                    <HStack marginY='10'>
-                        <TallIconButton iconTitle='brain' backgroundColor='info.400' buttonText='Symptoms'/>
-                        <TallIconButton iconTitle='clipboard-outline' backgroundColor='warning.200' buttonText='Full Report'/>
-                        <TallIconButton iconTitle='lightbulb-outline' backgroundColor='info.200' buttonText='Care Tips' navigateToPage='General Tips'/>
+                    <HStack marginY='5'>
+                        <ScrollView horizontal="true" contentOffset={100}>
+                            <HStack pr='5'>
+                                <TallIconButton iconTitle='brain' backgroundColor='info.400' buttonText='Symptoms'/>
+                                <TallIconButton iconTitle='clipboard-outline' backgroundColor='warning.200' buttonText='Full Report'/>
+                                <TallIconButton iconTitle='lightbulb-outline' backgroundColor='info.200' buttonText='Care Tips' navigateToPage='General Tips'/>
+                            </HStack>
+                        </ScrollView>
+                        {/* <HomeCarousel></HomeCarousel> */}
                     </HStack>
                 </VStack>
         </ScrollView>
