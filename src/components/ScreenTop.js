@@ -52,7 +52,10 @@ const ScreenTop = (props) => {
                                     <Text width='100%' color='white' fontSize={20}>{props.supportingText}</Text>
                                 </VStack>
                             </HStack>
-
+                            {!props.progressNumber &&
+                            <Box mt='10' mb='-1' borderRadius='16' bgColor='white'>
+                                <Text fontSize={24} alignSelf='center'>{props.bottomText}</Text>
+                            </Box>}
                         </VStack>
                     </Center>
                     {props.progressNumber && 

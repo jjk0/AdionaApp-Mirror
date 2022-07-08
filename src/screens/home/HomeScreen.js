@@ -104,7 +104,7 @@ import HomeCarousel from '../../components/HomeCarousel';
                     </HStack>
                 </Pressable>
             </Box>
-                <VStack px='4' mr='2'>
+                <VStack px='4'>
                     <Pressable borderRadius='2xl' justifyContent='center' onPress={() => navigation.navigate('Overall Trends')} >
                         <Box bgColor='#F0402A' my='4' borderRadius='2xl'>
                                 <View style={{position:'absolute', right:50}} size={200}>
@@ -145,9 +145,9 @@ import HomeCarousel from '../../components/HomeCarousel';
                         <HomeIconButton navigateToPage='Diary Main Screen'buttonColor='warning.200' iconTitle='notebook-outline' mainText='Daily Diary' tipText='Log important info here'/>
                     </VStack>
 
-                    <HStack marginY='5'>
-                        <ScrollView horizontal="true" contentOffset={100}>
-                            <HStack pr='5'>
+                    <HStack>
+                        <ScrollView  _contentContainerStyle={{w: "120%", paddingRight:120}} horizontal="true">
+                            <HStack>
                                 <TallIconButton iconTitle='brain' backgroundColor='info.400' buttonText='Symptoms'/>
                                 <TallIconButton iconTitle='clipboard-outline' backgroundColor='warning.200' buttonText='Full Report'/>
                                 <TallIconButton iconTitle='lightbulb-outline' backgroundColor='info.200' buttonText='Care Tips' navigateToPage='General Tips'/>
@@ -167,6 +167,11 @@ import HomeCarousel from '../../components/HomeCarousel';
       backgroundColor:'white',
       paddingBottom: 50
     },
+    // sidewaysContainer: {
+    //     flex:1,
+    //     backgroundColor:'white',
+    //     paddingRight: 100
+    //   },
   });
 
   export default Home;

@@ -19,7 +19,7 @@ import BackButton from '../../components/BackButton';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-
+import ScreenTop from '../../components/ScreenTop';
 
 
 
@@ -29,19 +29,7 @@ const DiaryMainScreen = ({navigation}) => {
 
     return (
         <ScrollView>
-            <Box bgColor='info.600' m='0' pb='8'>
-                <BackButton/>
-                <Center>
-                    <VStack>
-                        <HStack>
-                            <Icon name='notebook-outline' size={150} color='white' />
-                        </HStack>
-                    <Box mt='10' mb='-12' borderRadius='16' bgColor='white'>
-                        <Text fontSize={24} alignSelf='center'>Daily Diary</Text>
-                    </Box>
-                    </VStack>
-                </Center>
-            </Box>
+                <ScreenTop backgroundColor='#517FF3' screenTitle='Daily Diary' bottomText='Diary' iconName='book-reader'/>
 
             <VStack mt='10'>
                 <Box mx='10'>

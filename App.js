@@ -6,7 +6,14 @@
  * @flow strict-local
  */
 import 'react-native-gesture-handler';
-import { withAuthenticator } from 'aws-amplify-react-native';
+import { withAuthenticator, Greetings,
+  SignIn,
+  ConfirmSignIn,
+  RequireNewPassword,
+  SignUp,
+  ConfirmSignUp,
+  ForgotPassword,
+  Loading } from 'aws-amplify-react-native';
 //import { withAuthenticator } from '@aws-amplify/ui-react';
 import React from 'react';
 import UserContext from './src/contexts/UserContext';
@@ -114,7 +121,7 @@ const signUpConfig = {
       type: 'string'
     },
     {
-      label: 'Cargiver Name',
+      label: 'Caregiver Name',
       key: 'custom:caregiverName',
       required: true,
       displayOrder: 6,
@@ -134,5 +141,14 @@ const signUpConfig = {
 // });;
 export default withAuthenticator(App, {
   signUpConfig,
+  usernameAttributes: 'email',
+  // authenticatorComponents: [Greetings,
+  //   SignIn,
+  //   ConfirmSignIn,
+  //   RequireNewPassword,
+  //   SignUp,
+  //   ConfirmSignUp,
+  //   ForgotPassword,
+  //   Loading],
   theme: MyTheme
 });
