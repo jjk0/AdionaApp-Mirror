@@ -133,7 +133,6 @@ const signUpConfig = {
 //   // Show only certain components
 // });;
 export default withAuthenticator(App, {
-  includeGreetings:true,
   signUpConfig,
   theme: MyTheme
 });

@@ -18,6 +18,7 @@ import SleepTips from '../screens/tips/SleepTips';
 import CognitionTips from '../screens/tips/CognitionTips';
 import HeartTips from '../screens/tips/HeartTips';
 import MobilityTips from '../screens/tips/MobilityTips';
+import Logout from '../components/Logout';
 import UserRegistration from '../screens/registration/UserRegistration';
 import WatchRegistration from '../screens/registration/WatchRegistration'
 import {useUserContext} from '../contexts/UserContext'
@@ -25,6 +26,8 @@ import {useUserContext} from '../contexts/UserContext'
 import {
     createDrawerNavigator,
     DrawerContentScrollView,
+    DrawerItem,
+    DrawerItemList
   } from "@react-navigation/drawer";
 import { DataStore,Auth, Logger } from 'aws-amplify';
 
@@ -46,8 +49,16 @@ const backToHomeRoutes = [
 
 function Root() {
     return (
-        <Drawer.Navigator name='Drawer'>
+        <Drawer.Navigator name='Drawer' drawerContent={props => {
+          return (
+            <DrawerContentScrollView {...props}>
+              <DrawerItemList {...props} />
+              <DrawerItem label="Logout" onPress={() => props.navigation.navigate("Logout")} />
+            </DrawerContentScrollView>
+          )
+        }}>
             <Drawer.Screen name="Home Screen" component={HomeScreen} />
+            <Drawer.Screen name="Logout" component={Logout} />
             <Drawer.Screen name="Profile" component={ActivityScreen} />
             <Drawer.Screen name="Settings" component={HeartScreen} />
             <Drawer.Screen name="Register" component={UserRegistration} />
