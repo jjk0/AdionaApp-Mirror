@@ -32,6 +32,7 @@ import {
 import { DataStore,Auth, Logger } from 'aws-amplify';
 
 import  {VStack,Skeleton}  from "native-base"
+import ManageGeoFence from '../screens/location/ManageGeoFence';
   
 
 
@@ -77,7 +78,7 @@ function App() {
   const initialRouteDecider = async () => {
     console.log('userChecked',userChecked)
     if (!userChecked) return;
-    if (user[0]['hasPatientInfo']) {
+    if (user[0] && user[0]['hasPatientInfo']) {
       setInitialRoute('Root');
       return;
     }
@@ -118,6 +119,7 @@ function App() {
       <Stack.Screen screenOptions={{headerShown: false}} name="Cognition Tips" component={CognitionTips} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Agitation Tips" component={AgitationTips} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Main Location" component={MainLocation} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Manage GeoFence" component={ManageGeoFence} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Respiratory Screen" component={RespiratoryScreen} />
     </Stack.Navigator>
   </NavigationContainer>
