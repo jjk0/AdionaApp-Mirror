@@ -19,4 +19,19 @@ type UserInfo @model @auth(rules: [{allow: public}]) {
   hasWatchSetup: Boolean
   hasPatientInfo: Boolean
 }
+
+enum GeoFenceRadius {
+  FT_50
+  FT_100
+  FT_200
+}
  
+type GeoFence @model @auth(rules: [
+  {allow: owner, operations: [create, read, update, delete]}
+]) {
+  id: ID!
+  owner: String! @index(name: "geoFenceByUser", queryField: "geoFenceByUser")
+  lon: Float
+  lat:  Float
+  radius: GeoFenceRadius
+}
