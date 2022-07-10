@@ -70,7 +70,7 @@ const ActivityScreen = ({navigation}) => {
   const getData = async () => {
 
     try {
-    const result = await Storage.get(`hrData.json`, {download:true})
+    const result = await Storage.get(`/12345/hrData.json`, {download:true})
       .then(result => { 
       const getBlog = async () => {
         const text = await (new Response(result.Body)).json();

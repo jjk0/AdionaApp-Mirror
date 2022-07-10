@@ -70,7 +70,7 @@ import HomeCarousel from '../../components/HomeCarousel';
         <ScrollView style={styles.sectionContainer}>
             <ErrorModal isOpen={showErrorModal} handleClose={() => setShowErrorModal(false)} errorText="Sorry, an error occurred. Please try again"/>
             <DrawerContentScrollView style={{margin:-25}}/>
-            <Box bgColor='#517FF3' m='0'>
+            <Box bgColor='#517FF3' m='0' borderBottomLeftRadius={50}>
                 <Center>
                     <HStack>
                             <Pressable>
@@ -104,7 +104,7 @@ import HomeCarousel from '../../components/HomeCarousel';
                     </HStack>
                 </Pressable>
             </Box>
-                <VStack px='4'>
+                <VStack px='4' >
                     <Pressable borderRadius='2xl' justifyContent='center' onPress={() => navigation.navigate('Overall Trends')} >
                         <Box bgColor='#F0402A' my='4' borderRadius='2xl'>
                                 <View style={{position:'absolute', right:50}} size={200}>

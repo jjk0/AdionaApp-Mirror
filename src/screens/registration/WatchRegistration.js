@@ -24,11 +24,12 @@ import * as Yup from 'yup';
 
 
 import {RegisteredInfo, UserInfo} from '../../models';
-import { DataStore, Auth, Hub, Logger } from 'aws-amplify';
+import { DataStore, Auth, Hub, Logger, Storage } from 'aws-amplify';
 //Amplify.Logger.LOG_LEVEL = 'DEBUG';
 import Swiper from 'react-native-swiper'
 import NextSwipeButton from '../../components/NextSwipeButton';
 import PrevSwipeButton from '../../components/PrevSwipeButton';
+import { useNavigation } from '@react-navigation/native';
 
 const styles = StyleSheet.create({
     wrapper: {},
@@ -65,6 +66,32 @@ const styles = StyleSheet.create({
   
 
 const WatchRegistration = ({navigation}) => {
+    
+
+    const [code,setCode] = useState()
+
+    const getUniqueCode = async () => {
+      
+      const keys = []
+      const buckets = await Storage.list("")
+      console.log('buckets',buckets)
+      for (let i = buckets.length-1; i > 0;  i--) {
+        const val = buckets[i];
+        const match = val.key.match(/\b\d{5}\b/g)
+        if (!keys.includes(match[0])) {keys.push(match[0])}
+      }
+      var num = Math.floor(Math.random()*90000) + 10000;
+
+      while (keys.includes(num)) {
+        num = Math.floor(Math.random()*90000) + 10000;
+
+    }
+    
+    setCode(num)
+    
+
+    }
+    
 
     const swiperRef = useRef(null);
     const next = () => {
@@ -78,6 +105,10 @@ const WatchRegistration = ({navigation}) => {
         }
     };
 
+    useEffect(() => {
+      getUniqueCode();
+  }, []);
+
 
     return(
             <Swiper ref={swiperRef} loop={false} dotColor="white" activeDotColor="black" showsButtons={false}>
@@ -87,6 +118,47 @@ const WatchRegistration = ({navigation}) => {
                     </View>
                     <VStack mb='20' justifyContent="flex-end">
                         <NextSwipeButton onNextPressed={() => next()}/>
+                    </VStack>
+                </View>
+                <View flex="1" bgColor="#517FF3">
+                    <View p='5' justifyContent='center' alignItems='center' alignSelf='center' textAlign="center">
+                        <Text fontSize={30} mt='32' alignSelf='center' color='white'>Go to the Apple Watch app on the phone you’d like to pair with the Apple Watch to set it up. Come back when you’re done and click next.</Text>
+                    </View>
+                    <VStack mb='20' justifyContent="flex-end">
+                        <NextSwipeButton onNextPressed={() => next()}/>
+                        <PrevSwipeButton onNextPressed={() => prev()}/>
+                    </VStack>
+                </View>
+                <View flex="1" bgColor="#517FF3">
+                    <View p='5' justifyContent='center' alignItems='center' alignSelf='center' textAlign="center">
+                        <Center>
+                          <Text color='white' fontSize={40}>Your code is:</Text> 
+                        </Center>
+                        <Box bgColor='white' p='2' borderRadius="2xl">
+                            {code &&
+                            <Center>
+                              <Text color='black' fontSize={45}>
+                                  {code}
+                              </Text>
+                            </Center>}
+                        </Box>
+                        <Center>
+                          <Text color='white' fontSize={35} p='2'>
+                            Enter this code into your watch and then hit "next"
+                          </Text>
+                        </Center>
+                    </View>
+                    <VStack mb='20' justifyContent="flex-end">
+                        <NextSwipeButton onNextPressed={() => next()}/>
+                        <PrevSwipeButton onNextPressed={() => prev()}/>
+                    </VStack>
+                </View>
+                <View flex="1" bgColor="#517FF3">
+                    <View p='5' justifyContent='center' alignItems='center' alignSelf='center' textAlign="center">
+                        <Text fontSize={50} mt='32' alignSelf='center' color='white'>You're all set!</Text>
+                    </View>
+                    <VStack mb='20' justifyContent="flex-end">
+                        <NextSwipeButton onNextPressed={() => navigation.navigate("Home")}/>
                     </VStack>
                 </View>
                 
