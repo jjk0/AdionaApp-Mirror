@@ -21,9 +21,9 @@ type UserInfo @model @auth(rules: [{allow: public}]) {
 }
 
 enum GeoFenceRadius {
-  FT_50
-  FT_100
-  FT_200
+  FT_50 #50 Feet
+  FT_100 #100 Feet
+  FT_200 #200 Feet
 }
  
 type GeoFence @model @auth(rules: [
