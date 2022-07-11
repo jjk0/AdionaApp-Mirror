@@ -29,7 +29,8 @@ import { DataStore, Auth, Hub, Logger, Storage } from 'aws-amplify';
 import Swiper from 'react-native-swiper'
 import NextSwipeButton from '../../components/NextSwipeButton';
 import PrevSwipeButton from '../../components/PrevSwipeButton';
-import { useNavigation } from '@react-navigation/native';
+import { useUserContext } from '../../contexts/UserContext';
+
 
 const styles = StyleSheet.create({
     wrapper: {},
@@ -71,26 +72,69 @@ const WatchRegistration = ({navigation}) => {
     const [code,setCode] = useState()
 
     const getUniqueCode = async () => {
-      
-      const keys = []
-      const buckets = await Storage.list("")
-      console.log('buckets',buckets)
-      for (let i = buckets.length-1; i > 0;  i--) {
-        const val = buckets[i];
-        const match = val.key.match(/\b\d{5}\b/g)
-        if (!keys.includes(match[0])) {keys.push(match[0])}
+      try {
+        const keys = []
+        const buckets = await Storage.list("")
+        console.log('buckets',buckets)
+        for (let i = buckets.length-1; i > 0;  i--) {
+          const val = buckets[i];
+          const match = val.key.match(/\b\d{5}\b/g)
+          if (!keys.includes(match[0])) {keys.push(match[0])}
+        }
+        var num = Math.floor(Math.random()*90000) + 10000;
+
+        while (keys.includes(num)) {
+          num = Math.floor(Math.random()*90000) + 10000;
       }
-      var num = Math.floor(Math.random()*90000) + 10000;
+        setCode(num.toString())
+      }
+      catch (e) {
+        console.log('error happened',e);
+        }
+      }
 
-      while (keys.includes(num)) {
-        num = Math.floor(Math.random()*90000) + 10000;
 
-    }
     
-    setCode(num)
-    
+    const updateUserInfo = async () => {
+      try {
+        const user = await Auth.currentAuthenticatedUser();
+        const original = await DataStore.query(UserInfo, user.attributes.sub)
+        console.log('original',original)
+        await DataStore.save(
+        UserInfo.copyOf(original, updated => {
+            updated.hasWatchSetup = true;
+        }))
 
+
+        console.log('updated!')
+
+      }
+
+      catch (e) {
+        console.log('error happened',e )
+      }
     }
+
+
+    const updateRegisteredInfo = async () => {
+        try {
+          const user = await Auth.currentAuthenticatedUser();
+          const original = await DataStore.query(RegisteredInfo, c => c.userId("eq", user.attributes.sub))
+          console.log('registeredInfo',original)
+          await DataStore.save(
+          RegisteredInfo.copyOf(original[0], updated => {
+              updated.bucketNumber = code;
+          }))
+  
+  
+          console.log('updated!')
+  
+        }
+  
+        catch (e) {
+          console.log('error happened',e )
+        }
+      }
     
 
     const swiperRef = useRef(null);
@@ -108,6 +152,10 @@ const WatchRegistration = ({navigation}) => {
     useEffect(() => {
       getUniqueCode();
   }, []);
+  useEffect(() => {
+    updateUserInfo();
+    updateRegisteredInfo();
+}, [code]);
 
 
     return(

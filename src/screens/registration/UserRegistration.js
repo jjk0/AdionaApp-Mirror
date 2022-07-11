@@ -58,8 +58,9 @@ const UserRegistration = ({navigation}) => {
 
     const registerUser = async (values) => {
         console.log('post route', postRoute)
+        const user = await Auth.currentAuthenticatedUser();
+        const obj = await DataStore.query(RegisteredInfo, c => c.userId("eq", user.attributes.sub))
         try {
-            const user = await Auth.currentAuthenticatedUser();
             await DataStore.save(new RegisteredInfo({ 'userId':user.attributes.sub, ...values }))
             await updateFlag()
             navigation.navigate(postRoute);
@@ -69,6 +70,32 @@ const UserRegistration = ({navigation}) => {
         catch (e) {
             logger.error('error happened', e);
         }}
+        // if (obj.length === 0) {
+        //     try {
+        //         await DataStore.save(new RegisteredInfo({ 'userId':user.attributes.sub, ...values }))
+        //         await updateFlag()
+        //         navigation.navigate(postRoute);
+        //         console.log('submitted!')
+                
+        //     }
+        //     catch (e) {
+        //         logger.error('error happened', e);
+        //     }}
+        // else {
+        //     //continue for when registeredInfo already exists
+        //     try {
+        //         await DataStore.save(
+        //             RegisteredInfo.copyOf(obj, updated => {new RegisteredInfo({ 'userId':user.attributes.sub, ...values })
+        //             }))
+        //         navigation.navigate(postRoute);
+        //         console.log('updated!')
+                
+        //     }
+        //     catch (e) {
+        //         logger.error('error happened', e);
+        //     }}
+        // }
+
 
     const updateFlag = async () => {
         try {

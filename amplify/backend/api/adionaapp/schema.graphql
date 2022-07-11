@@ -8,6 +8,7 @@ type RegisteredInfo @model @auth(rules: [{allow: public}]) {
   patientName: String
   caregiverName: String
   caregiverRelationship: String
+  bucketNumber: String
 }
 
 type UserInfo @model @auth(rules: [{allow: public}]) {

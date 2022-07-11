@@ -104,6 +104,7 @@ function App() {
     <Stack.Navigator name="Stack" initialRouteName={initialRoute} options={{ title: 'Overview' }}>
       <Stack.Screen screenOptions={{headerShown: false}} name="Root" component={Root}/>
       <Stack.Screen screenOptions={{headerShown: false}} name="Register" component={UserRegistration} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Watch Setup" component={WatchRegistration} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Home" component={HomeScreen} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Overall Trends" component={OverallTrends} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Activity Screen" component={ActivityScreen} />
