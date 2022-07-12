@@ -13,6 +13,7 @@ export const onCreateRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
+      bucketNumber
       createdAt
       updatedAt
       _version
@@ -33,6 +34,7 @@ export const onUpdateRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
+      bucketNumber
       createdAt
       updatedAt
       _version
@@ -53,6 +55,7 @@ export const onDeleteRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
+      bucketNumber
       createdAt
       updatedAt
       _version

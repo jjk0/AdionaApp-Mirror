@@ -14,7 +14,8 @@
     "categories": {
       "auth": {
         "adionaappbdf26d35": {},
-        "userPoolGroups": {}
+        "userPoolGroups": {},
+        "true": {}
       },
       "function": {
         "UserInfoFunction": {

@@ -92,7 +92,7 @@ function App() {
 
   useEffect(() => {
     initialRouteDecider();
-  }, [user, userChecked]);
+  }, [initialRouteDecider, user, userChecked]);
   if (!initialRoute) {
     return (
       <VStack space={4} mt="20" ml="10%" width="80%">
@@ -107,9 +107,13 @@ function App() {
       <Stack.Navigator
         name="Stack"
         initialRouteName={initialRoute}
-        options={{title: 'Overview'}}>
+        options={{title: 'Overview'}}
+        screenOptions={{
+          headerShown: false,
+          gestureEnabled: false,
+        }}>
         <Stack.Screen
-          options={{headerShown: false}}
+          screenOptions={{headerShown: false}}
           name="Root"
           component={Root}
         />

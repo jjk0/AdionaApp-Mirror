@@ -10,10 +10,6 @@ target 'AdionaApp' do
   # Flags change depending on the env values.
   flags = get_default_flags()
 
-  # React Native Maps dependencies
-  rn_maps_path = '../node_modules/react-native-maps'
-  pod 'react-native-google-maps', :path => rn_maps_path
-
   pod 'react-native-blob-util',
   :path => '../node_modules/react-native-blob-util'
 
@@ -28,6 +24,8 @@ target 'AdionaApp' do
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
 
   target 'AdionaAppTests' do
     inherit! :complete

@@ -23,7 +23,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 // import MapView from 'react-native-maps';
 // import { Marker } from 'react-native-maps';
 import BackButton from '../../components/BackButton';
-import MapView from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 // import {Icon} from 'react-native-vector-icons/Icon';
 
 const MainLocation = ({navigation}) => {
@@ -39,8 +39,11 @@ const MainLocation = ({navigation}) => {
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
-        zoomEnabled={false}
-      />
+        zoomEnabled={false}>
+          <Marker coordinate={{latitude: 22.258,
+          longitude: 71.19}} 
+          draggable={true}/>
+        </MapView>
 
       <Box
         bgColor="white"

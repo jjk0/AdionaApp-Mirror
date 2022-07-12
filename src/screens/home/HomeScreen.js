@@ -1,31 +1,19 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
   Box,
-  Button,
   Circle,
-  Card,
   ScrollView,
   VStack,
-  Heading,
-  Text,
   HStack,
+  Text,
   Pressable,
-  Skeleton,
   View,
-  Image,
   Center,
-  ChevronRightIcon,
-  Modal,
 } from 'native-base';
-import {StyleSheet, Dimensions} from 'react-native';
-
-import Carousel from 'react-native-snap-carousel';
+import {StyleSheet} from 'react-native';
 
 //clean up import code here
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-
-import ProgressCircle from 'react-native-progress-circle';
 import HomeIconButton from '../../components/HomeIconButton';
 import TallIconButton from '../../components/TallIconButon';
 import AgitationModal from '../../components/AgitationModal';
@@ -36,15 +24,7 @@ import ErrorModal from '../../components/ErrorModal';
 
 import {GradientCircularProgress} from 'react-native-circular-gradient-progress';
 
-import {
-  createDrawerNavigator,
-  DrawerContentScrollView,
-} from '@react-navigation/drawer';
-import HomeCarousel from '../../components/HomeCarousel';
-
-const submit = () => {
-  console.log('submitted');
-};
+import {DrawerContentScrollView} from '@react-navigation/drawer';
 
 //may have to include in useState
 const date = new Date();
@@ -65,8 +45,8 @@ const Home = ({navigation}) => {
         <Center>
           <HStack>
             <Pressable>
-              <Icon name="menu" size={40} color="white" />
-              <Text alignSelf="center" color="black" fontSize={27}>
+              {/* <Icon name="menu" size={40} color="white" /> */}
+              <Text alignSelf="center" color="white" fontSize={27}>
                 John's Wellness Score
               </Text>
             </Pressable>
@@ -100,6 +80,7 @@ const Home = ({navigation}) => {
                     72
                   </Text>
                 </GradientCircularProgress>
+                {/* </ProgressCircle> */}
               </Circle>
             </HStack>
           </VStack>
@@ -120,7 +101,8 @@ const Home = ({navigation}) => {
               name="arrow-right"
               size={28}
               alignSelf="flex-end"
-              color="black"></Icon>
+              color="black"
+            />
           </HStack>
         </Pressable>
       </Box>
@@ -183,7 +165,7 @@ const Home = ({navigation}) => {
           <Text fontSize={20} color="black">
             Tap here to log an agitation episode as it happens
           </Text>
-          <Text></Text>
+          <Text />
         </Pressable>
         <AgitationModal
           isOpen={showAgitationModal}

@@ -13,6 +13,7 @@ export const getRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
+      bucketNumber
       createdAt
       updatedAt
       _version
@@ -38,6 +39,7 @@ export const listRegisteredInfos = /* GraphQL */ `
         patientName
         caregiverName
         caregiverRelationship
+        bucketNumber
         createdAt
         updatedAt
         _version
@@ -72,6 +74,7 @@ export const syncRegisteredInfos = /* GraphQL */ `
         patientName
         caregiverName
         caregiverRelationship
+        bucketNumber
         createdAt
         updatedAt
         _version
