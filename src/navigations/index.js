@@ -20,8 +20,9 @@ import HeartTips from '../screens/tips/HeartTips';
 import MobilityTips from '../screens/tips/MobilityTips';
 import Logout from '../components/Logout';
 import UserRegistration from '../screens/registration/UserRegistration';
-import WatchRegistration from '../screens/registration/WatchRegistration'
-import {useUserContext} from '../contexts/UserContext'
+import WatchRegistration from '../screens/registration/WatchRegistration';
+import DiaryEntry from '../screens/diary/DiaryEntry'
+import {useUserContext} from '../contexts/UserContext';
 
 import {
     createDrawerNavigator,
@@ -110,6 +111,7 @@ function App() {
       <Stack.Screen screenOptions={{headerShown: false}} name="Activity Screen" component={ActivityScreen} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Heart Screen" component={HeartScreen} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Diary Main Screen" component={DiaryMainScreen} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Diary Entry" component={DiaryEntry} />
       <Stack.Screen screenOptions={{headerShown: false}} name="General Tips" component={GeneralTips} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Activity Tips" component={ActivityTips} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Respiratory Tips" component={RespiratoryTips} />
