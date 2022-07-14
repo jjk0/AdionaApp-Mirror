@@ -19,6 +19,7 @@ export const getRegisteredInfo = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
@@ -45,6 +46,7 @@ export const listRegisteredInfos = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        owner
       }
       nextToken
       startedAt
@@ -80,6 +82,7 @@ export const syncRegisteredInfos = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        owner
       }
       nextToken
       startedAt

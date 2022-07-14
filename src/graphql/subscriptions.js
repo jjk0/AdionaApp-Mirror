@@ -2,8 +2,8 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateRegisteredInfo = /* GraphQL */ `
-  subscription OnCreateRegisteredInfo {
-    onCreateRegisteredInfo {
+  subscription OnCreateRegisteredInfo($owner: String) {
+    onCreateRegisteredInfo(owner: $owner) {
       id
       userId
       livingSituation
@@ -19,12 +19,13 @@ export const onCreateRegisteredInfo = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
 export const onUpdateRegisteredInfo = /* GraphQL */ `
-  subscription OnUpdateRegisteredInfo {
-    onUpdateRegisteredInfo {
+  subscription OnUpdateRegisteredInfo($owner: String) {
+    onUpdateRegisteredInfo(owner: $owner) {
       id
       userId
       livingSituation
@@ -40,12 +41,13 @@ export const onUpdateRegisteredInfo = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
 export const onDeleteRegisteredInfo = /* GraphQL */ `
-  subscription OnDeleteRegisteredInfo {
-    onDeleteRegisteredInfo {
+  subscription OnDeleteRegisteredInfo($owner: String) {
+    onDeleteRegisteredInfo(owner: $owner) {
       id
       userId
       livingSituation
@@ -61,6 +63,7 @@ export const onDeleteRegisteredInfo = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;

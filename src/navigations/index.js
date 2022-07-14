@@ -49,7 +49,11 @@ const backToHomeRoutes = [
 
 function Root() {
     return (
-        <Drawer.Navigator name='Drawer' drawerContent={props => {
+        <Drawer.Navigator name='Drawer' screenOptions={{
+          headerShown: false,
+          headerTransparent:true
+        }}
+        drawerContent={props => {
           return (
             <DrawerContentScrollView {...props}>
               <DrawerItemList {...props} />
@@ -101,8 +105,8 @@ function App() {
   return (  
 
   <NavigationContainer>
-    <Stack.Navigator name="Stack" initialRouteName={initialRoute} options={{ title: 'Overview' }}>
-      <Stack.Screen screenOptions={{headerShown: false}} name="Root" component={Root}/>
+    <Stack.Navigator name="Stack" screenOptions={{headerShown:false, headerTransparent:true, navigationOptions: { header: null }}} headerMode={false} initialRouteName={initialRoute}>
+      <Stack.Screen name="Root" component={Root}/>
       <Stack.Screen screenOptions={{headerShown: false}} name="Register" component={UserRegistration} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Watch Setup" component={WatchRegistration} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Home" component={HomeScreen} />

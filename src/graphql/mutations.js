@@ -22,6 +22,7 @@ export const createRegisteredInfo = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
@@ -46,6 +47,7 @@ export const updateRegisteredInfo = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
@@ -70,6 +72,7 @@ export const deleteRegisteredInfo = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;

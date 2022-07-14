@@ -19,7 +19,8 @@ import {
   } from 'native-base';
 import {
     StyleSheet,
-    Dimensions
+    Dimensions,
+    SafeAreaView
   } from 'react-native';
 
 
@@ -67,22 +68,32 @@ import HomeCarousel from '../../components/HomeCarousel';
     const [showErrorModal , setShowErrorModal] = useState(false)
     
     return (
+        <SafeAreaView style={{flex:1}}>
         <ScrollView style={styles.sectionContainer}>
             <ErrorModal isOpen={showErrorModal} handleClose={() => setShowErrorModal(false)} errorText="Sorry, an error occurred. Please try again"/>
+            
             <DrawerContentScrollView style={{margin:-25}}/>
             <Box bgColor='#517FF3' m='0' borderBottomLeftRadius={50}>
+                <HStack justifyContent='space-between'>
+                <Pressable onPress={()=>navigation.toggleDrawer()}>
+                    <Box m='2'>
+                        <Icon color='white' name='menu' size={25}></Icon>
+                    </Box>
+                </Pressable>
+
+                
                 <Center>
-                    <HStack>
                             <Pressable>
                                 {/* <Icon name="menu" size={40} color="white" /> */}
-                                <Text alignSelf='center' color='white' fontSize={27}>John's Wellness Score</Text>
+                                <Text alignSelf='center' color='white' fontSize={27}>{date.toDateString()}</Text>
                             </Pressable>
-                    </HStack>
+ 
                 </Center>
+                </HStack>
                 <HStack alignSelf='center'>
                     <VStack>
                         <HStack>
-                            <Text alignSelf='center' width='30%' fontSize={20} color='white' flexWrap='wrap' m='2'>{date.toDateString()}</Text>
+                            <Text alignSelf='center' width='30%' fontSize={20} color='white' flexWrap='wrap' m='2'>John's Wellness Score</Text>
                             <Circle bgColor='white' size={250}>
                                 <GradientCircularProgress
                                         startColor="#517FF3"
@@ -157,6 +168,7 @@ import HomeCarousel from '../../components/HomeCarousel';
                     </HStack>
                 </VStack>
         </ScrollView>
+        </SafeAreaView>
     )
   }
 

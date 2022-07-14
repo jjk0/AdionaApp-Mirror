@@ -119,7 +119,8 @@ const WatchRegistration = ({navigation}) => {
     const updateRegisteredInfo = async () => {
         try {
           const user = await Auth.currentAuthenticatedUser();
-          const original = await DataStore.query(RegisteredInfo, c => c.userId("eq", user.attributes.sub))
+          //const original = await DataStore.query(RegisteredInfo, c => c.userId("eq", user.attributes.sub))
+          const original = await DataStore.query(RegisteredInfo)
           console.log('registeredInfo',original)
           await DataStore.save(
           RegisteredInfo.copyOf(original[0], updated => {
