@@ -99,5 +99,13 @@
       "service": "Lambda",
       "dependsOn": []
     }
+  },
+  "notifications": {
+    "AdionaAppPinpoint": {
+      "service": "Pinpoint",
+      "channels": [
+        "APNS"
+      ]
+    }
   }
 }

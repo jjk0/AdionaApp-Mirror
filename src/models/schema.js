@@ -66,13 +66,6 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "bucketNumber": {
-                    "name": "bucketNumber",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -102,16 +95,13 @@ export const schema = {
                     "properties": {
                         "rules": [
                             {
-                                "provider": "userPools",
-                                "ownerField": "owner",
-                                "allow": "owner",
+                                "allow": "public",
                                 "operations": [
                                     "create",
-                                    "read",
                                     "update",
-                                    "delete"
-                                ],
-                                "identityClaim": "cognito:username"
+                                    "delete",
+                                    "read"
+                                ]
                             }
                         ]
                     }
@@ -319,5 +309,5 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "version": "65ee77b41b3b86de15b3cd0a4e746d7b"
+    "version": "88446574f5b9742542023d32713d15a4"
 };

@@ -30,7 +30,6 @@ export declare class RegisteredInfo {
   readonly patientName?: string | null;
   readonly caregiverName?: string | null;
   readonly caregiverRelationship?: string | null;
-  readonly bucketNumber?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<RegisteredInfo, RegisteredInfoMetaData>);
