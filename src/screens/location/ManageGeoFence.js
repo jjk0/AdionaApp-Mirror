@@ -10,7 +10,7 @@ import {
 import React, {useEffect, useState} from 'react';
 import {DataStore} from 'aws-amplify';
 import {GeoFence} from '../../models';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import {DEVICE_HEIGHT, DEVICE_WIDTH} from '../../helpers/Device';
 import Vector19 from '../../assets/Vector 19.svg';
 import Vector20 from '../../assets/Vector 20.svg';
@@ -59,11 +59,11 @@ const ManageGeoFence = ({navigation}) => {
                   <Text
                     ml="2"
                     color="black"
-                    fontSize={16}>{`Lat: ${geoFence.lon}`}</Text>
+                    fontSize={16}>{`Lng: ${geoFence.lon}`}</Text>
                   <Text
                     ml="2"
                     color="black"
-                    fontSize={16}>{`Lat: ${geoFence.radius}`}</Text>
+                    fontSize={16}>{`Radius: ${geoFence.radius}`}</Text>
                 </HStack>
               </Box>
             ))}
@@ -110,11 +110,13 @@ const ManageGeoFence = ({navigation}) => {
             },
           ]}
         />
-        <Box style={styles.appBar}>
-          <Center pr="1" style={styles.backButton}>
-            <BackArrow />
-          </Center>
-        </Box>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Box style={styles.appBar}>
+            <Center pr="1" style={styles.backButton}>
+              <BackArrow />
+            </Center>
+          </Box>
+        </TouchableOpacity>
         <Box style={styles.centerAsset}>
           <MapPin
             height={DEVICE_HEIGHT * 0.12}

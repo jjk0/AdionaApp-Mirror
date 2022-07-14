@@ -16,7 +16,6 @@ export const createRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
-      bucketNumber
       createdAt
       updatedAt
       _version
@@ -40,7 +39,6 @@ export const updateRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
-      bucketNumber
       createdAt
       updatedAt
       _version
@@ -64,7 +62,6 @@ export const deleteRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
-      bucketNumber
       createdAt
       updatedAt
       _version

@@ -2,7 +2,7 @@
   "version": "1",
   "cognitoConfig": {
     "identityPoolName": "adionaappbdf26d35_identitypool_bdf26d35",
-    "allowUnauthenticatedIdentities": true,
+    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "adionabdf26d35",
     "userPoolName": "adionaappbdf26d35_userpool_bdf26d35",
     "autoVerifiedAttributes": [

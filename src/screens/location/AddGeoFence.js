@@ -33,12 +33,8 @@ const AddGeoFence = () => {
     // setLng(75.78727);
     setStep(1);
   };
-  const selectRadius = () => {
-    setRadius(GeoFenceRadius.FT_50);
-    setStep(2);
-  };
 
-  const add = async () => {
+  const addGeofence = async () => {
     const user = await Auth.currentAuthenticatedUser();
     alert(user.attributes.sub);
     DataStore.save(
@@ -68,12 +64,14 @@ const AddGeoFence = () => {
       <MapView
         style={{height: screenHeight, width: screenWidth, position: 'absolute'}}
         region={{
+          initialZoom: 17,
           latitude: lat,
           longitude: lng,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
+          latitudeDelta: 0,
+          longitudeDelta: 0.005,
         }}
-        zoomEnabled={false}>
+        zoomEnabled={true}
+        >
         <Marker
           coordinate={{latitude: lat, longitude: lng}}
           draggable={true}
@@ -84,10 +82,9 @@ const AddGeoFence = () => {
             setLat(value.nativeEvent.coordinate.latitude);
             setLng(value.nativeEvent.coordinate.longitude);
           }}
+        
         />
-   
-          <Circle center={{latitude: lat, longitude: lng}} radius={radius} />
-      
+        <Circle center={{latitude: lat, longitude: lng}} radius={radius} />
       </MapView>
       {step === 0 ? (
         <Box
@@ -143,14 +140,14 @@ const AddGeoFence = () => {
                   endIcon: <CheckIcon size="5" />,
                 }}
                 mt={1}
-                onValueChange={itemValue => setGeofence(itemValue)}>
-                <Select.Item label="50 Ft" value={50} />
-                <Select.Item label="100 Ft" value={100} />
-                <Select.Item label="150 Ft" value={150} />
+                onValueChange={itemValue => setRadius(itemValue)}>
+                <Select.Item label="100 Ft" value={30.48} />
+                <Select.Item label="200 Ft" value={60.96} />
+                <Select.Item label="300 Ft" value={91.44} />
               </Select>
             </Box>
           </View>
-          <Pressable mt="7" onPress={selectRadius}>
+          <Pressable mt="7" onPress={addGeofence}>
             <Box p="4" width="100%" borderRadius="2xl" bgColor="blue.500">
               <HStack alignSelf="center" alignItems={'center'}>
                 {/* <Icon color="white" name="car-outline" size={30} /> */}
@@ -166,19 +163,6 @@ const AddGeoFence = () => {
         []
       )}
 
-      {step === 2 ? (
-        <Pressable mx="4" onPress={add}>
-          <Box p="2" bgColor="info.200" width="100%" borderRadius="2xl">
-            <HStack alignSelf="center">
-              <Text ml="2" color="black" fontSize={16}>
-                Save Geofence
-              </Text>
-            </HStack>
-          </Box>
-        </Pressable>
-      ) : (
-        []
-      )}
     </View>
   );
 };
