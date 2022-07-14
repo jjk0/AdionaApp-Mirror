@@ -59,10 +59,10 @@ const UserRegistration = ({navigation}) => {
     const registerUser = async (values) => {
         console.log('post route', postRoute)
         const user = await Auth.currentAuthenticatedUser();
-        //const obj = await DataStore.query(RegisteredInfo, c => c.userId("eq", user.attributes.sub))
+        const obj = await DataStore.query(RegisteredInfo, c => c.userId("eq", user.attributes.sub))
         // const obj = DataStore.query(RegisteredInfo);
         try {
-            await DataStore.save(new RegisteredInfo({ userId:user.attributes.sub, ...values }))
+            await DataStore.save(new RegisteredInfo({ 'userId':user.attributes.sub, ...values }))
             await updateFlag()
             navigation.navigate(postRoute);
             console.log('submitted!')
