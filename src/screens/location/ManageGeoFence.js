@@ -1,10 +1,10 @@
 import {
   Box,
   Center,
-  HStack,
   Pressable,
   ScrollView,
   Text,
+  VStack,
   ZStack,
 } from 'native-base';
 import React, {useEffect, useState} from 'react';
@@ -23,8 +23,31 @@ const ManageGeoFence = ({navigation}) => {
   useEffect(() => {
     DataStore.query(GeoFence)
       .then(newGeoFences => {
-        console.log(newGeoFences);
+        console.log('GEOFENCES: ', newGeoFences);
         setGeoFences(newGeoFences);
+
+        // Enable this later when geocode api is enabled
+
+        // newGeoFences.map(gf => {
+        //   fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${gf.lat},${gf.lon}&key=AIzaSyDRKkgvSOHBUjgW1jDPjg6Savq2EM5fmQU`)
+        //   .then((response) => response.json())
+        //   .then((json) => {
+        //     console.log(json);
+        //     let formattedNames = [...geoFences];
+
+        //     formattedNames.push(json[0].formatted_address);
+
+        //     setGeoFences({
+        //       lat: gf.lat,
+        //       lon: gf.lon,
+        //       radius: gf.radius,
+        //       name: formattedNames
+        //     });
+        //   })
+        //   .catch((error) => {
+        //     console.error(error);
+        //   });
+        // })
       })
       .catch(err => {
         console.log(err);
@@ -43,37 +66,36 @@ const ManageGeoFence = ({navigation}) => {
             A geofence allows you to get an alert when John leaves a certain
             area, like the house.
           </Text>
-
-          <Box
-            w={DEVICE_WIDTH - 40}
-            h={DEVICE_HEIGHT * 0.2}
-            bg="rgba(81, 127, 243, 0.25)"
-            borderRadius={25}>
-            {geoFences.map(geoFence => (
-              <Box p="2" bgColor="info.200" width="100%" borderRadius="2xl">
-                <HStack alignSelf="center">
-                  <Text
-                    ml="2"
-                    color="black"
-                    fontSize={16}>{`Lat: ${geoFence.lat}`}</Text>
-                  <Text
-                    ml="2"
-                    color="black"
-                    fontSize={16}>{`Lng: ${geoFence.lon}`}</Text>
-                  <Text
-                    ml="2"
-                    color="black"
-                    fontSize={16}>{`Radius: ${geoFence.radius}`}</Text>
-                </HStack>
-              </Box>
-            ))}
-          </Box>
-
+          {geoFences.map((geoFence, index) => (
+            <Box
+              w={DEVICE_WIDTH - 40}
+              h={DEVICE_HEIGHT * 0.2}
+              bg="rgba(81, 127, 243, 0.25)"
+              borderRadius="3xl"
+              mb="5">
+              <VStack p="5" justifyContent="center" flex="1">
+                <Text
+                  color="black"
+                  fontSize={20}
+                  fontWeight="semibold"
+                  letterSpacing="lg">{`Geofence ${index + 1}:`}</Text>
+                <Text
+                  color="black"
+                  fontSize={16}>{`Lat: ${geoFence.lat}`}</Text>
+                <Text
+                  color="black"
+                  fontSize={16}>{`Lng: ${geoFence.lon}`}</Text>
+                <Text
+                  color="black"
+                  fontSize={16}>{`Radius: ${geoFence.radius}`}</Text>
+              </VStack>
+            </Box>
+          ))}
           <Pressable onPress={() => navigation.navigate('Add GeoFence')}>
             <Center
               bgColor="rgba(81, 127, 243, 0.25)"
               h={65}
-              mt={5}
+              // mt={5}
               borderRadius="3xl">
               <Text ml="2" color="black" fontSize={16} fontWeight="semibold">
                 + Add Geofences

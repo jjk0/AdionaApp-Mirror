@@ -150,6 +150,14 @@
     uuid "^3.2.1"
     zen-observable-ts "0.8.19"
 
+"@aws-amplify/pushnotification@^4.3.24":
+  version "4.3.24"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/pushnotification/-/pushnotification-4.3.24.tgz#eb2d6ed51a875c8f970d18c9f68f8d5437b6e861"
+  integrity sha512-K8BBgbsVYYJlNCUlpT6ryYHDF5BsPdNdkzjtX/AwtGmX7Y5gdKDTaH4O6GseXL4ODRm54rr5X9y7btYuqejvtQ==
+  dependencies:
+    "@aws-amplify/core" "4.5.9"
+    "@react-native-community/push-notification-ios" "1.0.3"
+
 "@aws-amplify/storage@4.4.28":
   version "4.4.28"
   resolved "https://registry.yarnpkg.com/@aws-amplify/storage/-/storage-4.4.28.tgz#c1c99187519bb15179d17bf3553566deec68ab37"
@@ -4560,6 +4568,20 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-8.3.1.tgz#c880407c660475d1fa0afa92fa259aae0e9e2dc9"
   integrity sha512-CYZXW3wZJ8Ac7FQjrDfqITFZ6Ex+dCOOKQv0LvjQUI811otSBATyEZrBVWc+1GpZExbKTlulyE0X3W4v5YN1hQ==
 
+"@react-native-community/push-notification-ios@1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@react-native-community/push-notification-ios/-/push-notification-ios-1.0.3.tgz#cd2c7f29aeeb431942eda0bd729738fd2b444ae9"
+  integrity sha512-f+Y3lFLt5OBWHDtGHE+PiZH4aLeS8w2D47c0G/S5XpzeGoEeggOiALtou/r6raiVLP+D5CrLkIBMs2U2+LGJhw==
+  dependencies:
+    invariant "^2.2.4"
+
+"@react-native-community/push-notification-ios@^1.10.1":
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/@react-native-community/push-notification-ios/-/push-notification-ios-1.10.1.tgz#d52a6d69ac1112df0f79e1d17978077629b76784"
+  integrity sha512-k6bZWUKLif4GjenyTD3aQLwA2VT3bNmt22INO/34lexnpmqkPDZF7nreqbckTHG0Zso9wDTe4N/AZJUC/d8iRg==
+  dependencies:
+    invariant "^2.2.4"
+
 "@react-native-picker/picker@^2.4.1":
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/@react-native-picker/picker/-/picker-2.4.2.tgz#2925eb8e76ff6b584c80529adc251df963be9141"
@@ -5681,7 +5703,7 @@ aws-amplify-react-native@^6.0.5:
   dependencies:
     buffer "^5.2.1"
 
-aws-amplify@^4.3.26:
+aws-amplify@^4.3.27:
   version "4.3.27"
   resolved "https://registry.yarnpkg.com/aws-amplify/-/aws-amplify-4.3.27.tgz#05f77e1deef2a63262e6f23e912a090d890774d6"
   integrity sha512-qwA3ElnBsilmqHJxrBTN0geDBq8jhpDR5/kEvIXWZ9rEBYCuWF/cUm9Dzc5KDV0dP1JR1mhzJQ6iZKL12+Acsg==

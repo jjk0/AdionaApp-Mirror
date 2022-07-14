@@ -27,6 +27,13 @@
           "bucketName": "processed-adiona-watch-app-data",
           "region": "us-east-1"
         }
+      },
+      "notifications": {
+        "Pinpoint": {
+          "Name": "AdionaAppPinpoint-dev",
+          "Id": "530ffa0302914c9aad10fd138d436f45",
+          "Region": "us-east-1"
+        }
       }
     }
   }

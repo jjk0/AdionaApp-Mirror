@@ -24,6 +24,7 @@ import {
   Dimensions,
   PermissionsAndroid,
   Linking,
+  Platform,
 } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 
@@ -88,40 +89,42 @@ const MainLocation = ({navigation}) => {
 
   const requestLocationPermission = async () => {
     try {
-      const granted = await PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-        {
-          title: 'Location Permission',
-          message:
-            'we need to access you location ' +
-            'in order to give our best service.',
+      if(Platform.OS === 'android') {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+          {
+            title: 'Location Permission',
+            message:
+              'we need to access you location ' +
+              'in order to give our best service.',
 
-          buttonNegative: 'Ask Me Later',
-          buttonPositive: 'Allow',
-        },
-      );
-      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-        Geolocation.getCurrentPosition(
-          position => {
-            setCurrentLatitude(position.coords.latitude);
-            setCurrentLongitude(position.coords.longitude);
-            setLatitudeDelta(0.0922);
-            setLongitudeDelta(0.0421);
-            console.log('Current location captured');
-            setShowAlert(false);
+            buttonNegative: 'Ask Me Later',
+            buttonPositive: 'Allow',
           },
-          error => {
-            setShowAlert(true);
-            // See error code charts below.
-            console.log('error : ', error.code, error.message);
-          },
-          {enableHighAccuracy: true, timeout: 15000, maximumAge: 10000},
         );
-        console.log('You can use the location');
-        setShowAlert(false);
-      } else {
-        console.log('loaction permission denied');
-        setShowAlert(true);
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          Geolocation.getCurrentPosition(
+            position => {
+              setCurrentLatitude(position.coords.latitude);
+              setCurrentLongitude(position.coords.longitude);
+              setLatitudeDelta(0.0922);
+              setLongitudeDelta(0.0421);
+              console.log('Current location captured');
+              setShowAlert(false);
+            },
+            error => {
+              setShowAlert(true);
+              // See error code charts below.
+              console.log('error : ', error.code, error.message);
+            },
+            {enableHighAccuracy: true, timeout: 15000, maximumAge: 10000},
+          );
+          console.log('You can use the location');
+          setShowAlert(false);
+        } else {
+          console.log('loaction permission denied');
+          setShowAlert(true);
+        }
       }
     } catch (err) {
       console.warn(err);
