@@ -84,8 +84,7 @@ import HomeCarousel from '../../components/HomeCarousel';
                 
                 <Center>
                             <Pressable>
-                                {/* <Icon name="menu" size={40} color="white" /> */}
-                                <Text alignSelf='center' color='white' fontSize={27}>{date.toDateString()}</Text>
+                                <Text alignSelf='center' p='2' color='white' fontSize={27}>{date.toDateString()}</Text>
                             </Pressable>
  
                 </Center>
