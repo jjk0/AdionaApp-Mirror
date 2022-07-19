@@ -8,10 +8,11 @@ const GeoFenceRadius = {
   "FT_200": "FT_200"
 };
 
-const { RegisteredInfo, UserInfo, GeoFence } = initSchema(schema);
+const { RegisteredInfo, PatientWatchData, UserInfo, GeoFence } = initSchema(schema);
 
 export {
   RegisteredInfo,
+  PatientWatchData,
   UserInfo,
   GeoFence,
   GeoFenceRadius
