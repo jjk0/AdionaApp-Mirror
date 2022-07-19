@@ -120,7 +120,7 @@ const UserRegistration = ({navigation}) => {
         if (user[0]['hasWatchSetup']) {
             setPostRoute('Home Screen');
             setPostNavigator('Root')
-        return;
+            return;
         }
         else {
             setPostRoute('Watch Setup');

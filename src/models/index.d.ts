@@ -12,6 +12,10 @@ type RegisteredInfoMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
+type PatientWatchDataMetaData = {
+  readOnlyFields: 'updatedAt';
+}
+
 type UserInfoMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
@@ -30,11 +34,25 @@ export declare class RegisteredInfo {
   readonly patientName?: string | null;
   readonly caregiverName?: string | null;
   readonly caregiverRelationship?: string | null;
-  readonly bucketNumber?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<RegisteredInfo, RegisteredInfoMetaData>);
   static copyOf(source: RegisteredInfo, mutator: (draft: MutableModel<RegisteredInfo, RegisteredInfoMetaData>) => MutableModel<RegisteredInfo, RegisteredInfoMetaData> | void): RegisteredInfo;
+}
+
+export declare class PatientWatchData {
+  readonly id: string;
+  readonly time: string;
+  readonly patientId: string;
+  readonly steps?: number | null;
+  readonly calories?: number | null;
+  readonly heart_rate?: number | null;
+  readonly respiratoryRate?: number | null;
+  readonly oxygenSaturation?: number | null;
+  readonly createdAt: string;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<PatientWatchData, PatientWatchDataMetaData>);
+  static copyOf(source: PatientWatchData, mutator: (draft: MutableModel<PatientWatchData, PatientWatchDataMetaData>) => MutableModel<PatientWatchData, PatientWatchDataMetaData> | void): PatientWatchData;
 }
 
 export declare class UserInfo {

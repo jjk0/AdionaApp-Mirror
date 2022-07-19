@@ -21,7 +21,9 @@ import MobilityTips from '../screens/tips/MobilityTips';
 import Logout from '../components/Logout';
 import UserRegistration from '../screens/registration/UserRegistration';
 import WatchRegistration from '../screens/registration/WatchRegistration';
-import DiaryEntry from '../screens/diary/DiaryEntry'
+import DiaryEntry from '../screens/diary/DiaryEntry';
+import DiaryPageTwo from '../screens/diary/DiaryPageTwo';
+import DiaryPageThree from '../screens/diary/DiaryPageThree';
 import {useUserContext} from '../contexts/UserContext';
 
 import {
@@ -112,6 +114,8 @@ function App() {
       <Stack.Screen screenOptions={{headerShown: false}} name="Heart Screen" component={HeartScreen} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Diary Main Screen" component={DiaryMainScreen} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Diary Entry" component={DiaryEntry} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Diary Page Two" component={DiaryPageTwo} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Diary Page Three" component={DiaryPageThree} />
       <Stack.Screen screenOptions={{headerShown: false}} name="General Tips" component={GeneralTips} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Activity Tips" component={ActivityTips} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Respiratory Tips" component={RespiratoryTips} />
