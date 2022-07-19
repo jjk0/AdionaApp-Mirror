@@ -178,7 +178,7 @@ const UserRegistration = ({navigation}) => {
                                         <Text style={{fontFamily:'Alata'}} color='white' fontSize={20}>First Name</Text></FormControl.Label>
                                     <Input size={20} value={values.caregiverName} onChangeText={handleChange('caregiverName')} bgColor='white' errors={errors} variant="underlined" p={2} placeholder="Name" />
                                     {touched.caregiverName && errors.caregiverName &&
-                                    <Text style={{fontFamily:'Alata'}} style={{ fontSize: 12, color: "white" }}>Please fill out your first name</Text>
+                                    <Text style={{fontFamily:'Alata'}} color='white' fontSize={12}>Please fill out your first name</Text>
                                     }   
                                 </Stack>
                                 <Stack mx='5'>
@@ -224,7 +224,7 @@ const UserRegistration = ({navigation}) => {
                                         <Text style={{fontFamily:'Alata'}} color='white' fontSize={20}>Patient Name</Text></FormControl.Label>
                                     <Input size={20} value={values.patientName} onChangeText={handleChange('patientName')} errors={errors} bgColor='white' variant="underlined" p={2} placeholder="Name" />
                                     {errors.patientName &&
-                                    <Text style={{fontFamily:'Alata'}} style={{ fontSize: 12, color: "white" }}>Please fill out patient name</Text>
+                                    <Text style={{fontFamily:'Alata'}} color='white' fontSize={12}>Please fill out patient name</Text>
                                     }   
                                 </Stack>
                                 {/* <Stack mx='5'>
@@ -245,7 +245,7 @@ const UserRegistration = ({navigation}) => {
                                         <Text style={{fontFamily:'Alata'}} color='white' fontSize={20}>Diagnosis Date</Text></FormControl.Label>
                                     <Input size={20} value={values.diagnosisDate} bgColor='white' onChangeText={handleChange('diagnosisDate')} variant="underlined" p={2} placeholder="yyyy" />
                                     {errors.diagnosisDate &&
-                                    <Text style={{fontFamily:'Alata'}} style={{ fontSize: 12, color: "white" }}>Please fill out the correct year of diagnosis</Text>
+                                    <Text style={{fontFamily:'Alata'}} color='white' fontSize={12}>Please fill out the correct year of diagnosis</Text>
                                     }
                                 </Stack>
                                 <Stack mx='5'>
