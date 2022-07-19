@@ -20,7 +20,8 @@ import {
 import {
     StyleSheet,
     Dimensions,
-    SafeAreaView
+    SafeAreaView,
+    Text as OGText,
   } from 'react-native';
 
 
@@ -52,14 +53,7 @@ import {
 import HomeCarousel from '../../components/HomeCarousel';
 
 
- const submit = () => {
-     console.log('submitted')
- }
 
-
- 
-
- //may have to include in useState
  const date = new Date()
 
 
@@ -84,8 +78,9 @@ import HomeCarousel from '../../components/HomeCarousel';
                 
                 <Center>
                             <Pressable>
-                                <Text alignSelf='center' p='2' color='white' fontSize={27}>{date.toDateString()}</Text>
-                            </Pressable>
+                                <Text style={{fontFamily:'Alata'}} fontWeight={400} fontStyle="normal"  alignSelf='center' p='2' color='white' fontSize={27}>{date.toDateString()}</Text>
+                                {/* <OGText style={{color:'white', fontSize:27, fontFamily:'Alata'}}>{date.toDateString()}</OGText> */}
+                            </Pressable> 
  
                 </Center>
                 </HStack>

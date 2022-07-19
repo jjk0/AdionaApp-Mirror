@@ -12,6 +12,10 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		68C28111288714A100461EEC /* Alata-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68C28110288714A000461EEC /* Alata-Regular.ttf */; };
+		68C28112288714A100461EEC /* Alata-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68C28110288714A000461EEC /* Alata-Regular.ttf */; };
+		68C2811528873A1E00461EEC /* Alata-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68C2811428873A1E00461EEC /* Alata-Regular.ttf */; };
+		68C2811628873A1E00461EEC /* Alata-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68C2811428873A1E00461EEC /* Alata-Regular.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-AdionaApp-AdionaAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-AdionaApp-AdionaAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -57,6 +61,8 @@
 		6858D7DC282B0E040032DFC7 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		6858D7DD282B0E040032DFC7 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
 		6858D7DE282B0E040032DFC7 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
+		68C28110288714A000461EEC /* Alata-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Alata-Regular.ttf"; path = "../../src/assets/fonts/Alata-Regular.ttf"; sourceTree = "<group>"; };
+		68C2811428873A1E00461EEC /* Alata-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Alata-Regular.ttf"; path = "../src/assets/fonts/Alata-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AdionaApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-AdionaApp-AdionaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdionaApp-AdionaAppTests.release.xcconfig"; path = "Target Support Files/Pods-AdionaApp-AdionaAppTests/Pods-AdionaApp-AdionaAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -125,6 +131,7 @@
 		6858D7CE282B0E040032DFC7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				68C28110288714A000461EEC /* Alata-Regular.ttf */,
 				6858D7CF282B0E040032DFC7 /* FontAwesome5_Regular.ttf */,
 				6858D7D0282B0E040032DFC7 /* Ionicons.ttf */,
 				6858D7D1282B0E040032DFC7 /* MaterialIcons.ttf */,
@@ -155,6 +162,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				68C2811428873A1E00461EEC /* Alata-Regular.ttf */,
 				6858D7CE282B0E040032DFC7 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* AdionaApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -162,6 +170,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				F4E3350199674AA5ABA81B4C /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -187,6 +196,14 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		F4E3350199674AA5ABA81B4C /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -273,6 +290,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68C28112288714A100461EEC /* Alata-Regular.ttf in Resources */,
+				68C2811628873A1E00461EEC /* Alata-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +299,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68C28111288714A100461EEC /* Alata-Regular.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				68C2811528873A1E00461EEC /* Alata-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
