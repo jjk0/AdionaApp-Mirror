@@ -14,10 +14,6 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		DAE1B80EBCFB16015B8D595F /* libPods-AdionaApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD20ADF76420436AAC881C0 /* libPods-AdionaApp.a */; };
 		DFA6F0A29786A15C82FDC51D /* libPods-AdionaApp-AdionaAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6FAE092BB4493553AB0FBE /* libPods-AdionaApp-AdionaAppTests.a */; };
-		E5ACAE4C288065A3007D38CF /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5ACAE48288065A2007D38CF /* FontAwesome.ttf */; };
-		E5ACAE4D288065A3007D38CF /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5ACAE49288065A2007D38CF /* FontAwesome5_Solid.ttf */; };
-		E5ACAE4E288065A3007D38CF /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5ACAE4A288065A2007D38CF /* FontAwesome5_Regular.ttf */; };
-		E5ACAE4F288065A3007D38CF /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5ACAE4B288065A3007D38CF /* FontAwesome5_Brands.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,10 +58,6 @@
 		A898CE759CDA0D94A58A50DF /* Pods-AdionaApp-AdionaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdionaApp-AdionaAppTests.release.xcconfig"; path = "Target Support Files/Pods-AdionaApp-AdionaAppTests/Pods-AdionaApp-AdionaAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A96C22FA71B92581C40F4CB4 /* Pods-AdionaApp-AdionaAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdionaApp-AdionaAppTests.debug.xcconfig"; path = "Target Support Files/Pods-AdionaApp-AdionaAppTests/Pods-AdionaApp-AdionaAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB6FAE092BB4493553AB0FBE /* libPods-AdionaApp-AdionaAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdionaApp-AdionaAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5ACAE48288065A2007D38CF /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
-		E5ACAE49288065A2007D38CF /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
-		E5ACAE4A288065A2007D38CF /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
-		E5ACAE4B288065A3007D38CF /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		E5CD5916DE182DD6BCA3999A /* Pods-AdionaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdionaApp.release.xcconfig"; path = "Target Support Files/Pods-AdionaApp/Pods-AdionaApp.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -200,10 +192,6 @@
 		E5ACAE472880652B007D38CF /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				E5ACAE48288065A2007D38CF /* FontAwesome.ttf */,
-				E5ACAE4B288065A3007D38CF /* FontAwesome5_Brands.ttf */,
-				E5ACAE4A288065A2007D38CF /* FontAwesome5_Regular.ttf */,
-				E5ACAE49288065A2007D38CF /* FontAwesome5_Solid.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -301,11 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				E5ACAE4D288065A3007D38CF /* FontAwesome5_Solid.ttf in Resources */,
-				E5ACAE4E288065A3007D38CF /* FontAwesome5_Regular.ttf in Resources */,
-				E5ACAE4F288065A3007D38CF /* FontAwesome5_Brands.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				E5ACAE4C288065A3007D38CF /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

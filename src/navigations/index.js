@@ -106,7 +106,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator
         name="Stack"
-        initialRouteName={initialRoute}
+        initialRouteName={"Root"}
         options={{title: 'Overview'}}
         screenOptions={{
           headerShown: false,
