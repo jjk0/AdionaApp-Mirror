@@ -6,10 +6,28 @@ export enum GeoFenceRadius {
   FT_200 = "FT_200"
 }
 
+export declare class Tip {
+  readonly message?: string | null;
+  readonly importance?: number | null;
+  readonly link?: string | null;
+  constructor(init: ModelInit<Tip>);
+}
 
+export declare class PatientTip {
+  readonly lifestyleTip?: Tip | null;
+  readonly sleepTip?: Tip | null;
+  readonly hrTip?: Tip | null;
+  readonly respiratoryTip?: Tip | null;
+  readonly generalTip?: Tip | null;
+  constructor(init: ModelInit<PatientTip>);
+}
 
 type RegisteredInfoMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
+type PatientWatchDataMetaData = {
+  readOnlyFields: 'updatedAt';
 }
 
 type UserInfoMetaData = {
@@ -34,6 +52,22 @@ export declare class RegisteredInfo {
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<RegisteredInfo, RegisteredInfoMetaData>);
   static copyOf(source: RegisteredInfo, mutator: (draft: MutableModel<RegisteredInfo, RegisteredInfoMetaData>) => MutableModel<RegisteredInfo, RegisteredInfoMetaData> | void): RegisteredInfo;
+}
+
+export declare class PatientWatchData {
+  readonly id: string;
+  readonly time: string;
+  readonly patientId: string;
+  readonly steps?: number | null;
+  readonly calories?: number | null;
+  readonly heart_rate?: number | null;
+  readonly respiratoryRate?: number | null;
+  readonly oxygenSaturation?: number | null;
+  readonly tips?: PatientTip | null;
+  readonly createdAt: string;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<PatientWatchData, PatientWatchDataMetaData>);
+  static copyOf(source: PatientWatchData, mutator: (draft: MutableModel<PatientWatchData, PatientWatchDataMetaData>) => MutableModel<PatientWatchData, PatientWatchDataMetaData> | void): PatientWatchData;
 }
 
 export declare class UserInfo {
