@@ -40,13 +40,13 @@ import { useNavigation } from '@react-navigation/native';
                     <Modal.Body>
                         <Center my='4'>
                             <HStack>
-                                <Text bold width='80%' fontSize={24}>{errorText}</Text>
+                                <Text style={{fontFamily:'Alata'}} bold width='80%' fontSize={24}>{errorText}</Text>
                             </HStack>
                         </Center>
                         <Center>
                             <VStack justifyContent='center' width='80%'>
                                 <Button m='2' py='2' borderRadius='2xl' bgColor='warning.200' onPress={() => closeAllModals()}>
-                                    <Text bold alignSelf='center' fontSize={20}>Home</Text>
+                                    <Text style={{fontFamily:'Alata'}} bold alignSelf='center' fontSize={20}>Home</Text>
                                 </Button>
                             </VStack>
                         </Center>

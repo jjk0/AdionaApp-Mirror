@@ -23,8 +23,8 @@ const ClickableTextBox = (props) => {
     return (
         <Pressable onPress={() => navigation.navigate(props.navigateToPage)}>
             <Box borderRadius='2xl' mt='10' w='100%' bgColor={props.backgroundColor} pt='2'>
-                <Text mx='5' color={props.textColor} bold alignItems='flex-start' fontSize={25}>{props.mainText}</Text>
-                <Text mx='5' color={props.textColor} alignItems='flex-start' fontSize={25}>{props.secondaryText}</Text>
+                <Text style={{fontFamily:'Alata'}} mx='5' color={props.textColor} bold alignItems='flex-start' fontSize={25}>{props.mainText}</Text>
+                <Text style={{fontFamily:'Alata'}} mx='5' color={props.textColor} alignItems='flex-start' fontSize={25}>{props.secondaryText}</Text>
                 <Box mb='2' alignSelf='flex-end'>
                         <Icon name="chevron-right" size={40} color={props.textColor} />
                 </Box>

@@ -79,7 +79,6 @@ import HomeCarousel from '../../components/HomeCarousel';
                 <Center>
                             <Pressable>
                                 <Text style={{fontFamily:'Alata'}} fontWeight={400} fontStyle="normal"  alignSelf='center' p='2' color='white' fontSize={27}>{date.toDateString()}</Text>
-                                {/* <OGText style={{color:'white', fontSize:27, fontFamily:'Alata'}}>{date.toDateString()}</OGText> */}
                             </Pressable> 
  
                 </Center>
@@ -87,7 +86,7 @@ import HomeCarousel from '../../components/HomeCarousel';
                 <HStack alignSelf='center'>
                     <VStack>
                         <HStack>
-                            <Text alignSelf='center' width='30%' fontSize={20} color='white' flexWrap='wrap' m='2'>John's Wellness Score</Text>
+                            <Text style={{fontFamily:'Alata'}} alignSelf='center' width='30%' fontSize={20} color='white' flexWrap='wrap' m='2'>John's Wellness Score</Text>
                             <Circle bgColor='white' size={250}>
                                 <GradientCircularProgress
                                         startColor="#517FF3"
@@ -95,7 +94,7 @@ import HomeCarousel from '../../components/HomeCarousel';
                                         middleColor='#7393B3'
                                         progress={72}
                                         size={220}>
-                                    <Text position='absolute' top='10' alignSelf='center' color='#517FF3' fontSize={100}>72</Text>
+                                    <Text style={{fontFamily:'Alata'}} position='absolute' top='10' alignSelf='center' color='#517FF3' fontSize={100}>72</Text>
                                 </GradientCircularProgress>
                                 {/* </ProgressCircle> */}
                             </Circle>
@@ -104,7 +103,7 @@ import HomeCarousel from '../../components/HomeCarousel';
                 </HStack>
                 <Pressable borderRadius='100' m='5' bgColor='white' height='10' width='1/3' alignSelf='flex-end' onPress={() => navigation.navigate('Overall Trends')}>
                     <HStack alignSelf='center'  m='2'>
-                        <Text m='0.5' color='black' fontSize='16'>See trends</Text>
+                        <Text style={{fontFamily:'Alata'}} m='0.5' color='black' fontSize='16'>See trends</Text>
                         <Icon name='arrow-right' size={28} alignSelf='flex-end' color='black'></Icon>
                     </HStack>
                 </Pressable>
@@ -122,10 +121,10 @@ import HomeCarousel from '../../components/HomeCarousel';
                                 <VStack>
                                     <HStack>
                                         <Icon name="alert-circle-outline" size={30} color="white" alignSelf='start' />
-                                        <Text fontSize={25} alignSelf='center' ml='3' color='white'>Alert</Text>
+                                        <Text style={{fontFamily:'Alata'}} fontSize={25} alignSelf='center' ml='3' color='white'>Alert</Text>
                                     </HStack>
 
-                                    <Text fontSize={20} color='white'>John might get agitated soon. Tap to see our recommendations</Text>
+                                    <Text style={{fontFamily:'Alata'}} fontSize={20} color='white'>John might get agitated soon. Tap to see our recommendations</Text>
                                 </VStack>
                             </Box>
                         </Box>
@@ -136,10 +135,10 @@ import HomeCarousel from '../../components/HomeCarousel';
                     <Pressable borderRadius='2xl' justifyContent='center' textAlign='center' width='100%' bg='warning.200' mb='10' p='25' onPress={() => setShowAgitationModal(true)}>
                         <HStack>
                             <Icon name="note-edit-outline" size={30} color="black" alignSelf='start' />
-                            <Text fontSize={25} alignSelf='center' ml='3' color='black'>Info</Text>
+                            <Text style={{fontFamily:'Alata'}} fontSize={25} alignSelf='center' ml='3' color='black'>Info</Text>
                         </HStack>
-                        <Text fontSize={20} color='black'>Tap here to log an agitation episode as it happens</Text>
-                        <Text></Text>
+                        <Text style={{fontFamily:'Alata'}} fontSize={20} color='black'>Tap here to log an agitation episode as it happens</Text>
+                        <Text style={{fontFamily:'Alata'}}></Text>
                     </Pressable>
                     <AgitationModal
                     isOpen={showAgitationModal}

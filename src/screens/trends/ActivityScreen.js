@@ -91,7 +91,7 @@ const ActivityScreen = ({navigation}) => {
             <VStack mx='8'>
                 <ClickableTextBox textColor='white' backgroundColor='#517FF3' mainText='Activity Tip' secondaryText='Try some of these activities to keep John Active'/>
                 <Box bgColor='white' borderRadius='2xl' my='5'>
-                    {patientName && <Text color='black' mt='2' fontSize={24} alignSelf='center'>{patientName}'s Step Count</Text>}
+                    {patientName && <Text style={{fontFamily:'Alata'}} color='black' mt='2' fontSize={24} alignSelf='center'>{patientName}'s Step Count</Text>}
                     <Box bgColor='white' borderRadius='2xl'>
                         <VictoryChart width={350} theme={VictoryTheme.grayscale} domainPadding={{ x: 15 }}>
                             {/* <VictoryAxis crossAxis />

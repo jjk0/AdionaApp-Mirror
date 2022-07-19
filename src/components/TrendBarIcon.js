@@ -40,8 +40,8 @@ const TrendBarIcon = (props) => {
                 </Center>
             </Box>
             <VStack my='-1' mx='5'>
-                <Text bold fontSize={20}>{props.title}</Text>
-                <Text alignSelf='flex-end' italic fontSize={16}>{props.progressText}</Text>
+                <Text style={{fontFamily:'Alata'}} bold fontSize={20}>{props.title}</Text>
+                <Text style={{fontFamily:'Alata'}} alignSelf='flex-end' italic fontSize={16}>{props.progressText}</Text>
                 <ProgressBar unfilledColor='#e5e5e5' borderColor='#FFFFFF' color={progressColor} progress={props.progressNumber} width={200} />
             </VStack>
         </HStack>

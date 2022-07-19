@@ -87,7 +87,7 @@ import { UserInfo,ActivityInfo } from '../../models';
                 <Center>
                     <HStack>
                         <VStack py='10' alignSelf='center'>
-                        <Text ml='17' w='200' fontSize={20} h='10' color='white'>John's Wellness Score</Text>
+                        <Text style={{fontFamily:'Alata'}} ml='17' w='200' fontSize={20} h='10' color='white'>John's Wellness Score</Text>
                                 <HStack>
                                     <Circle size={250} bg='white'>
                                         <ProgressCircle
@@ -98,7 +98,7 @@ import { UserInfo,ActivityInfo } from '../../models';
                                             shadowColor="#fff"
                                             bgColor="#FFFFFF"
                                         >
-                                            <Text alignSelf='center' color='blue' fontSize='48'>{72}</Text>
+                                            <Text style={{fontFamily:'Alata'}} alignSelf='center' color='blue' fontSize='48'>{72}</Text>
                                         </ProgressCircle>
                                     </Circle>
                                 </HStack>

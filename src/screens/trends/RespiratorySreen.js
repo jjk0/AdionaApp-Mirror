@@ -62,7 +62,7 @@ const RespiratoryScreen = () => {
             <VStack mx='8'>
                 <ClickableTextBox backgroundColor='#D0F1FC' mainText='Summary' secondaryText='Avg. SpO2: 96% Avg. Breathing Rate: 21/min'/>
                 <Box bgColor='white' borderRadius='2xl' my='5'>
-                    <Text color='black' my='2' fontSize={24} alignSelf='center'>John's SpO2</Text>
+                    <Text style={{fontFamily:'Alata'}} color='black' my='2' fontSize={24} alignSelf='center'>John's SpO2</Text>
                 <Box borderRadius='2xl' bgColor='white'>
                     <VictoryChart width={350} domainPadding={{ x: 15 }}>
                         <VictoryCandlestick data={data} 

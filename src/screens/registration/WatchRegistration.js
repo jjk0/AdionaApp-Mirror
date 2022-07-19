@@ -163,7 +163,7 @@ const WatchRegistration = ({navigation}) => {
             <Swiper ref={swiperRef} loop={false} dotColor="white" activeDotColor="black" showsButtons={false}>
                 <View flex="1" bgColor="#517FF3">
                     <View p='5' justifyContent='center' alignItems='center' alignSelf='center' textAlign="center">
-                        <Text fontSize={30} mt='32' alignSelf='center' color='white'>Setup your watch here to begin viewing analytics</Text>
+                        <Text style={{fontFamily:'Alata'}} fontSize={30} mt='32' alignSelf='center' color='white'>Setup your watch here to begin viewing analytics</Text>
                     </View>
                     <VStack mb='20' justifyContent="flex-end">
                         <NextSwipeButton onNextPressed={() => next()}/>
@@ -171,7 +171,7 @@ const WatchRegistration = ({navigation}) => {
                 </View>
                 <View flex="1" bgColor="#517FF3">
                     <View p='5' justifyContent='center' alignItems='center' alignSelf='center' textAlign="center">
-                        <Text fontSize={30} mt='32' alignSelf='center' color='white'>Go to the Apple Watch app on the phone you’d like to pair with the Apple Watch to set it up. Come back when you’re done and click next.</Text>
+                        <Text style={{fontFamily:'Alata'}} fontSize={30} mt='32' alignSelf='center' color='white'>Go to the Apple Watch app on the phone you’d like to pair with the Apple Watch to set it up. Come back when you’re done and click next.</Text>
                     </View>
                     <VStack mb='20' justifyContent="flex-end">
                         <NextSwipeButton onNextPressed={() => next()}/>
@@ -181,18 +181,18 @@ const WatchRegistration = ({navigation}) => {
                 <View flex="1" bgColor="#517FF3">
                     <View p='5' justifyContent='center' alignItems='center' alignSelf='center' textAlign="center">
                         <Center>
-                          <Text color='white' fontSize={40}>Your code is:</Text> 
+                          <Text style={{fontFamily:'Alata'}} color='white' fontSize={40}>Your code is:</Text> 
                         </Center>
                         <Box bgColor='white' p='2' borderRadius="2xl">
                             {code &&
                             <Center>
-                              <Text color='black' fontSize={45}>
+                              <Text style={{fontFamily:'Alata'}} color='black' fontSize={45}>
                                   {code}
                               </Text>
                             </Center>}
                         </Box>
                         <Center>
-                          <Text color='white' fontSize={35} p='2'>
+                          <Text style={{fontFamily:'Alata'}} color='white' fontSize={35} p='2'>
                             Enter this code into your watch and then hit "next"
                           </Text>
                         </Center>
@@ -204,7 +204,7 @@ const WatchRegistration = ({navigation}) => {
                 </View>
                 <View flex="1" bgColor="#517FF3">
                     <View p='5' justifyContent='center' alignItems='center' alignSelf='center' textAlign="center">
-                        <Text fontSize={50} mt='32' alignSelf='center' color='white'>You're all set!</Text>
+                        <Text style={{fontFamily:'Alata'}} fontSize={50} mt='32' alignSelf='center' color='white'>You're all set!</Text>
                     </View>
                     <VStack mb='20' justifyContent="flex-end">
                         <NextSwipeButton onNextPressed={() => navigation.navigate("Home")}/>

@@ -162,7 +162,7 @@ const UserRegistration = ({navigation}) => {
             <Swiper ref={swiperRef} loop={false} dotColor="white" activeDotColor="black" showsButtons={false}>
                 <View flex="1" bgColor="#517FF3">
                     <View p='5' justifyContent='center' alignItems='center' alignSelf='center' textAlign="center">
-                        <Text fontSize={30} mt='32' alignSelf='center' color='white'>Adiona would like to get to know you and your loved one more so we can provide the best support possible. </Text>
+                        <Text style={{fontFamily:'Alata'}} fontSize={30} mt='32' alignSelf='center' color='white'>Adiona would like to get to know you and your loved one more so we can provide the best support possible. </Text>
                     </View>
                     <VStack mb='20' justifyContent="flex-end">
                         <NextSwipeButton onNextPressed={() => next()}/>
@@ -170,20 +170,20 @@ const UserRegistration = ({navigation}) => {
                 </View>
                 <ScrollView flex='1' bgColor="#517FF3">
                     <View alignItems='center' mb='10'>
-                            <Text fontSize={30} textAlign='center' color='white'>Tell Adiona a little bit about yourself</Text>
+                            <Text style={{fontFamily:'Alata'}} fontSize={30} textAlign='center' color='white'>Tell Adiona a little bit about yourself</Text>
                         <FormControl>
                             <Stack mt='5' space={5}>
                                 <Stack mx='5'>
                                     <FormControl.Label>
-                                        <Text color='white' fontSize={20}>First Name</Text></FormControl.Label>
+                                        <Text style={{fontFamily:'Alata'}} color='white' fontSize={20}>First Name</Text></FormControl.Label>
                                     <Input size={20} value={values.caregiverName} onChangeText={handleChange('caregiverName')} bgColor='white' errors={errors} variant="underlined" p={2} placeholder="Name" />
                                     {touched.caregiverName && errors.caregiverName &&
-                                    <Text style={{ fontSize: 12, color: "white" }}>Please fill out your first name</Text>
+                                    <Text style={{fontFamily:'Alata'}} style={{ fontSize: 12, color: "white" }}>Please fill out your first name</Text>
                                     }   
                                 </Stack>
                                 <Stack mx='5'>
                                     <FormControl.Label>
-                                            <Text color='white' fontSize={20}>Relationship to Patient</Text></FormControl.Label>
+                                            <Text style={{fontFamily:'Alata'}} color='white' fontSize={20}>Relationship to Patient</Text></FormControl.Label>
                                     <Select value={values.caregiverRelationship} size={20} onValueChange={handleChange('caregiverRelationship')} bgColor='white' placeholder="Choose relation">
                                         <Select.Item label="Child" value="Child" />
                                         <Select.Item label="Grandchild" value="Grandchild" />
@@ -197,7 +197,7 @@ const UserRegistration = ({navigation}) => {
                                 </Stack>
                                 <Stack mx='5'>
                                     <FormControl.Label>
-                                            <Text color='white' fontSize={20}>Living Situation</Text></FormControl.Label>
+                                            <Text style={{fontFamily:'Alata'}} color='white' fontSize={20}>Living Situation</Text></FormControl.Label>
                                     <Select value={values.livingSituation} size={20} onValueChange={handleChange('livingSituation')} bgColor='white' placeholder="Living Situation">
                                         <Select.Item label="Same household" value="Same household" />
                                         <Select.Item label="Same neighborhood" value="Same neighborhood" />
@@ -216,15 +216,15 @@ const UserRegistration = ({navigation}) => {
                 </ScrollView>
                 <ScrollView bgColor="#517FF3" >
                     <View alignItems='center' >
-                            <Text fontSize={30} textAlign='center' color='white'>Tell Adiona a little bit about your loved one</Text>
+                            <Text style={{fontFamily:'Alata'}} fontSize={30} textAlign='center' color='white'>Tell Adiona a little bit about your loved one</Text>
                         <FormControl>
                             <Stack mt='5' space={5}>
                                 <Stack mx='5'>
                                     <FormControl.Label>
-                                        <Text color='white' fontSize={20}>Patient Name</Text></FormControl.Label>
+                                        <Text style={{fontFamily:'Alata'}} color='white' fontSize={20}>Patient Name</Text></FormControl.Label>
                                     <Input size={20} value={values.patientName} onChangeText={handleChange('patientName')} errors={errors} bgColor='white' variant="underlined" p={2} placeholder="Name" />
                                     {errors.patientName &&
-                                    <Text style={{ fontSize: 12, color: "white" }}>Please fill out patient name</Text>
+                                    <Text style={{fontFamily:'Alata'}} style={{ fontSize: 12, color: "white" }}>Please fill out patient name</Text>
                                     }   
                                 </Stack>
                                 {/* <Stack mx='5'>
@@ -233,7 +233,7 @@ const UserRegistration = ({navigation}) => {
                                 </Stack> */}
                                 <Stack mx='5'>
                                     <FormControl.Label>
-                                        <Text color='white' fontSize={20}>Diagnosis</Text></FormControl.Label>
+                                        <Text style={{fontFamily:'Alata'}} color='white' fontSize={20}>Diagnosis</Text></FormControl.Label>
                                     <Select size={20} value={values.diagnosis} onValueChange={handleChange('diagnosis')} bgColor='white' placeholder="Select diagnosis">
                                         <Select.Item label="Alzheimer's Disease" value="Alzheimer's Disease" />
                                         <Select.Item label="Dementia" value="Dementia" />
@@ -242,15 +242,15 @@ const UserRegistration = ({navigation}) => {
                                 </Stack>
                                 <Stack mx='5'>
                                     <FormControl.Label>
-                                        <Text color='white' fontSize={20}>Diagnosis Date</Text></FormControl.Label>
+                                        <Text style={{fontFamily:'Alata'}} color='white' fontSize={20}>Diagnosis Date</Text></FormControl.Label>
                                     <Input size={20} value={values.diagnosisDate} bgColor='white' onChangeText={handleChange('diagnosisDate')} variant="underlined" p={2} placeholder="yyyy" />
                                     {errors.diagnosisDate &&
-                                    <Text style={{ fontSize: 12, color: "white" }}>Please fill out the correct year of diagnosis</Text>
+                                    <Text style={{fontFamily:'Alata'}} style={{ fontSize: 12, color: "white" }}>Please fill out the correct year of diagnosis</Text>
                                     }
                                 </Stack>
                                 <Stack mx='5'>
                                     <FormControl.Label>
-                                        <Text color='white' fontSize={20}>Mobility</Text></FormControl.Label>
+                                        <Text style={{fontFamily:'Alata'}} color='white' fontSize={20}>Mobility</Text></FormControl.Label>
                                     <Select size={20} value={values.mobility} onValueChange={handleChange('mobility')} bgColor='white' placeholder="Select mobilty">
                                         <Select.Item label="Excellent" value="Excellent" />
                                         <Select.Item label="Good" value="Good" />
@@ -269,7 +269,7 @@ const UserRegistration = ({navigation}) => {
                         <Pressable m='2' onPress={handleSubmit}>
                             <Center>
                                 <Box borderRadius='2xl' bgColor='white' height="50" width="80%">
-                                    <Text alignSelf="center" justifyContent="center" fontSize={26} m='1' bold color="black">Submit</Text>
+                                    <Text style={{fontFamily:'Alata'}} alignSelf="center" justifyContent="center" fontSize={26} m='1' bold color="black">Submit</Text>
                                 </Box>
                             </Center>
                         </Pressable>
