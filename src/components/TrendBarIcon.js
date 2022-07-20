@@ -12,6 +12,8 @@ import {
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import ProgressBar from 'react-native-progress/Bar';
 import { useNavigation } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 
 const TrendBarIcon = (props) => {
 
@@ -41,7 +43,8 @@ const TrendBarIcon = (props) => {
             </Box>
             <VStack my='-1' mx='5'>
                 <Text style={{fontFamily:'Alata'}} bold fontSize={20}>{props.title}</Text>
-                <Text style={{fontFamily:'Alata'}} alignSelf='flex-end' italic fontSize={16}>{props.progressText}</Text>
+                {/* <Text style={{fontFamily:'Alata'}} alignSelf='flex-end' italic fontSize={16}>{props.progressText}</Text> */}
+                <Icon style={{alignSelf:'flex-end'}} color='black' name='arrow-right' size={25}></Icon>
                 <ProgressBar unfilledColor='#e5e5e5' borderColor='#FFFFFF' color={progressColor} progress={props.progressNumber} width={200} />
             </VStack>
         </HStack>
