@@ -1,9 +1,144 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreatePatientWatchData = /* GraphQL */ `
+  subscription OnCreatePatientWatchData {
+    onCreatePatientWatchData {
+      time
+      patientId
+      steps
+      calories
+      heart_rate
+      respiratoryRate
+      oxygenSaturation
+      tips {
+        lifestyleTip {
+          message
+          importance
+          link
+        }
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onUpdatePatientWatchData = /* GraphQL */ `
+  subscription OnUpdatePatientWatchData {
+    onUpdatePatientWatchData {
+      time
+      patientId
+      steps
+      calories
+      heart_rate
+      respiratoryRate
+      oxygenSaturation
+      tips {
+        lifestyleTip {
+          message
+          importance
+          link
+        }
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onDeletePatientWatchData = /* GraphQL */ `
+  subscription OnDeletePatientWatchData {
+    onDeletePatientWatchData {
+      time
+      patientId
+      steps
+      calories
+      heart_rate
+      respiratoryRate
+      oxygenSaturation
+      tips {
+        lifestyleTip {
+          message
+          importance
+          link
+        }
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
 export const onCreateRegisteredInfo = /* GraphQL */ `
-  subscription OnCreateRegisteredInfo($owner: String) {
-    onCreateRegisteredInfo(owner: $owner) {
+  subscription OnCreateRegisteredInfo {
+    onCreateRegisteredInfo {
       id
       userId
       livingSituation
@@ -13,19 +148,17 @@ export const onCreateRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
-      bucketNumber
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
 export const onUpdateRegisteredInfo = /* GraphQL */ `
-  subscription OnUpdateRegisteredInfo($owner: String) {
-    onUpdateRegisteredInfo(owner: $owner) {
+  subscription OnUpdateRegisteredInfo {
+    onUpdateRegisteredInfo {
       id
       userId
       livingSituation
@@ -35,19 +168,17 @@ export const onUpdateRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
-      bucketNumber
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
 export const onDeleteRegisteredInfo = /* GraphQL */ `
-  subscription OnDeleteRegisteredInfo($owner: String) {
-    onDeleteRegisteredInfo(owner: $owner) {
+  subscription OnDeleteRegisteredInfo {
+    onDeleteRegisteredInfo {
       id
       userId
       livingSituation
@@ -57,13 +188,11 @@ export const onDeleteRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
-      bucketNumber
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;

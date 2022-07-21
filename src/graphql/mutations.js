@@ -1,6 +1,150 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createPatientWatchData = /* GraphQL */ `
+  mutation CreatePatientWatchData(
+    $input: CreatePatientWatchDataInput!
+    $condition: ModelPatientWatchDataConditionInput
+  ) {
+    createPatientWatchData(input: $input, condition: $condition) {
+      time
+      patientId
+      steps
+      calories
+      heart_rate
+      respiratoryRate
+      oxygenSaturation
+      tips {
+        lifestyleTip {
+          message
+          importance
+          link
+        }
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const updatePatientWatchData = /* GraphQL */ `
+  mutation UpdatePatientWatchData(
+    $input: UpdatePatientWatchDataInput!
+    $condition: ModelPatientWatchDataConditionInput
+  ) {
+    updatePatientWatchData(input: $input, condition: $condition) {
+      time
+      patientId
+      steps
+      calories
+      heart_rate
+      respiratoryRate
+      oxygenSaturation
+      tips {
+        lifestyleTip {
+          message
+          importance
+          link
+        }
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const deletePatientWatchData = /* GraphQL */ `
+  mutation DeletePatientWatchData(
+    $input: DeletePatientWatchDataInput!
+    $condition: ModelPatientWatchDataConditionInput
+  ) {
+    deletePatientWatchData(input: $input, condition: $condition) {
+      time
+      patientId
+      steps
+      calories
+      heart_rate
+      respiratoryRate
+      oxygenSaturation
+      tips {
+        lifestyleTip {
+          message
+          importance
+          link
+        }
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
 export const createRegisteredInfo = /* GraphQL */ `
   mutation CreateRegisteredInfo(
     $input: CreateRegisteredInfoInput!
@@ -16,13 +160,11 @@ export const createRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
-      bucketNumber
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
@@ -41,13 +183,11 @@ export const updateRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
-      bucketNumber
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
@@ -66,13 +206,11 @@ export const deleteRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
-      bucketNumber
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;

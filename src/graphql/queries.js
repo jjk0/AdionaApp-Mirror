@@ -1,6 +1,153 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getPatientWatchData = /* GraphQL */ `
+  query GetPatientWatchData($time: AWSDateTime!) {
+    getPatientWatchData(time: $time) {
+      time
+      patientId
+      steps
+      calories
+      heart_rate
+      respiratoryRate
+      oxygenSaturation
+      tips {
+        lifestyleTip {
+          message
+          importance
+          link
+        }
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listPatientWatchData = /* GraphQL */ `
+  query ListPatientWatchData(
+    $time: AWSDateTime
+    $filter: ModelPatientWatchDataFilterInput
+    $limit: Int
+    $nextToken: String
+    $sortDirection: ModelSortDirection
+  ) {
+    listPatientWatchData(
+      time: $time
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
+      items {
+        time
+        patientId
+        steps
+        calories
+        heart_rate
+        respiratoryRate
+        oxygenSaturation
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncPatientWatchData = /* GraphQL */ `
+  query SyncPatientWatchData(
+    $filter: ModelPatientWatchDataFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncPatientWatchData(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        time
+        patientId
+        steps
+        calories
+        heart_rate
+        respiratoryRate
+        oxygenSaturation
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getDataByPatient = /* GraphQL */ `
+  query GetDataByPatient(
+    $patientId: ID!
+    $createdAt: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelPatientWatchDataFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    getDataByPatient(
+      patientId: $patientId
+      createdAt: $createdAt
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        time
+        patientId
+        steps
+        calories
+        heart_rate
+        respiratoryRate
+        oxygenSaturation
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
 export const getRegisteredInfo = /* GraphQL */ `
   query GetRegisteredInfo($id: ID!) {
     getRegisteredInfo(id: $id) {
@@ -13,13 +160,11 @@ export const getRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
-      bucketNumber
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
@@ -40,13 +185,11 @@ export const listRegisteredInfos = /* GraphQL */ `
         patientName
         caregiverName
         caregiverRelationship
-        bucketNumber
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
       }
       nextToken
       startedAt
@@ -76,13 +219,11 @@ export const syncRegisteredInfos = /* GraphQL */ `
         patientName
         caregiverName
         caregiverRelationship
-        bucketNumber
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
       }
       nextToken
       startedAt
