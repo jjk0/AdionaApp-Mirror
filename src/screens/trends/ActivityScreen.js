@@ -18,7 +18,8 @@ import {
   } from 'native-base';
 import {
     StyleSheet,
-    Dimensions
+    Dimensions,
+    SafeAreaView
   } from 'react-native';
 
   import {
@@ -86,6 +87,7 @@ const ActivityScreen = ({navigation}) => {
     
     
     return(
+        <SafeAreaView style={{flex: 1}}>
         <ScrollView>
             <ScreenTop backgroundColor='#94E577' screenTitle='Activity' statistic='7592' supportingText='steps today' progressNumber='.8' iconName='walking'/>
             <VStack mx='8'>
@@ -107,6 +109,7 @@ const ActivityScreen = ({navigation}) => {
                 </Box>
             </VStack>
     </ScrollView>
+    </SafeAreaView>
     )
 }
 export default ActivityScreen

@@ -91,8 +91,9 @@ import HomeCarousel from '../../components/HomeCarousel';
                                     <GradientCircularProgress
                                             startColor="#517FF3"
                                             endColor='white'
-                                            middleColor='#7393B3'
+                                            middleColor='#6699CC'
                                             progress={72}
+                                            strokeWidth={4}
                                             size={220}>
                                         <Text style={{fontFamily:'Alata'}} position='absolute' top='10' alignSelf='center' color='#517FF3' fontSize={100}>72</Text>
                                     </GradientCircularProgress>
@@ -132,7 +133,7 @@ import HomeCarousel from '../../components/HomeCarousel';
                                 
                         </Pressable>
 
-                        <Pressable borderRadius='2xl' justifyContent='center' textAlign='center' width='100%' bg='warning.200' mb='10' p='25' onPress={() => setShowAgitationModal(true)}>
+                        <Pressable borderRadius='2xl' justifyContent='center' textAlign='center' width='100%' bg='#FFC684' mb='10' p='25' onPress={() => setShowAgitationModal(true)}>
                             <HStack>
                                 <Icon name="note-edit-outline" size={30} color="black" alignSelf='start' />
                                 <Text style={{fontFamily:'Alata'}} fontSize={25} alignSelf='center' ml='3' color='black'>Info</Text>
@@ -144,9 +145,9 @@ import HomeCarousel from '../../components/HomeCarousel';
                         isOpen={showAgitationModal}
                         handleClose={() => setShowAgitationModal(false)}/>
                         <VStack marginY='5' alignSelf='flex-start'>
-                            <HomeIconButton navigateToPage='Overall Trends' buttonColor='info.500' iconTitle='trending-up' mainText='Tips and Trends' tipText='John could get more sleep'/>
-                            <HomeIconButton navigateToPage='Main Location' buttonColor='info.200' iconTitle='map-marker-radius-outline' mainText='Location' tipText='1234 Main Street'/>
-                            <HomeIconButton navigateToPage='Diary Main Screen'buttonColor='warning.200' iconTitle='notebook-outline' mainText='Daily Diary' tipText='Log important info here'/>
+                            <HomeIconButton navigateToPage='Overall Trends' buttonColor='#517FF3' iconTitle='trending-up' mainText='Tips and Trends' tipText='John could get more sleep'/>
+                            <HomeIconButton navigateToPage='Main Location' buttonColor='#8AC4FF' iconTitle='map-marker-radius-outline' mainText='Location' tipText='1234 Main Street'/>
+                            <HomeIconButton navigateToPage='Diary Main Screen'buttonColor='#FFC684' iconTitle='notebook-outline' mainText='Daily Diary' tipText='Log important info here'/>
                         </VStack>
 
                         <HStack>

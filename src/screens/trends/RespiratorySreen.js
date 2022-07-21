@@ -17,7 +17,8 @@ import {
   } from 'native-base';
 import {
     StyleSheet,
-    Dimensions
+    Dimensions,
+    SafeAreaView
   } from 'react-native';
 
   import {
@@ -57,6 +58,7 @@ const data = [
 
 const RespiratoryScreen = () => {
     return (
+      <SafeAreaView style={{flex: 1}}>
         <ScrollView>
             <ScreenTop backgroundColor='#84C1FF' screenTitle='Respiratory Health' statistic='97' supportingText='% SpO2' progressNumber='.9' iconName='lungs'/>
             <VStack mx='8'>
@@ -74,6 +76,7 @@ const RespiratoryScreen = () => {
                 </Box>
             </VStack>
         </ScrollView>
+        </SafeAreaView>
     )
 }
 

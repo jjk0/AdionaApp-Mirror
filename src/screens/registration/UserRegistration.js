@@ -16,6 +16,7 @@ import {
   } from 'native-base';
 import {
     StyleSheet,
+    SafeAreaView
   } from 'react-native';
 
 
@@ -159,6 +160,7 @@ const UserRegistration = ({navigation}) => {
           })}
         >
             {({ values, handleChange, errors, setFieldTouched, touched, isValid, handleSubmit }) => (
+            <SafeAreaView style={{flex: 1}}>
             <Swiper ref={swiperRef} loop={false} dotColor="white" activeDotColor="black" showsButtons={false}>
                 <View flex="1" bgColor="#517FF3">
                     <View p='5' justifyContent='center' alignItems='center' alignSelf='center' textAlign="center">
@@ -277,6 +279,7 @@ const UserRegistration = ({navigation}) => {
                     </VStack>
                 </ScrollView>
             </Swiper>
+            </SafeAreaView>
             )}
         </Formik>
     )

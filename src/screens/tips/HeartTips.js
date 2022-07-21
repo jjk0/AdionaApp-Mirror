@@ -3,6 +3,8 @@ import {
     ScrollView,
     VStack,
   } from 'native-base';
+import {SafeAreaView} from 'react-native';
+
 
 import ScreenTop from '../../components/ScreenTop';
 import ClickableTextBox from '../../components/ClickableTextBox';
@@ -10,6 +12,7 @@ import ClickableTextBox from '../../components/ClickableTextBox';
 
 const HeartTips = () => {
     return(
+        <SafeAreaView style={{flex: 1}}>
         <ScrollView>
             <ScreenTop backgroundColor='#FE987D' screenTitle='Heart Tips'/>
             <VStack mx='8'>
@@ -21,6 +24,7 @@ const HeartTips = () => {
                                 secondaryText='Tap to find out a few ways to help John exercise'/>
             </VStack>
         </ScrollView>
+        </SafeAreaView>
     )
 }
 

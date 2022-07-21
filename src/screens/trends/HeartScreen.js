@@ -17,7 +17,8 @@ import {
   } from 'native-base';
 import {
     StyleSheet,
-    Dimensions
+    Dimensions,
+    SafeAreaView,
   } from 'react-native';
 
   import {
@@ -101,6 +102,7 @@ const ActivityScreen = ({navigation}) => {
     
 
     return(
+      <SafeAreaView style={{flex: 1}}>
         <ScrollView>
             <ScreenTop backgroundColor='#517FF3' screenTitle='Heart Health' statistic='74' supportingText='avg bpm today' progressNumber='1' iconName='heartbeat'/>
             <VStack mx='8'>
@@ -116,6 +118,7 @@ const ActivityScreen = ({navigation}) => {
                 </Box>
             </VStack>
         </ScrollView>
+        </SafeAreaView>
     )
 }
 export default ActivityScreen

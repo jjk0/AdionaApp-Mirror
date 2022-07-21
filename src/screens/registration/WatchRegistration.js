@@ -16,6 +16,7 @@ import {
   } from 'native-base';
 import {
     StyleSheet,
+    SafeAreaView
   } from 'react-native';
 
 
@@ -160,6 +161,7 @@ const WatchRegistration = ({navigation}) => {
 
 
     return(
+          <SafeAreaView style={{flex: 1}}>
             <Swiper ref={swiperRef} loop={false} dotColor="white" activeDotColor="black" showsButtons={false}>
                 <View flex="1" bgColor="#517FF3">
                     <View p='5' justifyContent='center' alignItems='center' alignSelf='center' textAlign="center">
@@ -210,9 +212,8 @@ const WatchRegistration = ({navigation}) => {
                         <NextSwipeButton onNextPressed={() => navigation.navigate("Home")}/>
                     </VStack>
                 </View>
-                
-              
             </Swiper>
+          </SafeAreaView>
     )
 }
 

@@ -17,6 +17,7 @@ import {
   } from 'native-base';
 import {
     StyleSheet,
+    SafeAreaView
   } from 'react-native';
 
 
@@ -81,6 +82,7 @@ import { UserInfo,ActivityInfo } from '../../models';
     
     
     return (
+        <SafeAreaView style={{flex: 1}}>
         <ScrollView style={styles.sectionContainer}>
             <Box bgColor='#517FF3' m='0'>
                 <BackButton/>
@@ -116,8 +118,8 @@ import { UserInfo,ActivityInfo } from '../../models';
                     <TrendBarIcon title='Respiratory' iconTitle='lungs' progressText='Metrics look normal' progressNumber='.9' iconColor="#84C1FF" navigateToPage='Respiratory Screen'/>
                 </VStack>
             </VStack>
-                
         </ScrollView>
+        </SafeAreaView>
     )
   }
 
