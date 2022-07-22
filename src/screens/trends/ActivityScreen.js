@@ -19,7 +19,8 @@ import {
 import {
     StyleSheet,
     Dimensions,
-    SafeAreaView
+    SafeAreaView,
+    Linking
   } from 'react-native';
 
   import {
@@ -83,7 +84,8 @@ const ActivityScreen = ({navigation}) => {
         getUser();
         console.log('data',data)
         }, [])
-
+    
+    const link = 'https://www.nia.nih.gov/health/staying-physically-active-alzheimers#:~:text=Being%20active%20and%20getting%20exercise,regular%20toilet%20and%20sleep%20habits.'
     
     
     return(
@@ -91,7 +93,7 @@ const ActivityScreen = ({navigation}) => {
         <ScrollView>
             <ScreenTop backgroundColor='#94E577' screenTitle='Activity' statistic='7592' supportingText='steps today' progressNumber='.8' iconName='walking'/>
             <VStack mx='8'>
-                <ClickableTextBox textColor='white' backgroundColor='#517FF3' mainText='Activity Tip' secondaryText='Try some of these activities to keep John Active'/>
+                <ClickableTextBox textColor='white' backgroundColor='#517FF3' mainText='Activity Tip' secondaryText='Try some of these activities to keep John Active' externalLink={link}/>
                 <Box bgColor='white' borderRadius='2xl' my='5'>
                     {patientName && <Text style={{fontFamily:'Alata'}} color='black' mt='2' fontSize={24} alignSelf='center'>{patientName}'s Step Count</Text>}
                     <Box bgColor='white' borderRadius='2xl'>

@@ -74,13 +74,10 @@ import HomeCarousel from '../../components/HomeCarousel';
                             <Icon color='white' name='menu' size={25}></Icon>
                         </Box>
                     </Pressable>
-
-                    
                     <Center>
                                 <Pressable>
                                     <Text style={{fontFamily:'Alata'}} fontWeight={400} fontStyle="normal"  alignSelf='center' p='2' color='white' fontSize={27}>{date.toDateString()}</Text>
                                 </Pressable> 
-    
                     </Center>
                     </HStack>
                     <HStack alignSelf='center'>
@@ -110,7 +107,7 @@ import HomeCarousel from '../../components/HomeCarousel';
                     </Pressable>
                 </Box>
                     <VStack px='4' >
-                        <Pressable borderRadius='2xl' justifyContent='center' onPress={() => navigation.navigate('Overall Trends')} >
+                        <Pressable borderRadius='2xl' justifyContent='center' onPress={() => navigation.navigate('Fall Warning')} >
                             <Box bgColor='#F0402A' my='4' borderRadius='2xl'>
                                     <View style={{position:'absolute', right:50}} size={200}>
                                         <Vector8/>

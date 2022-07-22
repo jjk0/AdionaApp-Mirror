@@ -34,7 +34,7 @@ const ScreenTop = (props) => {
 
     return (
         <View>
-            <Box bgColor='#517FF3' borderBottomRadius={50}>
+            <Box bgColor={props.backgroundColor} borderBottomRadius={50}>
                 <View style={{position:'absolute', top:'-30%', left:'30%'}} size='90%' >
                     <Vector14/>
                 </View>

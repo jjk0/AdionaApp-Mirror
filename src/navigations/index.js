@@ -20,7 +20,8 @@ import HeartTips from '../screens/tips/HeartTips';
 import MobilityTips from '../screens/tips/MobilityTips';
 import Logout from '../components/Logout';
 import UserRegistration from '../screens/registration/UserRegistration';
-import WatchRegistration from '../screens/registration/WatchRegistration'
+import WatchRegistration from '../screens/registration/WatchRegistration';
+import FallWarning from '../screens/warning/FallWarning';
 import {useUserContext} from '../contexts/UserContext'
 
 import {
@@ -124,6 +125,7 @@ function App() {
       <Stack.Screen screenOptions={{headerShown: false}} name="Agitation Tips" component={AgitationTips} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Main Location" component={MainLocation} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Respiratory Screen" component={RespiratoryScreen} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Fall Warning" component={FallWarning} />
     </Stack.Navigator>
   </NavigationContainer>
 )}
