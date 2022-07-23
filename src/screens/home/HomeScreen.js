@@ -99,7 +99,7 @@ import HomeCarousel from '../../components/HomeCarousel';
                             </HStack>
                         </VStack>
                     </HStack>
-                    <Pressable borderRadius='100' mr='4' bgColor='white'  alignSelf='flex-end' onPress={() => navigation.navigate('Overall Trends')}>
+                    <Pressable borderRadius='100' mr='4' mb='-6' bgColor='white'  alignSelf='flex-end' onPress={() => navigation.navigate('Overall Trends')}>
                         <HStack alignSelf='center'  m='2'>
                             <Text style={{fontFamily:'Alata'}} p='1' color='black' fontSize={16}>See trends</Text>
                             <Icon name='arrow-right' size={28} alignSelf='flex-end' color='black'></Icon>
@@ -108,11 +108,11 @@ import HomeCarousel from '../../components/HomeCarousel';
                 </Box>
                     <VStack px='4' my='2' >
                         <Pressable borderRadius='2xl' justifyContent='center' onPress={() => navigation.navigate('Fall Warning')} >
-                            <Box bgColor='#F0402A' mt='40' mb='4' borderRadius='2xl'>
+                            <Box mt='10' bgColor='#F0402A' mb='4' borderRadius='2xl'>
                                     <View style={{position:'absolute', right:50}} size={200}>
                                         <Vector8/>
                                     </View>
-                                    <View style={{position:'absolute', top:-100, right:-40}} size={400}>
+                                    <View style={{position:'absolute', bottom:-200, right:0}} size={400}>
                                         <Vector9/>
                                     </View>
                                 <Box my="8" mx="4" width='90%'>
