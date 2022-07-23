@@ -198,12 +198,12 @@
 			sourceTree = "<group>";
 		};
 		F4E3350199674AA5ABA81B4C /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 

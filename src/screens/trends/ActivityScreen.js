@@ -23,6 +23,8 @@ import {
     Linking
   } from 'react-native';
 
+import ClickableWebViewTextbox from '../../components/ClickableWebViewTextbox';
+
   import {
     BarChart
   } from 'react-native-chart-kit'
@@ -91,9 +93,9 @@ const ActivityScreen = ({navigation}) => {
     return(
         <SafeAreaView style={{flex: 1}}>
         <ScrollView>
-            <ScreenTop backgroundColor='#94E577' screenTitle='Activity' statistic='7592' supportingText='steps today' progressNumber='.8' iconName='walking'/>
+            <ScreenTop backgroundColor='#577FC3' screenTitle='Activity' statistic='7592' supportingText='steps today' progressNumber='.8' iconName='walking'/>
             <VStack mx='8'>
-                <ClickableTextBox textColor='white' backgroundColor='#517FF3' mainText='Activity Tip' secondaryText='Try some of these activities to keep John Active' externalLink={link}/>
+                <ClickableWebViewTextbox textColor='white' backgroundColor='#517FF3' mainText='Activity Tip' secondaryText='Try some of these activities to keep John Active' externalLink={link}/>
                 <Box bgColor='white' borderRadius='2xl' my='5'>
                     {patientName && <Text style={{fontFamily:'Alata'}} color='black' mt='2' fontSize={24} alignSelf='center'>{patientName}'s Step Count</Text>}
                     <Box bgColor='white' borderRadius='2xl'>

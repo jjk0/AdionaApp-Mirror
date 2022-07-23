@@ -251,8 +251,8 @@ export const onDeleteUserInfo = /* GraphQL */ `
   }
 `;
 export const onCreateGeoFence = /* GraphQL */ `
-  subscription OnCreateGeoFence($owner: String) {
-    onCreateGeoFence(owner: $owner) {
+  subscription OnCreateGeoFence {
+    onCreateGeoFence {
       id
       owner
       lon
@@ -267,8 +267,8 @@ export const onCreateGeoFence = /* GraphQL */ `
   }
 `;
 export const onUpdateGeoFence = /* GraphQL */ `
-  subscription OnUpdateGeoFence($owner: String) {
-    onUpdateGeoFence(owner: $owner) {
+  subscription OnUpdateGeoFence {
+    onUpdateGeoFence {
       id
       owner
       lon
@@ -283,8 +283,8 @@ export const onUpdateGeoFence = /* GraphQL */ `
   }
 `;
 export const onDeleteGeoFence = /* GraphQL */ `
-  subscription OnDeleteGeoFence($owner: String) {
-    onDeleteGeoFence(owner: $owner) {
+  subscription OnDeleteGeoFence {
+    onDeleteGeoFence {
       id
       owner
       lon

@@ -80,7 +80,7 @@ import HomeCarousel from '../../components/HomeCarousel';
                                 </Pressable> 
                     </Center>
                     </HStack>
-                    <HStack alignSelf='center'>
+                    <HStack mb='10' alignSelf='center'>
                         <VStack>
                             <HStack>
                                 <Text style={{fontFamily:'Alata'}} alignSelf='center' width='30%' fontSize={20} color='white' flexWrap='wrap' m='2'>John's Wellness Score</Text>
@@ -99,16 +99,16 @@ import HomeCarousel from '../../components/HomeCarousel';
                             </HStack>
                         </VStack>
                     </HStack>
-                    <Pressable borderRadius='100' m='5' bgColor='white' height='10' width='1/3' alignSelf='flex-end' onPress={() => navigation.navigate('Overall Trends')}>
+                    <Pressable borderRadius='100' mr='4' bgColor='white'  alignSelf='flex-end' onPress={() => navigation.navigate('Overall Trends')}>
                         <HStack alignSelf='center'  m='2'>
-                            <Text style={{fontFamily:'Alata'}} m='0.5' color='black' fontSize='16'>See trends</Text>
+                            <Text style={{fontFamily:'Alata'}} p='1' color='black' fontSize={16}>See trends</Text>
                             <Icon name='arrow-right' size={28} alignSelf='flex-end' color='black'></Icon>
                         </HStack>
                     </Pressable>
                 </Box>
-                    <VStack px='4' >
+                    <VStack px='4' my='2' >
                         <Pressable borderRadius='2xl' justifyContent='center' onPress={() => navigation.navigate('Fall Warning')} >
-                            <Box bgColor='#F0402A' my='4' borderRadius='2xl'>
+                            <Box bgColor='#F0402A' mt='40' mb='4' borderRadius='2xl'>
                                     <View style={{position:'absolute', right:50}} size={200}>
                                         <Vector8/>
                                     </View>
@@ -125,9 +125,7 @@ import HomeCarousel from '../../components/HomeCarousel';
                                         <Text style={{fontFamily:'Alata'}} fontSize={20} color='white'>John might get agitated soon. Tap to see our recommendations</Text>
                                     </VStack>
                                 </Box>
-                            </Box>
-                                
-                                
+                            </Box> 
                         </Pressable>
 
                         <Pressable borderRadius='2xl' justifyContent='center' textAlign='center' width='100%' bg='#FFC684' mb='10' p='25' onPress={() => setShowAgitationModal(true)}>

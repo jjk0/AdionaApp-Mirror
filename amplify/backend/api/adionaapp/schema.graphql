@@ -53,9 +53,8 @@ enum GeoFenceRadius {
   FT_200
 }
  
-type GeoFence @model @auth(rules: [
-  {allow: owner, operations: [create, read, update, delete]}
-]) {
+type GeoFence @model @auth(rules: [{allow: public}])
+ {
   id: ID!
   owner: String! @index(name: "geoFenceByUser", queryField: "geoFenceByUser")
   lon: Float

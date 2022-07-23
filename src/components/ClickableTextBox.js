@@ -22,11 +22,10 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const ClickableTextBox = (props) => {
     const navigation = useNavigation();
 
-    const link = props.externalLink;
-    console.log('link', link)
+
 
     return (
-        <Pressable onPress={() => Linking.openURL(link)}>
+        <Pressable onPress={() => props.onPress()}>
             <Box borderRadius='2xl' mt='10' w='100%' bgColor={props.backgroundColor} pt='2'>
                 <Text style={{fontFamily:'Alata'}} mx='5' color={props.textColor} bold alignItems='flex-start' fontSize={25}>{props.mainText}</Text>
                 <Text style={{fontFamily:'Alata'}} mx='5' color={props.textColor} alignItems='flex-start' fontSize={25}>{props.secondaryText}</Text>
