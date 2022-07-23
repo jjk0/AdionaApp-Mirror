@@ -14,10 +14,6 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		DAE1B80EBCFB16015B8D595F /* libPods-AdionaApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD20ADF76420436AAC881C0 /* libPods-AdionaApp.a */; };
 		DFA6F0A29786A15C82FDC51D /* libPods-AdionaApp-AdionaAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6FAE092BB4493553AB0FBE /* libPods-AdionaApp-AdionaAppTests.a */; };
-		E5ACAE4C288065A3007D38CF /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5ACAE48288065A2007D38CF /* FontAwesome.ttf */; };
-		E5ACAE4D288065A3007D38CF /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5ACAE49288065A2007D38CF /* FontAwesome5_Solid.ttf */; };
-		E5ACAE4E288065A3007D38CF /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5ACAE4A288065A2007D38CF /* FontAwesome5_Regular.ttf */; };
-		E5ACAE4F288065A3007D38CF /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5ACAE4B288065A3007D38CF /* FontAwesome5_Brands.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -301,11 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				E5ACAE4D288065A3007D38CF /* FontAwesome5_Solid.ttf in Resources */,
-				E5ACAE4E288065A3007D38CF /* FontAwesome5_Regular.ttf in Resources */,
-				E5ACAE4F288065A3007D38CF /* FontAwesome5_Brands.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				E5ACAE4C288065A3007D38CF /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +506,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5BY4WL56KH;
+				DEVELOPMENT_TEAM = 7J4DV39T97;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = AdionaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -541,7 +533,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5BY4WL56KH;
+				DEVELOPMENT_TEAM = 7J4DV39T97;
 				INFOPLIST_FILE = AdionaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

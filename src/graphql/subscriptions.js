@@ -1,6 +1,264 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreatePatientWatchData = /* GraphQL */ `
+  subscription OnCreatePatientWatchData {
+    onCreatePatientWatchData {
+      patientId
+      time
+      steps
+      calories
+      heartRate
+      respiratoryRate
+      oxygenSaturation
+      tips {
+        lifestyleTip {
+          message
+          importance
+          link
+        }
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onUpdatePatientWatchData = /* GraphQL */ `
+  subscription OnUpdatePatientWatchData {
+    onUpdatePatientWatchData {
+      patientId
+      time
+      steps
+      calories
+      heartRate
+      respiratoryRate
+      oxygenSaturation
+      tips {
+        lifestyleTip {
+          message
+          importance
+          link
+        }
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onDeletePatientWatchData = /* GraphQL */ `
+  subscription OnDeletePatientWatchData {
+    onDeletePatientWatchData {
+      patientId
+      time
+      steps
+      calories
+      heartRate
+      respiratoryRate
+      oxygenSaturation
+      tips {
+        lifestyleTip {
+          message
+          importance
+          link
+        }
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onCreatePatientAgitation = /* GraphQL */ `
+  subscription OnCreatePatientAgitation {
+    onCreatePatientAgitation {
+      patientId
+      time
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onUpdatePatientAgitation = /* GraphQL */ `
+  subscription OnUpdatePatientAgitation {
+    onUpdatePatientAgitation {
+      patientId
+      time
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onDeletePatientAgitation = /* GraphQL */ `
+  subscription OnDeletePatientAgitation {
+    onDeletePatientAgitation {
+      patientId
+      time
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onCreatePatientTips = /* GraphQL */ `
+  subscription OnCreatePatientTips {
+    onCreatePatientTips {
+      patientId
+      tips {
+        patientId
+        tips {
+          patientId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onUpdatePatientTips = /* GraphQL */ `
+  subscription OnUpdatePatientTips {
+    onUpdatePatientTips {
+      patientId
+      tips {
+        patientId
+        tips {
+          patientId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onDeletePatientTips = /* GraphQL */ `
+  subscription OnDeletePatientTips {
+    onDeletePatientTips {
+      patientId
+      tips {
+        patientId
+        tips {
+          patientId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
 export const onCreateRegisteredInfo = /* GraphQL */ `
   subscription OnCreateRegisteredInfo {
     onCreateRegisteredInfo {

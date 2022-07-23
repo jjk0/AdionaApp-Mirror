@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   Box,
   Circle,
@@ -10,7 +10,7 @@ import {
   View,
   Center,
 } from 'native-base';
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 
 //clean up import code here
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -25,6 +25,7 @@ import ErrorModal from '../../components/ErrorModal';
 import {GradientCircularProgress} from 'react-native-circular-gradient-progress';
 
 import {DrawerContentScrollView} from '@react-navigation/drawer';
+import { Analytics, Auth } from 'aws-amplify';
 
 //may have to include in useState
 const date = new Date();
@@ -32,6 +33,24 @@ const date = new Date();
 const Home = ({navigation}) => {
   const [showAgitationModal, setShowAgitationModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
+
+  useEffect(() => {
+    if(Platform.OS === 'ios') {
+      Auth.currentAuthenticatedUser().then(userObj => {
+        Analytics.updateEndpoint({
+          userId: userObj.attributes.sub,
+        }).then(res => {
+          console.log("Successfully updated endpoint: ", res);
+        })
+        .catch(err => {
+          console.log("Error updating endpoint: ", err);
+        });
+      
+      }).catch(err => {
+        console.log(err);
+      });  
+    }
+  })
 
   return (
     <ScrollView style={styles.sectionContainer}>
@@ -44,7 +63,7 @@ const Home = ({navigation}) => {
       <Box bgColor="#517FF3" m="0">
         <Center>
           <HStack>
-            <Pressable>
+            <Pressable mt={Platform.OS === 'ios' ? '0' : '50'}>
               {/* <Icon name="menu" size={40} color="white" /> */}
               <Text alignSelf="center" color="white" fontSize={27}>
                 John's Wellness Score
@@ -197,8 +216,8 @@ const Home = ({navigation}) => {
 
         <HStack>
           <ScrollView
-            _contentContainerStyle={{w: '120%', paddingRight: 120}}
-            horizontal="true">
+            _contentContainerStyle={{w: '100%', paddingRight: 120}}
+            horizontal={true}>
             <HStack>
               <TallIconButton
                 iconTitle="brain"
