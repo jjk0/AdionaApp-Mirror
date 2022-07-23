@@ -22,6 +22,7 @@ import Logout from '../components/Logout';
 import UserRegistration from '../screens/registration/UserRegistration';
 import WatchRegistration from '../screens/registration/WatchRegistration';
 import FallWarning from '../screens/warning/FallWarning';
+import ProfilePage from '../screens/registration/ProfilePage';
 import {useUserContext} from '../contexts/UserContext'
 
 import {
@@ -64,11 +65,9 @@ function Root() {
         }}>
             <Drawer.Screen name="Home Screen" component={HomeScreen} />
             <Drawer.Screen name="Logout" component={Logout} />
-            <Drawer.Screen name="Profile" component={ActivityScreen} />
-            <Drawer.Screen name="Settings" component={HeartScreen} />
             <Drawer.Screen name="Register" component={UserRegistration} />
             <Drawer.Screen name="Watch Setup" component={WatchRegistration} />
-            {/* <Stack.Screen screenOptions={{headerShown: false}} name="Root" component={Root} /> */}
+            <Drawer.Screen name="Profile Page" component={ProfilePage} />
         </Drawer.Navigator>
     );
     }
