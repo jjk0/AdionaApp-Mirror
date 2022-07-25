@@ -17,7 +17,8 @@ import {
   } from 'native-base';
 import {
     StyleSheet,
-    Dimensions
+    Dimensions,
+    SafeAreaView,
   } from 'react-native';
 
   import {
@@ -101,12 +102,13 @@ const ActivityScreen = ({navigation}) => {
     
 
     return(
+      <SafeAreaView style={{flex: 1}}>
         <ScrollView>
             <ScreenTop backgroundColor='#517FF3' screenTitle='Heart Health' statistic='74' supportingText='avg bpm today' progressNumber='1' iconName='heartbeat'/>
             <VStack mx='8'>
                 <ClickableTextBox textColor='white' backgroundColor='#517FF3' mainText='Summary' secondaryText='Avg. Resting HR: 67 bpm Avg. HRV: 67ms'/>
                 <Box bgColor='white' borderRadius='2xl' my='5'>
-                    <Text color='black' my='2' fontSize={24} alignSelf='center'>John's Daily Heart Rate</Text>
+                    <Text style={{fontFamily:'Alata'}} color='black' my='2' fontSize={24} alignSelf='center'>John's Daily Heart Rate</Text>
                 <Box borderRadius='2xl' bgColor='white'>
                     {loaded && <VictoryChart width={350}>
                         {loaded && <VictoryLine data={hrData}
@@ -116,6 +118,7 @@ const ActivityScreen = ({navigation}) => {
                 </Box>
             </VStack>
         </ScrollView>
+        </SafeAreaView>
     )
 }
 export default ActivityScreen

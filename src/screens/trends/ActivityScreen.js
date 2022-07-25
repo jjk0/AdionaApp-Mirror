@@ -18,8 +18,12 @@ import {
   } from 'native-base';
 import {
     StyleSheet,
-    Dimensions
+    Dimensions,
+    SafeAreaView,
+    Linking
   } from 'react-native';
+
+import ClickableWebViewTextbox from '../../components/ClickableWebViewTextbox';
 
   import {
     BarChart
@@ -82,16 +86,18 @@ const ActivityScreen = ({navigation}) => {
         getUser();
         console.log('data',data)
         }, [])
-
+    
+    const link = 'https://www.nia.nih.gov/health/staying-physically-active-alzheimers#:~:text=Being%20active%20and%20getting%20exercise,regular%20toilet%20and%20sleep%20habits.'
     
     
     return(
+        <SafeAreaView style={{flex: 1}}>
         <ScrollView>
-            <ScreenTop backgroundColor='#94E577' screenTitle='Activity' statistic='7592' supportingText='steps today' progressNumber='.8' iconName='walking'/>
+            <ScreenTop backgroundColor='#577FC3' screenTitle='Activity' statistic='7592' supportingText='steps today' progressNumber='.8' iconName='walking'/>
             <VStack mx='8'>
-                <ClickableTextBox textColor='white' backgroundColor='#517FF3' mainText='Activity Tip' secondaryText='Try some of these activities to keep John Active'/>
+                <ClickableWebViewTextbox textColor='white' backgroundColor='#517FF3' mainText='Activity Tip' secondaryText='Try some of these activities to keep John Active' externalLink={link}/>
                 <Box bgColor='white' borderRadius='2xl' my='5'>
-                    {patientName && <Text color='black' mt='2' fontSize={24} alignSelf='center'>{patientName}'s Step Count</Text>}
+                    {patientName && <Text style={{fontFamily:'Alata'}} color='black' mt='2' fontSize={24} alignSelf='center'>{patientName}'s Step Count</Text>}
                     <Box bgColor='white' borderRadius='2xl'>
                         <VictoryChart width={350} theme={VictoryTheme.grayscale} domainPadding={{ x: 15 }}>
                             {/* <VictoryAxis crossAxis />
@@ -107,6 +113,7 @@ const ActivityScreen = ({navigation}) => {
                 </Box>
             </VStack>
     </ScrollView>
+    </SafeAreaView>
     )
 }
 export default ActivityScreen

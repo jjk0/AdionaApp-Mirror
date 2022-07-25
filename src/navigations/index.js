@@ -20,7 +20,9 @@ import HeartTips from '../screens/tips/HeartTips';
 import MobilityTips from '../screens/tips/MobilityTips';
 import Logout from '../components/Logout';
 import UserRegistration from '../screens/registration/UserRegistration';
-import WatchRegistration from '../screens/registration/WatchRegistration'
+import WatchRegistration from '../screens/registration/WatchRegistration';
+import FallWarning from '../screens/warning/FallWarning';
+import ProfilePage from '../screens/registration/ProfilePage';
 import {useUserContext} from '../contexts/UserContext'
 
 import {
@@ -49,7 +51,11 @@ const backToHomeRoutes = [
 
 function Root() {
     return (
-        <Drawer.Navigator name='Drawer' drawerContent={props => {
+        <Drawer.Navigator name='Drawer' screenOptions={{
+          headerShown: false,
+          headerTransparent:true
+        }}
+        drawerContent={props => {
           return (
             <DrawerContentScrollView {...props}>
               <DrawerItemList {...props} />
@@ -59,11 +65,9 @@ function Root() {
         }}>
             <Drawer.Screen name="Home Screen" component={HomeScreen} />
             <Drawer.Screen name="Logout" component={Logout} />
-            <Drawer.Screen name="Profile" component={ActivityScreen} />
-            <Drawer.Screen name="Settings" component={HeartScreen} />
             <Drawer.Screen name="Register" component={UserRegistration} />
             <Drawer.Screen name="Watch Setup" component={WatchRegistration} />
-            {/* <Stack.Screen screenOptions={{headerShown: false}} name="Root" component={Root} /> */}
+            <Drawer.Screen name="Profile Page" component={ProfilePage} />
         </Drawer.Navigator>
     );
     }
@@ -101,8 +105,8 @@ function App() {
   return (  
 
   <NavigationContainer>
-    <Stack.Navigator name="Stack" initialRouteName={initialRoute} options={{ title: 'Overview' }}>
-      <Stack.Screen screenOptions={{headerShown: false}} name="Root" component={Root}/>
+    <Stack.Navigator name="Stack" screenOptions={{headerShown:false, headerTransparent:true, navigationOptions: { header: null }}} headerMode={false} initialRouteName={initialRoute}>
+      <Stack.Screen name="Root" component={Root}/>
       <Stack.Screen screenOptions={{headerShown: false}} name="Register" component={UserRegistration} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Watch Setup" component={WatchRegistration} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Home" component={HomeScreen} />
@@ -120,6 +124,7 @@ function App() {
       <Stack.Screen screenOptions={{headerShown: false}} name="Agitation Tips" component={AgitationTips} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Main Location" component={MainLocation} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Respiratory Screen" component={RespiratoryScreen} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Fall Warning" component={FallWarning} />
     </Stack.Navigator>
   </NavigationContainer>
 )}

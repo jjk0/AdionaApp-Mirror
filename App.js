@@ -28,7 +28,7 @@ import {
   View,
 } from 'react-native';
 
-import { NativeBaseProvider, Box } from "native-base";
+import { NativeBaseProvider, Box, extendTheme } from "native-base";
 
 import {
   Colors,
@@ -70,10 +70,58 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const theme = extendTheme({
+    // components: {
+    //   Text: {
+    //     baseStyle: {
+    //       fontFamily: 'Alata',
+    //     },
+    //   },
+    // },
+    fontConfig: {
+      Alata: {
+      100: {
+        normal: 'Alata',
+      },
+      200: {
+        normal: 'Alata',
+      },
+      300: {
+        normal: 'Alata',
+      },
+      400: {
+        normal: "Alata",
+      },
+      500: {
+        normal: 'Alata',
+      },
+      600: {
+        normal: 'Alata',
+      },
+      700: {
+        normal: 'Alata',
+      },
+      800: {
+        normal: 'Alata',
+      },
+      900: {
+        normal: 'Alata',  
+      },
+    },
+  
+    // Make sure values below matches any of the keys in `fontConfig`
+    fonts: {
+      heading: 'Alata',
+      body: 'Alata',
+      mono: 'Alata',
+    }
+  }});
+  
+
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <UserContext>
-        <NativeBaseProvider>
+        <NativeBaseProvider theme={theme}>
           <Navigations></Navigations>
         </NativeBaseProvider>
       </UserContext>

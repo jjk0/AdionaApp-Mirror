@@ -17,6 +17,7 @@ import {
   } from 'native-base';
 import {
     StyleSheet,
+    SafeAreaView
   } from 'react-native';
 
 
@@ -81,13 +82,14 @@ import { UserInfo,ActivityInfo } from '../../models';
     
     
     return (
+        <SafeAreaView style={{flex: 1}}>
         <ScrollView style={styles.sectionContainer}>
             <Box bgColor='#517FF3' m='0'>
                 <BackButton/>
                 <Center>
                     <HStack>
                         <VStack py='10' alignSelf='center'>
-                        <Text ml='17' w='200' fontSize={20} h='10' color='white'>John's Wellness Score</Text>
+                        <Text style={{fontFamily:'Alata'}} ml='17' w='200' fontSize={20} h='10' color='white'>John's Wellness Score</Text>
                                 <HStack>
                                     <Circle size={250} bg='white'>
                                         <ProgressCircle
@@ -98,7 +100,7 @@ import { UserInfo,ActivityInfo } from '../../models';
                                             shadowColor="#fff"
                                             bgColor="#FFFFFF"
                                         >
-                                            <Text alignSelf='center' color='blue' fontSize='48'>{72}</Text>
+                                            <Text style={{fontFamily:'Alata'}} alignSelf='center' color='blue' fontSize='48'>{72}</Text>
                                         </ProgressCircle>
                                     </Circle>
                                 </HStack>
@@ -116,8 +118,8 @@ import { UserInfo,ActivityInfo } from '../../models';
                     <TrendBarIcon title='Respiratory' iconTitle='lungs' progressText='Metrics look normal' progressNumber='.9' iconColor="#84C1FF" navigateToPage='Respiratory Screen'/>
                 </VStack>
             </VStack>
-                
         </ScrollView>
+        </SafeAreaView>
     )
   }
 
