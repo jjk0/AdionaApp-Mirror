@@ -10254,10 +10254,10 @@
     "prop-types" "^15.7.2"
     "yargs" "^16.1.1"
 
-"react-native-webview@^11.22.7":
-  "integrity" "sha512-IYMElB4fFS6S8LbhivAQfAlW95HorqCK4T3mFKmWsV24iPVTfYoaiA1TNzkRnjw2mMgXDk/QnMeH9IbjBVs1Ag=="
-  "resolved" "https://registry.npmjs.org/react-native-webview/-/react-native-webview-11.22.7.tgz"
-  "version" "11.22.7"
+"react-native-webview@^11.23.0":
+  "integrity" "sha512-mGrgsMnYcQONvQy59xpBn87sKqkCsSkqIDRo+c2Ov4ISYl1j90wFBs+qViVJRWdoNHVuoCAZ4nZkJ65mhDpHhA=="
+  "resolved" "https://registry.npmjs.org/react-native-webview/-/react-native-webview-11.23.0.tgz"
+  "version" "11.23.0"
   dependencies:
     "escape-string-regexp" "2.0.0"
     "invariant" "2.2.4"
