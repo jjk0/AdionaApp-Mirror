@@ -2,9 +2,9 @@
 // this is an auto generated file. This will be overwritten
 
 export const getPatientWatchData = /* GraphQL */ `
-  query GetPatientWatchData($patientId: ID!, $time: AWSDateTime!) {
-    getPatientWatchData(patientId: $patientId, time: $time) {
-      patientId
+  query GetPatientWatchData($id: ID!, $time: AWSDateTime!) {
+    getPatientWatchData(id: $id, time: $time) {
+      id
       time
       steps
       calories
@@ -48,7 +48,7 @@ export const getPatientWatchData = /* GraphQL */ `
 `;
 export const listPatientWatchData = /* GraphQL */ `
   query ListPatientWatchData(
-    $patientId: ID
+    $id: ID
     $time: ModelStringKeyConditionInput
     $filter: ModelPatientWatchDataFilterInput
     $limit: Int
@@ -56,7 +56,7 @@ export const listPatientWatchData = /* GraphQL */ `
     $sortDirection: ModelSortDirection
   ) {
     listPatientWatchData(
-      patientId: $patientId
+      id: $id
       time: $time
       filter: $filter
       limit: $limit
@@ -64,13 +64,40 @@ export const listPatientWatchData = /* GraphQL */ `
       sortDirection: $sortDirection
     ) {
       items {
-        patientId
+        id
         time
         steps
         calories
         heartRate
         respiratoryRate
         oxygenSaturation
+        tips {
+          lifestyleTip {
+            message
+            importance
+            link
+          }
+          sleepTip {
+            message
+            importance
+            link
+          }
+          hrTip {
+            message
+            importance
+            link
+          }
+          respiratoryTip {
+            message
+            importance
+            link
+          }
+          generalTip {
+            message
+            importance
+            link
+          }
+        }
         createdAt
         updatedAt
         _version
@@ -96,13 +123,40 @@ export const syncPatientWatchData = /* GraphQL */ `
       lastSync: $lastSync
     ) {
       items {
-        patientId
+        id
         time
         steps
         calories
         heartRate
         respiratoryRate
         oxygenSaturation
+        tips {
+          lifestyleTip {
+            message
+            importance
+            link
+          }
+          sleepTip {
+            message
+            importance
+            link
+          }
+          hrTip {
+            message
+            importance
+            link
+          }
+          respiratoryTip {
+            message
+            importance
+            link
+          }
+          generalTip {
+            message
+            importance
+            link
+          }
+        }
         createdAt
         updatedAt
         _version
@@ -115,9 +169,9 @@ export const syncPatientWatchData = /* GraphQL */ `
   }
 `;
 export const getPatientAgitation = /* GraphQL */ `
-  query GetPatientAgitation($patientId: ID!, $time: AWSDateTime!) {
-    getPatientAgitation(patientId: $patientId, time: $time) {
-      patientId
+  query GetPatientAgitation($id: ID!, $time: AWSDateTime!) {
+    getPatientAgitation(id: $id, time: $time) {
+      id
       time
       createdAt
       updatedAt
@@ -129,7 +183,7 @@ export const getPatientAgitation = /* GraphQL */ `
 `;
 export const listPatientAgitations = /* GraphQL */ `
   query ListPatientAgitations(
-    $patientId: ID
+    $id: ID
     $time: ModelStringKeyConditionInput
     $filter: ModelPatientAgitationFilterInput
     $limit: Int
@@ -137,7 +191,7 @@ export const listPatientAgitations = /* GraphQL */ `
     $sortDirection: ModelSortDirection
   ) {
     listPatientAgitations(
-      patientId: $patientId
+      id: $id
       time: $time
       filter: $filter
       limit: $limit
@@ -145,7 +199,7 @@ export const listPatientAgitations = /* GraphQL */ `
       sortDirection: $sortDirection
     ) {
       items {
-        patientId
+        id
         time
         createdAt
         updatedAt
@@ -172,7 +226,7 @@ export const syncPatientAgitations = /* GraphQL */ `
       lastSync: $lastSync
     ) {
       items {
-        patientId
+        id
         time
         createdAt
         updatedAt
@@ -186,24 +240,35 @@ export const syncPatientAgitations = /* GraphQL */ `
   }
 `;
 export const getPatientTips = /* GraphQL */ `
-  query GetPatientTips($patientId: ID!) {
-    getPatientTips(patientId: $patientId) {
-      patientId
+  query GetPatientTips($id: ID!) {
+    getPatientTips(id: $id) {
+      id
       tips {
-        patientId
-        tips {
-          patientId
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+        lifestyleTip {
+          message
+          importance
+          link
         }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
       }
       createdAt
       updatedAt
@@ -215,28 +280,47 @@ export const getPatientTips = /* GraphQL */ `
 `;
 export const listPatientTips = /* GraphQL */ `
   query ListPatientTips(
-    $patientId: ID
+    $id: ID
     $filter: ModelPatientTipsFilterInput
     $limit: Int
     $nextToken: String
     $sortDirection: ModelSortDirection
   ) {
     listPatientTips(
-      patientId: $patientId
+      id: $id
       filter: $filter
       limit: $limit
       nextToken: $nextToken
       sortDirection: $sortDirection
     ) {
       items {
-        patientId
+        id
         tips {
-          patientId
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+          lifestyleTip {
+            message
+            importance
+            link
+          }
+          sleepTip {
+            message
+            importance
+            link
+          }
+          hrTip {
+            message
+            importance
+            link
+          }
+          respiratoryTip {
+            message
+            importance
+            link
+          }
+          generalTip {
+            message
+            importance
+            link
+          }
         }
         createdAt
         updatedAt
@@ -263,14 +347,33 @@ export const syncPatientTips = /* GraphQL */ `
       lastSync: $lastSync
     ) {
       items {
-        patientId
+        id
         tips {
-          patientId
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+          lifestyleTip {
+            message
+            importance
+            link
+          }
+          sleepTip {
+            message
+            importance
+            link
+          }
+          hrTip {
+            message
+            importance
+            link
+          }
+          respiratoryTip {
+            message
+            importance
+            link
+          }
+          generalTip {
+            message
+            importance
+            link
+          }
         }
         createdAt
         updatedAt
@@ -445,7 +548,6 @@ export const getGeoFence = /* GraphQL */ `
   query GetGeoFence($id: ID!) {
     getGeoFence(id: $id) {
       id
-      owner
       lon
       lat
       radius
@@ -454,6 +556,7 @@ export const getGeoFence = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
@@ -466,7 +569,6 @@ export const listGeoFences = /* GraphQL */ `
     listGeoFences(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        owner
         lon
         lat
         radius
@@ -475,6 +577,7 @@ export const listGeoFences = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        owner
       }
       nextToken
       startedAt
@@ -496,7 +599,6 @@ export const syncGeoFences = /* GraphQL */ `
     ) {
       items {
         id
-        owner
         lon
         lat
         radius
@@ -505,38 +607,7 @@ export const syncGeoFences = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const geoFenceByUser = /* GraphQL */ `
-  query GeoFenceByUser(
-    $owner: String!
-    $sortDirection: ModelSortDirection
-    $filter: ModelGeoFenceFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    geoFenceByUser(
-      owner: $owner
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
         owner
-        lon
-        lat
-        radius
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       nextToken
       startedAt

@@ -40,11 +40,8 @@ const AddGeoFence = ({navigation, route}) => {
   };
 
   const addGeofence = async () => {
-    const user = await Auth.currentAuthenticatedUser();
-    alert(user.attributes.sub);
     DataStore.save(
       new GeoFence({
-        owner: user.attributes.sub,
         lon: lng,
         lat,
         radius,

@@ -24,8 +24,9 @@ type PatientTip {
   generalTip: Tip
 }
 
+
 type PatientWatchData @model {
-  patientId: ID! @primaryKey(sortKeyFields: ["time"])
+  id: ID! @primaryKey(sortKeyFields: ["time"])
   time: AWSDateTime!
   steps: Int
   calories: Int
@@ -37,14 +38,14 @@ type PatientWatchData @model {
 
 
 type PatientAgitation @model {
-  patientId: ID! @primaryKey(sortKeyFields: ["time"])
+  id: ID! @primaryKey(sortKeyFields: ["time"])
   time: AWSDateTime!
 }
 
 
 type PatientTips @model {
-    patientId: ID! @primaryKey
-    tips: PatientTips
+  id: ID! @primaryKey
+  tips: PatientTip
 }
 
 
@@ -68,7 +69,6 @@ type GeoFence @model @auth(rules: [
   {allow: owner, operations: [create, read, update, delete]}
 ]) {
   id: ID!
-  owner: String! @index(name: "geoFenceByUser", queryField: "geoFenceByUser")
   lon: Float
   lat:  Float
   radius: GeoFenceRadius

@@ -7,7 +7,7 @@ export const createPatientWatchData = /* GraphQL */ `
     $condition: ModelPatientWatchDataConditionInput
   ) {
     createPatientWatchData(input: $input, condition: $condition) {
-      patientId
+      id
       time
       steps
       calories
@@ -55,7 +55,7 @@ export const updatePatientWatchData = /* GraphQL */ `
     $condition: ModelPatientWatchDataConditionInput
   ) {
     updatePatientWatchData(input: $input, condition: $condition) {
-      patientId
+      id
       time
       steps
       calories
@@ -103,7 +103,7 @@ export const deletePatientWatchData = /* GraphQL */ `
     $condition: ModelPatientWatchDataConditionInput
   ) {
     deletePatientWatchData(input: $input, condition: $condition) {
-      patientId
+      id
       time
       steps
       calories
@@ -151,7 +151,7 @@ export const createPatientAgitation = /* GraphQL */ `
     $condition: ModelPatientAgitationConditionInput
   ) {
     createPatientAgitation(input: $input, condition: $condition) {
-      patientId
+      id
       time
       createdAt
       updatedAt
@@ -167,7 +167,7 @@ export const updatePatientAgitation = /* GraphQL */ `
     $condition: ModelPatientAgitationConditionInput
   ) {
     updatePatientAgitation(input: $input, condition: $condition) {
-      patientId
+      id
       time
       createdAt
       updatedAt
@@ -183,7 +183,7 @@ export const deletePatientAgitation = /* GraphQL */ `
     $condition: ModelPatientAgitationConditionInput
   ) {
     deletePatientAgitation(input: $input, condition: $condition) {
-      patientId
+      id
       time
       createdAt
       updatedAt
@@ -199,22 +199,33 @@ export const createPatientTips = /* GraphQL */ `
     $condition: ModelPatientTipsConditionInput
   ) {
     createPatientTips(input: $input, condition: $condition) {
-      patientId
+      id
       tips {
-        patientId
-        tips {
-          patientId
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+        lifestyleTip {
+          message
+          importance
+          link
         }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
       }
       createdAt
       updatedAt
@@ -230,22 +241,33 @@ export const updatePatientTips = /* GraphQL */ `
     $condition: ModelPatientTipsConditionInput
   ) {
     updatePatientTips(input: $input, condition: $condition) {
-      patientId
+      id
       tips {
-        patientId
-        tips {
-          patientId
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+        lifestyleTip {
+          message
+          importance
+          link
         }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
       }
       createdAt
       updatedAt
@@ -261,22 +283,33 @@ export const deletePatientTips = /* GraphQL */ `
     $condition: ModelPatientTipsConditionInput
   ) {
     deletePatientTips(input: $input, condition: $condition) {
-      patientId
+      id
       tips {
-        patientId
-        tips {
-          patientId
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+        lifestyleTip {
+          message
+          importance
+          link
         }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
       }
       createdAt
       updatedAt
@@ -425,7 +458,6 @@ export const createGeoFence = /* GraphQL */ `
   ) {
     createGeoFence(input: $input, condition: $condition) {
       id
-      owner
       lon
       lat
       radius
@@ -434,6 +466,7 @@ export const createGeoFence = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
@@ -444,7 +477,6 @@ export const updateGeoFence = /* GraphQL */ `
   ) {
     updateGeoFence(input: $input, condition: $condition) {
       id
-      owner
       lon
       lat
       radius
@@ -453,6 +485,7 @@ export const updateGeoFence = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
@@ -463,7 +496,6 @@ export const deleteGeoFence = /* GraphQL */ `
   ) {
     deleteGeoFence(input: $input, condition: $condition) {
       id
-      owner
       lon
       lat
       radius
@@ -472,6 +504,7 @@ export const deleteGeoFence = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;

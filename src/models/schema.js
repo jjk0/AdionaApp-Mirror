@@ -118,13 +118,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "patientId": {
-                    "name": "patientId",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
                 "time": {
                     "name": "time",
                     "isArray": false,
@@ -204,7 +197,7 @@ export const schema = {
                     "type": "key",
                     "properties": {
                         "fields": [
-                            "patientId",
+                            "id",
                             "time"
                         ]
                     }
@@ -216,13 +209,6 @@ export const schema = {
             "fields": {
                 "id": {
                     "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "patientId": {
-                    "name": "patientId",
                     "isArray": false,
                     "type": "ID",
                     "isRequired": true,
@@ -263,7 +249,7 @@ export const schema = {
                     "type": "key",
                     "properties": {
                         "fields": [
-                            "patientId",
+                            "id",
                             "time"
                         ]
                     }
@@ -280,11 +266,13 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "patientId": {
-                    "name": "patientId",
+                "tips": {
+                    "name": "tips",
                     "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
+                    "type": {
+                        "nonModel": "PatientTip"
+                    },
+                    "isRequired": false,
                     "attributes": []
                 },
                 "createdAt": {
@@ -315,7 +303,7 @@ export const schema = {
                     "type": "key",
                     "properties": {
                         "fields": [
-                            "patientId"
+                            "id"
                         ]
                     }
                 }
@@ -425,13 +413,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "owner": {
-                    "name": "owner",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
                 "lon": {
                     "name": "lon",
                     "isArray": false,
@@ -478,16 +459,6 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
-                },
-                {
-                    "type": "key",
-                    "properties": {
-                        "name": "geoFenceByUser",
-                        "queryField": "geoFenceByUser",
-                        "fields": [
-                            "owner"
-                        ]
-                    }
                 },
                 {
                     "type": "auth",
@@ -599,5 +570,5 @@ export const schema = {
             }
         }
     },
-    "version": "1029674e9a8de87e97318d175a4bfde5"
+    "version": "8c383e95e6d43a59906afc4a60fb75b7"
 };

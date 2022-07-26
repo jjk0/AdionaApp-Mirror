@@ -64,7 +64,6 @@ export declare class RegisteredInfo {
 
 export declare class PatientWatchData {
   readonly id: string;
-  readonly patientId: string;
   readonly time: string;
   readonly steps?: number | null;
   readonly calories?: number | null;
@@ -80,7 +79,6 @@ export declare class PatientWatchData {
 
 export declare class PatientAgitation {
   readonly id: string;
-  readonly patientId: string;
   readonly time: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
@@ -90,7 +88,7 @@ export declare class PatientAgitation {
 
 export declare class PatientTips {
   readonly id: string;
-  readonly patientId: string;
+  readonly tips?: PatientTip | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<PatientTips, PatientTipsMetaData>);
@@ -113,7 +111,6 @@ export declare class UserInfo {
 
 export declare class GeoFence {
   readonly id: string;
-  readonly owner: string;
   readonly lon?: number | null;
   readonly lat?: number | null;
   readonly radius?: GeoFenceRadius | keyof typeof GeoFenceRadius | null;

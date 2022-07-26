@@ -4,7 +4,7 @@
 export const onCreatePatientWatchData = /* GraphQL */ `
   subscription OnCreatePatientWatchData {
     onCreatePatientWatchData {
-      patientId
+      id
       time
       steps
       calories
@@ -49,7 +49,7 @@ export const onCreatePatientWatchData = /* GraphQL */ `
 export const onUpdatePatientWatchData = /* GraphQL */ `
   subscription OnUpdatePatientWatchData {
     onUpdatePatientWatchData {
-      patientId
+      id
       time
       steps
       calories
@@ -94,7 +94,7 @@ export const onUpdatePatientWatchData = /* GraphQL */ `
 export const onDeletePatientWatchData = /* GraphQL */ `
   subscription OnDeletePatientWatchData {
     onDeletePatientWatchData {
-      patientId
+      id
       time
       steps
       calories
@@ -139,7 +139,7 @@ export const onDeletePatientWatchData = /* GraphQL */ `
 export const onCreatePatientAgitation = /* GraphQL */ `
   subscription OnCreatePatientAgitation {
     onCreatePatientAgitation {
-      patientId
+      id
       time
       createdAt
       updatedAt
@@ -152,7 +152,7 @@ export const onCreatePatientAgitation = /* GraphQL */ `
 export const onUpdatePatientAgitation = /* GraphQL */ `
   subscription OnUpdatePatientAgitation {
     onUpdatePatientAgitation {
-      patientId
+      id
       time
       createdAt
       updatedAt
@@ -165,7 +165,7 @@ export const onUpdatePatientAgitation = /* GraphQL */ `
 export const onDeletePatientAgitation = /* GraphQL */ `
   subscription OnDeletePatientAgitation {
     onDeletePatientAgitation {
-      patientId
+      id
       time
       createdAt
       updatedAt
@@ -178,22 +178,33 @@ export const onDeletePatientAgitation = /* GraphQL */ `
 export const onCreatePatientTips = /* GraphQL */ `
   subscription OnCreatePatientTips {
     onCreatePatientTips {
-      patientId
+      id
       tips {
-        patientId
-        tips {
-          patientId
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+        lifestyleTip {
+          message
+          importance
+          link
         }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
       }
       createdAt
       updatedAt
@@ -206,22 +217,33 @@ export const onCreatePatientTips = /* GraphQL */ `
 export const onUpdatePatientTips = /* GraphQL */ `
   subscription OnUpdatePatientTips {
     onUpdatePatientTips {
-      patientId
+      id
       tips {
-        patientId
-        tips {
-          patientId
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+        lifestyleTip {
+          message
+          importance
+          link
         }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
       }
       createdAt
       updatedAt
@@ -234,22 +256,33 @@ export const onUpdatePatientTips = /* GraphQL */ `
 export const onDeletePatientTips = /* GraphQL */ `
   subscription OnDeletePatientTips {
     onDeletePatientTips {
-      patientId
+      id
       tips {
-        patientId
-        tips {
-          patientId
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+        lifestyleTip {
+          message
+          importance
+          link
         }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
       }
       createdAt
       updatedAt
@@ -377,7 +410,6 @@ export const onCreateGeoFence = /* GraphQL */ `
   subscription OnCreateGeoFence($owner: String) {
     onCreateGeoFence(owner: $owner) {
       id
-      owner
       lon
       lat
       radius
@@ -386,6 +418,7 @@ export const onCreateGeoFence = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
@@ -393,7 +426,6 @@ export const onUpdateGeoFence = /* GraphQL */ `
   subscription OnUpdateGeoFence($owner: String) {
     onUpdateGeoFence(owner: $owner) {
       id
-      owner
       lon
       lat
       radius
@@ -402,6 +434,7 @@ export const onUpdateGeoFence = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
@@ -409,7 +442,6 @@ export const onDeleteGeoFence = /* GraphQL */ `
   subscription OnDeleteGeoFence($owner: String) {
     onDeleteGeoFence(owner: $owner) {
       id
-      owner
       lon
       lat
       radius
@@ -418,6 +450,7 @@ export const onDeleteGeoFence = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
