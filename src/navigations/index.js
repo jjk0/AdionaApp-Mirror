@@ -25,6 +25,9 @@ import Logout from '../components/Logout';
 import UserRegistration from '../screens/registration/UserRegistration';
 import WatchRegistration from '../screens/registration/WatchRegistration';
 import {useUserContext} from '../contexts/UserContext';
+import FallWarning from '../screens/warning/FallWarning';
+import ProfilePage from '../screens/registration/ProfilePage';
+import {useUserContext} from '../contexts/UserContext'
 
 import {
   createDrawerNavigator,

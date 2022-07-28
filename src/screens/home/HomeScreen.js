@@ -1,16 +1,32 @@
 import React, {useState, useEffect} from 'react';
 import {
-  Box,
-  Circle,
-  ScrollView,
-  VStack,
-  HStack,
-  Text,
-  Pressable,
-  View,
-  Center,
-} from 'native-base';
-import {Platform, StyleSheet} from 'react-native';
+    Box,
+    Button, 
+    Circle,
+    Card,
+    ScrollView,
+    VStack,
+    Heading,
+    Text,
+    HStack,
+    Pressable,
+    Skeleton,
+    View,
+    Image,
+    Center,
+    ChevronRightIcon,
+    Modal
+  } from 'native-base';
+import {
+    StyleSheet,
+    Dimensions,
+    SafeAreaView,
+    Text as OGText,
+  } from 'react-native';
+
+
+
+import Carousel from 'react-native-snap-carousel';
 
 //clean up import code here
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';

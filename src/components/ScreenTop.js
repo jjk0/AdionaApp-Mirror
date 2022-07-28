@@ -34,7 +34,7 @@ const ScreenTop = (props) => {
 
     return (
         <View>
-            <Box bgColor='#517FF3'>
+            <Box bgColor={props.backgroundColor} borderBottomRadius={50}>
                 <View style={{position:'absolute', top:'-30%', left:'30%'}} size='90%' >
                     <Vector14/>
                 </View>
@@ -44,17 +44,23 @@ const ScreenTop = (props) => {
                     <BackButton/>
                     <Center mb='-3'>
                         <VStack>
-                            <Text alignSelf='center' width='100%' color='white' fontSize={40}>{props.screenTitle}</Text>
-                            <HStack>
-                                <FontAwesome5 name={props.iconName} size={150} color='white' />
+                            <Text style={{fontFamily:'Alata'}} alignSelf='center' width='100%' color='white' fontSize={40}>{props.screenTitle}</Text>
+                            <Center>
+                            <HStack mb='10'>
+                                    <Center mt='2' alignSelf='center' alignContent='center'>
+                                        <FontAwesome5 name={props.iconName} size={150} color='white' />
+                                    </Center>
+                                {props.statistic && 
                                 <VStack ml='10%' mt='10%'>
-                                    <Text width='100%' color='white' fontSize={50}>{props.statistic}</Text>
-                                    <Text width='100%' color='white' fontSize={20}>{props.supportingText}</Text>
+                                    <Text style={{fontFamily:'Alata'}} width='100%' color='white' fontSize={50}>{props.statistic}</Text>
+                                    <Text style={{fontFamily:'Alata'}} width='100%' color='white' fontSize={20}>{props.supportingText}</Text>      
                                 </VStack>
+                                }
                             </HStack>
-                            {!props.progressNumber &&
+                            </Center>
+                            {props.bottomText &&
                             <Box mt='10' mb='-1' borderRadius='16' bgColor='white'>
-                                <Text fontSize={24} alignSelf='center'>{props.bottomText}</Text>
+                                <Text style={{fontFamily:'Alata'}} fontSize={24} alignSelf='center'>{props.bottomText}</Text>
                             </Box>}
                         </VStack>
                     </Center>

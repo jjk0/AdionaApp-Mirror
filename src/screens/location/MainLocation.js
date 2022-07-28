@@ -93,7 +93,6 @@ const MainLocation = ({navigation}) => {
             message:
               'we need to access you location ' +
               'in order to give our best service.',
-
             buttonNegative: 'Ask Me Later',
             buttonPositive: 'Allow',
           },
