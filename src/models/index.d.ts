@@ -27,7 +27,6 @@ type RegisteredInfoMetaData = {
 }
 
 type PatientWatchDataMetaData = {
-<<<<<<< HEAD
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
@@ -37,9 +36,6 @@ type PatientAgitationMetaData = {
 
 type PatientTipsMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
-=======
-  readOnlyFields: 'updatedAt';
->>>>>>> 0ee0c82e4b35bdb70cfd7458280f64c1fcd69a27
 }
 
 type UserInfoMetaData = {
@@ -69,30 +65,17 @@ export declare class RegisteredInfo {
 export declare class PatientWatchData {
   readonly id: string;
   readonly time: string;
-<<<<<<< HEAD
   readonly steps?: number | null;
   readonly calories?: number | null;
   readonly heartRate?: number | null;
   readonly respiratoryRate?: number | null;
   readonly oxygenSaturation?: number | null;
-  readonly tips?: PatientTip | null;
   readonly createdAt?: string | null;
-=======
-  readonly patientId: string;
-  readonly steps?: number | null;
-  readonly calories?: number | null;
-  readonly heart_rate?: number | null;
-  readonly respiratoryRate?: number | null;
-  readonly oxygenSaturation?: number | null;
-  readonly tips?: PatientTip | null;
-  readonly createdAt: string;
->>>>>>> 0ee0c82e4b35bdb70cfd7458280f64c1fcd69a27
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<PatientWatchData, PatientWatchDataMetaData>);
   static copyOf(source: PatientWatchData, mutator: (draft: MutableModel<PatientWatchData, PatientWatchDataMetaData>) => MutableModel<PatientWatchData, PatientWatchDataMetaData> | void): PatientWatchData;
 }
 
-<<<<<<< HEAD
 export declare class PatientAgitation {
   readonly id: string;
   readonly time: string;
@@ -111,8 +94,6 @@ export declare class PatientTips {
   static copyOf(source: PatientTips, mutator: (draft: MutableModel<PatientTips, PatientTipsMetaData>) => MutableModel<PatientTips, PatientTipsMetaData> | void): PatientTips;
 }
 
-=======
->>>>>>> 0ee0c82e4b35bdb70cfd7458280f64c1fcd69a27
 export declare class UserInfo {
   readonly id: string;
   readonly username?: string | null;

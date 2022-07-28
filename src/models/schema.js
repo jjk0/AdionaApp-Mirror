@@ -125,16 +125,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-<<<<<<< HEAD
-=======
-                "patientId": {
-                    "name": "patientId",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
->>>>>>> 0ee0c82e4b35bdb70cfd7458280f64c1fcd69a27
                 "steps": {
                     "name": "steps",
                     "isArray": false,
@@ -149,13 +139,8 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-<<<<<<< HEAD
                 "heartRate": {
                     "name": "heartRate",
-=======
-                "heart_rate": {
-                    "name": "heart_rate",
->>>>>>> 0ee0c82e4b35bdb70cfd7458280f64c1fcd69a27
                     "isArray": false,
                     "type": "Int",
                     "isRequired": false,
@@ -175,16 +160,6 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "tips": {
-                    "name": "tips",
-                    "isArray": false,
-                    "type": {
-                        "nonModel": "PatientTip"
-                    },
-                    "isRequired": false,
-                    "attributes": []
-                },
-<<<<<<< HEAD
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -217,6 +192,22 @@ export const schema = {
                             "time"
                         ]
                     }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -245,16 +236,6 @@ export const schema = {
                     "attributes": [],
                     "isReadOnly": true
                 },
-=======
-
-                "createdAt": {
-                    "name": "createdAt",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
->>>>>>> 0ee0c82e4b35bdb70cfd7458280f64c1fcd69a27
                 "updatedAt": {
                     "name": "updatedAt",
                     "isArray": false,
@@ -265,11 +246,7 @@ export const schema = {
                 }
             },
             "syncable": true,
-<<<<<<< HEAD
             "pluralName": "PatientAgitations",
-=======
-            "pluralName": "PatientWatchData",
->>>>>>> 0ee0c82e4b35bdb70cfd7458280f64c1fcd69a27
             "attributes": [
                 {
                     "type": "model",
@@ -279,9 +256,24 @@ export const schema = {
                     "type": "key",
                     "properties": {
                         "fields": [
-<<<<<<< HEAD
                             "id",
                             "time"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
                         ]
                     }
                 }
@@ -329,25 +321,28 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
-=======
-                            "time"
-                        ]
-                    }
->>>>>>> 0ee0c82e4b35bdb70cfd7458280f64c1fcd69a27
                 },
                 {
                     "type": "key",
                     "properties": {
-<<<<<<< HEAD
                         "fields": [
                             "id"
-=======
-                        "name": "getDataByPatient",
-                        "queryField": "getDataByPatient",
-                        "fields": [
-                            "patientId",
-                            "createdAt"
->>>>>>> 0ee0c82e4b35bdb70cfd7458280f64c1fcd69a27
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
                         ]
                     }
                 }
@@ -611,10 +606,5 @@ export const schema = {
             }
         }
     },
-<<<<<<< HEAD
-    "version": "8c383e95e6d43a59906afc4a60fb75b7"
-=======
-    "version": "0217b720358effe5892c79fa9911328b"
-
->>>>>>> 0ee0c82e4b35bdb70cfd7458280f64c1fcd69a27
+    "version": "3757c6916ce01681da4ebf9abb617d31"
 };

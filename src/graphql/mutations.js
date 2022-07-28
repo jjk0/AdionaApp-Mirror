@@ -1,186 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createPatientWatchData = /* GraphQL */ `
-  mutation CreatePatientWatchData(
-    $input: CreatePatientWatchDataInput!
-    $condition: ModelPatientWatchDataConditionInput
-  ) {
-    createPatientWatchData(input: $input, condition: $condition) {
-<<<<<<< HEAD
-      id
-      time
-      steps
-      calories
-      heartRate
-      respiratoryRate
-      oxygenSaturation
-      tips {
-        lifestyleTip {
-          message
-          importance
-          link
-        }
-        sleepTip {
-          message
-          importance
-          link
-        }
-        hrTip {
-          message
-          importance
-          link
-        }
-        respiratoryTip {
-          message
-          importance
-          link
-        }
-        generalTip {
-          message
-          importance
-          link
-        }
-      }
-=======
-      time
-      patientId
-      steps
-      calories
-      heart_rate
-      respiratoryRate
-      oxygenSaturation
-      tips {
-        lifestyleTip {
-          message
-          importance
-          link
-        }
-        sleepTip {
-          message
-          importance
-          link
-        }
-        hrTip {
-          message
-          importance
-          link
-        }
-        respiratoryTip {
-          message
-          importance
-          link
-        }
-        generalTip {
-          message
-          importance
-          link
-        }
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const updatePatientWatchData = /* GraphQL */ `
-  mutation UpdatePatientWatchData(
-    $input: UpdatePatientWatchDataInput!
-    $condition: ModelPatientWatchDataConditionInput
-  ) {
-    updatePatientWatchData(input: $input, condition: $condition) {
-      time
-      patientId
-      steps
-      calories
-      heart_rate
-      respiratoryRate
-      oxygenSaturation
-      tips {
-        lifestyleTip {
-          message
-          importance
-          link
-        }
-        sleepTip {
-          message
-          importance
-          link
-        }
-        hrTip {
-          message
-          importance
-          link
-        }
-        respiratoryTip {
-          message
-          importance
-          link
-        }
-        generalTip {
-          message
-          importance
-          link
-        }
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const deletePatientWatchData = /* GraphQL */ `
-  mutation DeletePatientWatchData(
-    $input: DeletePatientWatchDataInput!
-    $condition: ModelPatientWatchDataConditionInput
-  ) {
-    deletePatientWatchData(input: $input, condition: $condition) {
-      time
-      patientId
-      steps
-      calories
-      heart_rate
-      respiratoryRate
-      oxygenSaturation
-      tips {
-        lifestyleTip {
-          message
-          importance
-          link
-        }
-        sleepTip {
-          message
-          importance
-          link
-        }
-        hrTip {
-          message
-          importance
-          link
-        }
-        respiratoryTip {
-          message
-          importance
-          link
-        }
-        generalTip {
-          message
-          importance
-          link
-        }
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
 export const createRegisteredInfo = /* GraphQL */ `
   mutation CreateRegisteredInfo(
     $input: CreateRegisteredInfoInput!
@@ -250,19 +70,19 @@ export const deleteRegisteredInfo = /* GraphQL */ `
     }
   }
 `;
-export const createUserInfo = /* GraphQL */ `
-  mutation CreateUserInfo(
-    $input: CreateUserInfoInput!
-    $condition: ModelUserInfoConditionInput
+export const createPatientWatchData = /* GraphQL */ `
+  mutation CreatePatientWatchData(
+    $input: CreatePatientWatchDataInput!
+    $condition: ModelPatientWatchDataConditionInput
   ) {
-    createUserInfo(input: $input, condition: $condition) {
+    createPatientWatchData(input: $input, condition: $condition) {
       id
-      username
-      email
-      patientName
-      caregiverName
-      hasWatchSetup
-      hasPatientInfo
+      time
+      steps
+      calories
+      heartRate
+      respiratoryRate
+      oxygenSaturation
       createdAt
       updatedAt
       _version
@@ -271,69 +91,6 @@ export const createUserInfo = /* GraphQL */ `
     }
   }
 `;
-export const updateUserInfo = /* GraphQL */ `
-  mutation UpdateUserInfo(
-    $input: UpdateUserInfoInput!
-    $condition: ModelUserInfoConditionInput
-  ) {
-    updateUserInfo(input: $input, condition: $condition) {
-      id
-      username
-      email
-      patientName
-      caregiverName
-      hasWatchSetup
-      hasPatientInfo
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const deleteUserInfo = /* GraphQL */ `
-  mutation DeleteUserInfo(
-    $input: DeleteUserInfoInput!
-    $condition: ModelUserInfoConditionInput
-  ) {
-    deleteUserInfo(input: $input, condition: $condition) {
-      id
-      username
-      email
-      patientName
-      caregiverName
-      hasWatchSetup
-      hasPatientInfo
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const createGeoFence = /* GraphQL */ `
-  mutation CreateGeoFence(
-    $input: CreateGeoFenceInput!
-    $condition: ModelGeoFenceConditionInput
-  ) {
-    createGeoFence(input: $input, condition: $condition) {
-      id
-      owner
-      lon
-      lat
-      radius
->>>>>>> 0ee0c82e4b35bdb70cfd7458280f64c1fcd69a27
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-<<<<<<< HEAD
 export const updatePatientWatchData = /* GraphQL */ `
   mutation UpdatePatientWatchData(
     $input: UpdatePatientWatchDataInput!
@@ -347,46 +104,6 @@ export const updatePatientWatchData = /* GraphQL */ `
       heartRate
       respiratoryRate
       oxygenSaturation
-      tips {
-        lifestyleTip {
-          message
-          importance
-          link
-        }
-        sleepTip {
-          message
-          importance
-          link
-        }
-        hrTip {
-          message
-          importance
-          link
-        }
-        respiratoryTip {
-          message
-          importance
-          link
-        }
-        generalTip {
-          message
-          importance
-          link
-        }
-      }
-=======
-export const updateGeoFence = /* GraphQL */ `
-  mutation UpdateGeoFence(
-    $input: UpdateGeoFenceInput!
-    $condition: ModelGeoFenceConditionInput
-  ) {
-    updateGeoFence(input: $input, condition: $condition) {
-      id
-      owner
-      lon
-      lat
-      radius
->>>>>>> 0ee0c82e4b35bdb70cfd7458280f64c1fcd69a27
       createdAt
       updatedAt
       _version
@@ -395,7 +112,6 @@ export const updateGeoFence = /* GraphQL */ `
     }
   }
 `;
-<<<<<<< HEAD
 export const deletePatientWatchData = /* GraphQL */ `
   mutation DeletePatientWatchData(
     $input: DeletePatientWatchDataInput!
@@ -409,46 +125,6 @@ export const deletePatientWatchData = /* GraphQL */ `
       heartRate
       respiratoryRate
       oxygenSaturation
-      tips {
-        lifestyleTip {
-          message
-          importance
-          link
-        }
-        sleepTip {
-          message
-          importance
-          link
-        }
-        hrTip {
-          message
-          importance
-          link
-        }
-        respiratoryTip {
-          message
-          importance
-          link
-        }
-        generalTip {
-          message
-          importance
-          link
-        }
-      }
-=======
-export const deleteGeoFence = /* GraphQL */ `
-  mutation DeleteGeoFence(
-    $input: DeleteGeoFenceInput!
-    $condition: ModelGeoFenceConditionInput
-  ) {
-    deleteGeoFence(input: $input, condition: $condition) {
-      id
-      owner
-      lon
-      lat
-      radius
->>>>>>> 0ee0c82e4b35bdb70cfd7458280f64c1fcd69a27
       createdAt
       updatedAt
       _version
@@ -631,75 +307,6 @@ export const deletePatientTips = /* GraphQL */ `
     }
   }
 `;
-export const createRegisteredInfo = /* GraphQL */ `
-  mutation CreateRegisteredInfo(
-    $input: CreateRegisteredInfoInput!
-    $condition: ModelRegisteredInfoConditionInput
-  ) {
-    createRegisteredInfo(input: $input, condition: $condition) {
-      id
-      userId
-      livingSituation
-      mobility
-      diagnosis
-      diagnosisDate
-      patientName
-      caregiverName
-      caregiverRelationship
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const updateRegisteredInfo = /* GraphQL */ `
-  mutation UpdateRegisteredInfo(
-    $input: UpdateRegisteredInfoInput!
-    $condition: ModelRegisteredInfoConditionInput
-  ) {
-    updateRegisteredInfo(input: $input, condition: $condition) {
-      id
-      userId
-      livingSituation
-      mobility
-      diagnosis
-      diagnosisDate
-      patientName
-      caregiverName
-      caregiverRelationship
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const deleteRegisteredInfo = /* GraphQL */ `
-  mutation DeleteRegisteredInfo(
-    $input: DeleteRegisteredInfoInput!
-    $condition: ModelRegisteredInfoConditionInput
-  ) {
-    deleteRegisteredInfo(input: $input, condition: $condition) {
-      id
-      userId
-      livingSituation
-      mobility
-      diagnosis
-      diagnosisDate
-      patientName
-      caregiverName
-      caregiverRelationship
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
 export const createUserInfo = /* GraphQL */ `
   mutation CreateUserInfo(
     $input: CreateUserInfoInput!
@@ -778,7 +385,6 @@ export const createGeoFence = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
@@ -797,7 +403,6 @@ export const updateGeoFence = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
@@ -816,7 +421,6 @@ export const deleteGeoFence = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
