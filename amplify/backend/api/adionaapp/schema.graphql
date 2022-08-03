@@ -11,18 +11,6 @@ type RegisteredInfo @model @auth(rules: [{allow: public}]) {
 
 }
 
-type PatientWatchData @model {
-  time: AWSDateTime! @primaryKey
-  patientId: ID! @index(name: "getDataByPatient", sortKeyFields: ["createdAt"], queryField: "getDataByPatient")
-  steps: Int
-  calories: Int
-  heart_rate: Int
-  respiratoryRate: Int
-  oxygenSaturation: Int
-  createdAt: String!
-
-}
-
 type Tip {
   message: String
   importance: Int
@@ -37,16 +25,27 @@ type PatientTip {
   generalTip: Tip
 }
 
-type PatientWatchData @model {
-  time: AWSDateTime! @primaryKey
-  patientId: ID! @index(name: "getDataByPatient", sortKeyFields: ["createdAt"], queryField: "getDataByPatient")
+
+type PatientWatchData @model @auth(rules: [{allow: public}]) {
+  id: ID! @primaryKey(sortKeyFields: ["time"])
+  time: AWSDateTime!
   steps: Int
   calories: Int
-  heart_rate: Int
+  heartRate: Int
   respiratoryRate: Int
   oxygenSaturation: Int
+}
+
+
+type PatientAgitation @model @auth(rules: [{allow: public}]) {
+  id: ID! @primaryKey(sortKeyFields: ["time"])
+  time: AWSDateTime!
+}
+
+
+type PatientTips @model @auth(rules: [{allow: public}]) {
+  id: ID! @primaryKey
   tips: PatientTip
-  createdAt: String!
 }
 
 
@@ -69,7 +68,6 @@ enum GeoFenceRadius {
 type GeoFence @model @auth(rules: [{allow: public}])
  {
   id: ID!
-  owner: String! @index(name: "geoFenceByUser", queryField: "geoFenceByUser")
   lon: Float
   lat:  Float
   radius: GeoFenceRadius
