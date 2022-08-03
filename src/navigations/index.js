@@ -1,8 +1,11 @@
 import * as React from 'react';
-import { useEffect, useState,useCallback, useRef , useContext} from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { GestureHandlerRootView,gestureHandlerRootHOC } from 'react-native-gesture-handler';
+import {useEffect, useState, useCallback, useRef, useContext} from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {
+  GestureHandlerRootView,
+  gestureHandlerRootHOC,
+} from 'react-native-gesture-handler';
 import HomeScreen from '../screens/home/HomeScreen';
 import OverallTrends from '../screens/trends/OverallTrends';
 import ActivityScreen from '../screens/trends/ActivityScreen';
@@ -26,28 +29,27 @@ import ProfilePage from '../screens/registration/ProfilePage';
 import {useUserContext} from '../contexts/UserContext'
 
 import {
-    createDrawerNavigator,
-    DrawerContentScrollView,
-    DrawerItem,
-    DrawerItemList
-  } from "@react-navigation/drawer";
-import { DataStore,Auth, Logger } from 'aws-amplify';
+  createDrawerNavigator,
+  DrawerContentScrollView,
+  DrawerItem,
+  DrawerItemList,
+} from '@react-navigation/drawer';
+import {DataStore, Auth, Logger} from 'aws-amplify';
 
-import  {VStack,Skeleton}  from "native-base"
-  
-
+import {VStack, Skeleton} from 'native-base';
+import ManageGeoFence from '../screens/location/ManageGeoFence';
+import AddGeoFence from '../screens/location/AddGeoFence';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
 const backToHomeRoutes = [
-    'Cognition',
-    'Patient',
-    'Behavior',
-    'Report',
-    'Caregiver',
-  ];
-
+  'Cognition',
+  'Patient',
+  'Behavior',
+  'Report',
+  'Caregiver',
+];
 
 function Root() {
     return (
@@ -73,19 +75,16 @@ function Root() {
     }
 
 function App() {
-
-  const { user, userChecked } =  useUserContext();
+  const {user, userChecked} = useUserContext();
   const [initialRoute, setInitialRoute] = useState('');
 
-
   const initialRouteDecider = async () => {
-    console.log('userChecked',userChecked)
+    console.log('userChecked', userChecked);
     if (!userChecked) return;
-    if (user[0]['hasPatientInfo']) {
+    if (user[0] && user[0]['hasPatientInfo']) {
       setInitialRoute('Root');
       return;
-    }
-    else {
+    } else {
       setInitialRoute('Register');
     }
   };

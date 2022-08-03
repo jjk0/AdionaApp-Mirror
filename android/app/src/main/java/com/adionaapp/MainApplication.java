@@ -4,7 +4,11 @@ import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+<<<<<<< HEAD
 import com.reactnativecommunity.webview.RNCWebViewPackage;
+=======
+import com.oblador.vectoricons.VectorIconsPackage;
+>>>>>>> 46f9e80 (location ui and backend integration)
 import com.ReactNativeBlobUtil.ReactNativeBlobUtilPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactInstanceManager;

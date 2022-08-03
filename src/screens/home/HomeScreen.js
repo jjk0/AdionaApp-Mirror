@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     Box,
     Button, 
@@ -32,9 +32,7 @@ import Carousel from 'react-native-snap-carousel';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-
-
-import ProgressCircle from 'react-native-progress-circle'
+import ProgressCircle from 'react-native-progress-circle';
 import HomeIconButton from '../../components/HomeIconButton';
 import TallIconButton from '../../components/TallIconButon';
 import AgitationModal from '../../components/AgitationModal';
@@ -43,15 +41,17 @@ import Vector9 from '../../components/shapeSVGs/Vector8';
 import Vector8 from '../../components/shapeSVGs/Vector9';
 import ErrorModal from '../../components/ErrorModal';
 
-import { GradientCircularProgress } from "react-native-circular-gradient-progress";
-
+import {GradientCircularProgress} from 'react-native-circular-gradient-progress';
 
 import {
-    createDrawerNavigator,
-    DrawerContentScrollView,
-  } from "@react-navigation/drawer";
+  createDrawerNavigator,
+  DrawerContentScrollView,
+} from '@react-navigation/drawer';
 import HomeCarousel from '../../components/HomeCarousel';
 
+const submit = () => {
+  console.log('submitted');
+};
 
 
  const date = new Date()
@@ -161,18 +161,18 @@ import HomeCarousel from '../../components/HomeCarousel';
     )
   }
 
-  const styles = StyleSheet.create({
-    sectionContainer: {
-      //paddingHorizontal: 24,
-      flex:1,
-      backgroundColor:'white',
-      paddingBottom: 50
-    },
-    // sidewaysContainer: {
-    //     flex:1,
-    //     backgroundColor:'white',
-    //     paddingRight: 100
-    //   },
-  });
+const styles = StyleSheet.create({
+  sectionContainer: {
+    //paddingHorizontal: 24,
+    flex: 1,
+    backgroundColor: 'white',
+    paddingBottom: 50,
+  },
+  // sidewaysContainer: {
+  //     flex:1,
+  //     backgroundColor:'white',
+  //     paddingRight: 100
+  //   },
+});
 
-  export default Home;
+export default Home;
