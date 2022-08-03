@@ -4,6 +4,7 @@ import {
     ScrollView,
     VStack,
   } from 'native-base';
+import {SafeAreaView} from 'react-native';
 
 
 import ScreenTop from '../../components/ScreenTop';
@@ -12,6 +13,7 @@ import ClickableTextBox from '../../components/ClickableTextBox';
 
 const GeneralTips = () => {
     return(
+        <SafeAreaView style={{flex: 1}}>
         <ScrollView>
             <ScreenTop backgroundColor='#517FF3' screenTitle='Caregiver Tips' supportingText="All of Adiona's tips in one place"/>
             <VStack mx='8'>
@@ -25,6 +27,7 @@ const GeneralTips = () => {
                 <ClickableTextBox textColor='white' navigateToPage='Cognition Tips' backgroundColor='#517FF3' mainText='Cognition Tips'/>
             </VStack>
         </ScrollView>
+        </SafeAreaView>
     )
 }
 

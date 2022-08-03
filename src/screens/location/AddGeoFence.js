@@ -1,18 +1,19 @@
 import {
   Box,
+  Center,
   CheckIcon,
   HStack,
   Pressable,
-  ScrollView,
   Select,
   Text,
 } from 'native-base';
 import React, {useState} from 'react';
-import {Dimensions, View} from 'react-native';
+import {Dimensions, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {DataStore, Auth} from 'aws-amplify';
 import {GeoFence} from '../../models';
-import {useUserContext} from '../../contexts/UserContext';
 import MapView, {Circle, Marker} from 'react-native-maps';
+import {DEVICE_HEIGHT, DEVICE_WIDTH} from '../../helpers/Device';
+import BackArrow from '../../assets/Back_Arrow.svg';
 
 const GeoFenceRadius = {
   FT_50: 'FT_50',
@@ -20,9 +21,13 @@ const GeoFenceRadius = {
   FT_200: 'FT_200',
 };
 
-const AddGeoFence = () => {
-  const [lat, setLat] = useState(26.912434);
-  const [lng, setLng] = useState(75.78727);
+const AddGeoFence = ({navigation, route}) => {
+  const {currentLatitude, currentLongitude, latitudeDelta, longitudeDelta} =
+    route.params;
+  const [lat, setLat] = useState(currentLatitude);
+  const [lng, setLng] = useState(currentLongitude);
+  const [latDelta, setLatDelta] = useState(latitudeDelta);
+  const [lngDelta, setLngDelta] = useState(longitudeDelta);
   const [radius, setRadius] = useState();
   const [step, setStep] = useState(0);
   const [geofence, setGeofence] = useState();
@@ -35,11 +40,8 @@ const AddGeoFence = () => {
   };
 
   const addGeofence = async () => {
-    const user = await Auth.currentAuthenticatedUser();
-    alert(user.attributes.sub);
     DataStore.save(
       new GeoFence({
-        owner: user.attributes.sub,
         lon: lng,
         lat,
         radius,
@@ -63,29 +65,46 @@ const AddGeoFence = () => {
       }}>
       <MapView
         style={{height: screenHeight, width: screenWidth, position: 'absolute'}}
+        // addressForCoordinate= {}
         region={{
-          initialZoom: 17,
           latitude: lat,
           longitude: lng,
-          latitudeDelta: 0,
-          longitudeDelta: 0.005,
+          latitudeDelta: latDelta,
+          longitudeDelta: lngDelta,
         }}
-        zoomEnabled={true}
-        >
-        <Marker
-          coordinate={{latitude: lat, longitude: lng}}
-          draggable={true}
-          onDragStart={value => {
-            console.log('start ', value);
-          }}
-          onDragEnd={value => {
-            setLat(value.nativeEvent.coordinate.latitude);
-            setLng(value.nativeEvent.coordinate.longitude);
-          }}
-        
-        />
+        onPress={value => {
+          console.log('onPress: ', value);
+          setLat(value.nativeEvent.coordinate.latitude);
+          setLng(value.nativeEvent.coordinate.longitude);
+          setLatDelta(0);
+          setLngDelta(0.005);
+        }}
+        zoomEnabled={true}>
+        {lat !== 31.053226 ? (
+          <Marker
+            coordinate={{latitude: lat, longitude: lng}}
+            draggable={true}
+            onDragStart={value => {
+              console.log('start ', value);
+            }}
+            onDragEnd={value => {
+              setLat(value.nativeEvent.coordinate.latitude);
+              setLng(value.nativeEvent.coordinate.longitude);
+            }}
+          />
+        ) : (
+          []
+        )}
+
         <Circle center={{latitude: lat, longitude: lng}} radius={radius} />
       </MapView>
+        <Box style={styles.appBar}>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Center pr="1" style={styles.backButton}>
+            <BackArrow />
+          </Center>
+      </TouchableOpacity>
+        </Box>
       {step === 0 ? (
         <Box
           position={'absolute'}
@@ -97,7 +116,7 @@ const AddGeoFence = () => {
           borderRadius="2xl">
           <HStack alignSelf="center">
             <Text ml="2" color="black" fontSize={16} p={'7'} bold>
-              Tap the map where you want to set up a geofence
+              Tap on the map or drag the marker to where you want to set up a geofence
             </Text>
           </HStack>
           <Pressable mt="4" onPress={saveLocation}>
@@ -131,12 +150,12 @@ const AddGeoFence = () => {
             <Box w="3/4" maxW="300" alignSelf={'center'} my="5">
               <Select
                 borderRadius="2xl"
-                selectedValue={geofence}
+                selectedValue={radius}
                 minWidth="200"
                 accessibilityLabel="Choose Service"
                 placeholder="Choose Geofence"
                 _selectedItem={{
-                  bg: 'teal.600',
+                  
                   endIcon: <CheckIcon size="5" />,
                 }}
                 mt={1}
@@ -162,9 +181,24 @@ const AddGeoFence = () => {
       ) : (
         []
       )}
-
     </View>
   );
 };
 
 export default AddGeoFence;
+const styles = StyleSheet.create({
+  backButton: {
+    height: DEVICE_WIDTH * 0.1,
+    width: DEVICE_WIDTH * 0.1,
+    backgroundColor: 'white',
+    borderRadius: 50,
+    elevation: 20,
+  },
+  appBar: {
+    height: DEVICE_HEIGHT * 0.08,
+    width: DEVICE_WIDTH * 0.1,
+    backgroundColor: 'transparent',
+    justifyContent: 'center',
+    marginLeft: DEVICE_WIDTH * 0.04,
+  },
+});

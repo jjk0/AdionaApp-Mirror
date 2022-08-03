@@ -13,7 +13,7 @@ import UserContext from './src/contexts/UserContext';
 
 import {StyleSheet, useColorScheme} from 'react-native';
 
-import {NativeBaseProvider} from 'native-base';
+import { NativeBaseProvider, Box, extendTheme } from "native-base";
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
@@ -32,6 +32,54 @@ import {AmplifyTheme} from 'aws-amplify-react-native';
 
 const App = () => {
   // const isDarkMode = useColorScheme() === 'dark';
+
+  const theme = extendTheme({
+    // components: {
+    //   Text: {
+    //     baseStyle: {
+    //       fontFamily: 'Alata',
+    //     },
+    //   },
+    // },
+    fontConfig: {
+      Alata: {
+      100: {
+        normal: 'Alata',
+      },
+      200: {
+        normal: 'Alata',
+      },
+      300: {
+        normal: 'Alata',
+      },
+      400: {
+        normal: "Alata",
+      },
+      500: {
+        normal: 'Alata',
+      },
+      600: {
+        normal: 'Alata',
+      },
+      700: {
+        normal: 'Alata',
+      },
+      800: {
+        normal: 'Alata',
+      },
+      900: {
+        normal: 'Alata',  
+      },
+    },
+  
+    // Make sure values below matches any of the keys in `fontConfig`
+    fonts: {
+      heading: 'Alata',
+      body: 'Alata',
+      mono: 'Alata',
+    }
+  }});
+  
 
   return (
     <GestureHandlerRootView style={{flex: 1}}>

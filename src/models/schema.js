@@ -108,6 +108,246 @@ export const schema = {
                 }
             ]
         },
+        "PatientWatchData": {
+            "name": "PatientWatchData",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "time": {
+                    "name": "time",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "steps": {
+                    "name": "steps",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "calories": {
+                    "name": "calories",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "heartRate": {
+                    "name": "heartRate",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "respiratoryRate": {
+                    "name": "respiratoryRate",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "oxygenSaturation": {
+                    "name": "oxygenSaturation",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "PatientWatchData",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "fields": [
+                            "id",
+                            "time"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "PatientAgitation": {
+            "name": "PatientAgitation",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "time": {
+                    "name": "time",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "PatientAgitations",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "fields": [
+                            "id",
+                            "time"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "PatientTips": {
+            "name": "PatientTips",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "tips": {
+                    "name": "tips",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "PatientTip"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "PatientTips",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "fields": [
+                            "id"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "UserInfo": {
             "name": "UserInfo",
             "fields": {
@@ -212,13 +452,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "owner": {
-                    "name": "owner",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
                 "lon": {
                     "name": "lon",
                     "isArray": false,
@@ -267,30 +500,17 @@ export const schema = {
                     "properties": {}
                 },
                 {
-                    "type": "key",
-                    "properties": {
-                        "name": "geoFenceByUser",
-                        "queryField": "geoFenceByUser",
-                        "fields": [
-                            "owner"
-                        ]
-                    }
-                },
-                {
                     "type": "auth",
                     "properties": {
                         "rules": [
                             {
-                                "provider": "userPools",
-                                "ownerField": "owner",
-                                "allow": "owner",
+                                "allow": "public",
                                 "operations": [
                                     "create",
-                                    "read",
                                     "update",
-                                    "delete"
-                                ],
-                                "identityClaim": "cognito:username"
+                                    "delete",
+                                    "read"
+                                ]
                             }
                         ]
                     }
@@ -308,6 +528,83 @@ export const schema = {
             ]
         }
     },
-    "nonModels": {},
-    "version": "88446574f5b9742542023d32713d15a4"
+    "nonModels": {
+        "Tip": {
+            "name": "Tip",
+            "fields": {
+                "message": {
+                    "name": "message",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "importance": {
+                    "name": "importance",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "link": {
+                    "name": "link",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        },
+        "PatientTip": {
+            "name": "PatientTip",
+            "fields": {
+                "lifestyleTip": {
+                    "name": "lifestyleTip",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "Tip"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "sleepTip": {
+                    "name": "sleepTip",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "Tip"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "hrTip": {
+                    "name": "hrTip",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "Tip"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "respiratoryTip": {
+                    "name": "respiratoryTip",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "Tip"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "generalTip": {
+                    "name": "generalTip",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "Tip"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        }
+    },
+    "version": "3757c6916ce01681da4ebf9abb617d31"
 };

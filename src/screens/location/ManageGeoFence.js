@@ -10,16 +10,17 @@ import {
 import React, {useEffect, useState} from 'react';
 import {DataStore} from 'aws-amplify';
 import {GeoFence} from '../../models';
-import {StyleSheet, TouchableOpacity} from 'react-native';
+import {Platform, StyleSheet, TouchableOpacity} from 'react-native';
 import {DEVICE_HEIGHT, DEVICE_WIDTH} from '../../helpers/Device';
 import Vector19 from '../../assets/Vector 19.svg';
 import Vector20 from '../../assets/Vector 20.svg';
 import MapPin from '../../assets/bx_map-pin.svg';
 import BackArrow from '../../assets/Back_Arrow.svg';
 
-const ManageGeoFence = ({navigation}) => {
+const ManageGeoFence = ({navigation, route}) => {
   const [geoFences, setGeoFences] = useState([]);
-
+  const {currentLatitude, currentLongitude, latitudeDelta, longitudeDelta} =
+    route.params;
   useEffect(() => {
     DataStore.query(GeoFence)
       .then(newGeoFences => {
@@ -57,6 +58,7 @@ const ManageGeoFence = ({navigation}) => {
   return (
     <>
       <ZStack alignItems="center">
+        {/* Screen body below */}
         <ScrollView style={styles.scrollView}>
           <Text
             fontSize="xl"
@@ -68,6 +70,7 @@ const ManageGeoFence = ({navigation}) => {
           </Text>
           {geoFences.map((geoFence, index) => (
             <Box
+              key={index}
               w={DEVICE_WIDTH - 40}
               h={DEVICE_HEIGHT * 0.2}
               bg="rgba(81, 127, 243, 0.25)"
@@ -91,11 +94,20 @@ const ManageGeoFence = ({navigation}) => {
               </VStack>
             </Box>
           ))}
-          <Pressable onPress={() => navigation.navigate('Add GeoFence')}>
+          <Pressable
+            mb={'10'}
+            onPress={() =>
+              navigation.navigate('Add GeoFence', {
+                screen: 'Add GeoFence',
+                currentLatitude,
+                currentLongitude,
+                latitudeDelta,
+                longitudeDelta,
+              })
+            }>
             <Center
               bgColor="rgba(81, 127, 243, 0.25)"
               h={65}
-              // mt={5}
               borderRadius="3xl">
               <Text ml="2" color="black" fontSize={16} fontWeight="semibold">
                 + Add Geofences
@@ -103,6 +115,7 @@ const ManageGeoFence = ({navigation}) => {
             </Center>
           </Pressable>
         </ScrollView>
+        {/* Custom AppBar Below */}
         <Box style={styles.headerBox} />
         <Vector19
           height={DEVICE_HEIGHT * 0.25}
@@ -115,6 +128,7 @@ const ManageGeoFence = ({navigation}) => {
                 {scaleX: 1.3},
                 {scaleY: 1.15},
               ],
+              marginTop: Platform.OS === 'ios' ? DEVICE_HEIGHT * 0.05 : 0,
             },
           ]}
         />
@@ -129,16 +143,10 @@ const ManageGeoFence = ({navigation}) => {
                 {scaleX: 2},
                 {scaleY: 1.9},
               ],
+              marginTop: Platform.OS === 'ios' ? DEVICE_HEIGHT * 0.05 : 0,
             },
           ]}
         />
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Box style={styles.appBar}>
-            <Center pr="1" style={styles.backButton}>
-              <BackArrow />
-            </Center>
-          </Box>
-        </TouchableOpacity>
         <Box style={styles.centerAsset}>
           <MapPin
             height={DEVICE_HEIGHT * 0.12}
@@ -158,7 +166,31 @@ const ManageGeoFence = ({navigation}) => {
             </Text>
           </Center>
         </Box>
+        <TouchableOpacity
+          onPress={() => {
+            console.log('Back Button Pressed');
+            navigation.goBack();
+          }}
+          style={{marginTop: Platform.OS === 'ios' ? DEVICE_HEIGHT * 0.05 : 0}}>
+          <Box style={styles.appBar}>
+            <Center pr="1" style={styles.backButton}>
+              <BackArrow />
+            </Center>
+          </Box>
+        </TouchableOpacity>
+        {Platform.OS === 'ios' ? (
+          <Box h={DEVICE_HEIGHT * 0.05} w={DEVICE_WIDTH} bg="#517FF3" />
+        ) : (
+          <> </>
+        )}
       </ZStack>
+      <Box style={styles.appBar}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Center pr="1" style={styles.backButton}>
+            <BackArrow />
+          </Center>
+        </TouchableOpacity>
+      </Box>
     </>
   );
 };
@@ -166,23 +198,22 @@ const ManageGeoFence = ({navigation}) => {
 const styles = StyleSheet.create({
   scrollView: {
     paddingHorizontal: 20,
-    paddingTop: DEVICE_HEIGHT * 0.25,
     backgroundColor: 'white',
     height: DEVICE_HEIGHT,
   },
   headerBox: {
     width: DEVICE_WIDTH,
-    height: DEVICE_HEIGHT * 0.25,
+    height: Platform.OS === 'ios' ? DEVICE_HEIGHT * 0.3 : DEVICE_HEIGHT * 0.25,
     backgroundColor: '#517FF3',
     borderBottomLeftRadius: 40,
     borderBottomRightRadius: 40,
   },
   appBar: {
     height: DEVICE_HEIGHT * 0.08,
-    width: DEVICE_WIDTH,
+    width: DEVICE_WIDTH * 0.1,
     backgroundColor: 'transparent',
     justifyContent: 'center',
-    paddingLeft: DEVICE_WIDTH * 0.04,
+    marginLeft: DEVICE_WIDTH * 0.04,
   },
   backButton: {
     height: DEVICE_WIDTH * 0.1,
@@ -196,12 +227,14 @@ const styles = StyleSheet.create({
     height: DEVICE_HEIGHT * 0.25,
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: Platform.OS === 'ios' ? DEVICE_HEIGHT * 0.05 : 0,
   },
   bottomBox: {
     width: DEVICE_WIDTH,
     height: DEVICE_HEIGHT * 0.25,
     alignItems: 'center',
     justifyContent: 'flex-end',
+    marginTop: Platform.OS === 'ios' ? DEVICE_HEIGHT * 0.05 : 0,
   },
   marginBottom: {marginBottom: 25},
   headerBottomBox: {
@@ -212,7 +245,12 @@ const styles = StyleSheet.create({
     elevation: 10,
     transform: [{translateY: (DEVICE_HEIGHT * 0.06) / 2}],
   },
-  paragraph: {paddingHorizontal: 30, paddingVertical: 50},
+  paragraph: {
+    paddingHorizontal: 30,
+    paddingVertical: 50,
+    paddingTop: DEVICE_HEIGHT * 0.3,
+    marginTop: Platform.OS === 'ios' ? DEVICE_HEIGHT * 0.05 : 0,
+  },
 });
 
 export default ManageGeoFence;

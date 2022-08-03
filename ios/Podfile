@@ -28,6 +28,10 @@ target 'AdionaApp' do
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+  pod 'GoogleMaps'
+  pod 'Google-Maps-iOS-Utils'
+
+  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
 
   target 'AdionaAppTests' do
     inherit! :complete

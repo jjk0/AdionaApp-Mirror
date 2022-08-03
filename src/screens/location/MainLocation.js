@@ -1,42 +1,38 @@
 import React, {useEffect, useState} from 'react';
 import {
   Box,
-  Card,
-  ScrollView,
   VStack,
-  Heading,
   Text,
   HStack,
   Pressable,
-  Skeleton,
   View,
-  Image,
-  Center,
-  ChevronRightIcon,
-  ZStack,
   Alert,
   IconButton,
   CloseIcon,
   CheckIcon,
+  Center,
 } from 'native-base';
 import {
   StyleSheet,
   Dimensions,
   PermissionsAndroid,
   Linking,
+  TouchableOpacity,
   Platform,
 } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 
 //clean up import code here
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 // import MapView from 'react-native-maps';
 // import { Marker } from 'react-native-maps';
-import BackButton from '../../components/BackButton';
 import MapView, {Marker} from 'react-native-maps';
-import {set} from 'react-native-reanimated';
 import {useIsFocused} from '@react-navigation/native';
+import Phone from '../../assets/Vector-1.svg';
+import Car from '../../assets/Vector.svg';
+import BackArrow from '../../assets/Back_Arrow.svg';
+import {DEVICE_HEIGHT, DEVICE_WIDTH} from '../../helpers/Device';
 // import {Icon} from 'react-native-vector-icons/Icon';
 
 const MainLocation = ({navigation}) => {
@@ -89,7 +85,7 @@ const MainLocation = ({navigation}) => {
 
   const requestLocationPermission = async () => {
     try {
-      if(Platform.OS === 'android') {
+      if (Platform.OS === 'android') {
         const granted = await PermissionsAndroid.request(
           PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
           {
@@ -97,7 +93,6 @@ const MainLocation = ({navigation}) => {
             message:
               'we need to access you location ' +
               'in order to give our best service.',
-
             buttonNegative: 'Ask Me Later',
             buttonPositive: 'Allow',
           },
@@ -155,6 +150,14 @@ const MainLocation = ({navigation}) => {
           []
         )}
       </MapView>
+      {showAlert ? <LocationAlert /> : []}
+      <Box style={styles.appBar}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Center pr="1" style={styles.backButton}>
+            <BackArrow />
+          </Center>
+        </TouchableOpacity>
+      </Box>
 
       <Box
         bgColor="white"
@@ -165,13 +168,25 @@ const MainLocation = ({navigation}) => {
         justifyContent={'space-between'}
         bottom={'10'}>
         <View>
-          <Text bold fontSize={20} alignSelf="flex-start" m={'3'}>
+          <Text
+            fontWeight="semibold"
+            letterSpacing="lg"
+            fontSize={20}
+            alignSelf="flex-start"
+            m={'3'}
+            mx={'5'}>
             John is 14 minutes away
           </Text>
-          <Text fontSize={20} width="50%" alignSelf="flex-start" mx={'3'}>
+          <Text
+            fontWeight="semibold"
+            letterSpacing="lg"
+            fontSize={16}
+            width="50%"
+            alignSelf="flex-start"
+            mx={'5'}>
             1234 Main Street, San Francisco, CA
           </Text>
-          <Pressable mx="4">
+          <Pressable mx="6">
             <Box
               style={{elevation: 3}}
               my="3"
@@ -180,7 +195,7 @@ const MainLocation = ({navigation}) => {
               width="100%"
               borderRadius="2xl">
               <HStack alignItems="center" alignSelf={'center'}>
-                <Icon name="phone" size={20} />
+                <Phone />
                 <Text ml="2" color="black" fontSize={16} bold>
                   Call John
                 </Text>
@@ -189,7 +204,15 @@ const MainLocation = ({navigation}) => {
           </Pressable>
           <Pressable
             mx="4"
-            onPress={() => navigation.navigate('Manage GeoFence')}>
+            onPress={() =>
+              navigation.navigate('Manage GeoFence', {
+                screen: 'Add GeoFence',
+                currentLatitude,
+                currentLongitude,
+                latitudeDelta,
+                longitudeDelta,
+              })
+            }>
             <Box
               style={{elevation: 3}}
               p="2"
@@ -207,8 +230,7 @@ const MainLocation = ({navigation}) => {
         <Pressable mt="4">
           <Box p="4" width="100%" borderRadius="2xl" bgColor="blue.500">
             <HStack alignSelf="center" alignItems={'center'}>
-              {/* <Icon color="white" name="car-outline" size={30} /> */}
-              <Icon name="car" size={25} color="white" />
+              <Car />
               <Text ml="4" color="white" fontSize={20}>
                 Get directions to John
               </Text>
@@ -216,9 +238,25 @@ const MainLocation = ({navigation}) => {
           </Box>
         </Pressable>
       </Box>
-      {showAlert ? <LocationAlert /> : []}
     </View>
   );
 };
 
 export default MainLocation;
+
+const styles = StyleSheet.create({
+  backButton: {
+    height: DEVICE_WIDTH * 0.1,
+    width: DEVICE_WIDTH * 0.1,
+    backgroundColor: 'white',
+    borderRadius: 50,
+    elevation: 20,
+  },
+  appBar: {
+    height: DEVICE_HEIGHT * 0.08,
+    width: DEVICE_WIDTH * 0.1,
+    backgroundColor: 'transparent',
+    justifyContent: 'center',
+    paddingLeft: DEVICE_WIDTH * 0.04,
+  },
+});
