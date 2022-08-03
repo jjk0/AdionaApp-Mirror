@@ -4,12 +4,15 @@ import {
     VStack,
   } from 'native-base';
 
+import {SafeAreaView} from 'react-native';
+
 import ScreenTop from '../../components/ScreenTop';
 import ClickableTextBox from '../../components/ClickableTextBox';
 
 
 const ActivityTips = () => {
     return(
+        <SafeAreaView style={{flex: 1}}>
         <ScrollView>
             <ScreenTop backgroundColor='#94E557' screenTitle='Activity Tips'/>
             <VStack mx='8'>
@@ -21,6 +24,7 @@ const ActivityTips = () => {
                                 secondaryText='Tap to find out a few ways to help John exercise'/>
             </VStack>
         </ScrollView>
+        </SafeAreaView>
     )
 }
 

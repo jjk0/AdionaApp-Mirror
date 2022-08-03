@@ -1,6 +1,141 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreatePatientWatchData = /* GraphQL */ `
+  subscription OnCreatePatientWatchData {
+    onCreatePatientWatchData {
+      time
+      patientId
+      steps
+      calories
+      heart_rate
+      respiratoryRate
+      oxygenSaturation
+      tips {
+        lifestyleTip {
+          message
+          importance
+          link
+        }
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onUpdatePatientWatchData = /* GraphQL */ `
+  subscription OnUpdatePatientWatchData {
+    onUpdatePatientWatchData {
+      time
+      patientId
+      steps
+      calories
+      heart_rate
+      respiratoryRate
+      oxygenSaturation
+      tips {
+        lifestyleTip {
+          message
+          importance
+          link
+        }
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onDeletePatientWatchData = /* GraphQL */ `
+  subscription OnDeletePatientWatchData {
+    onDeletePatientWatchData {
+      time
+      patientId
+      steps
+      calories
+      heart_rate
+      respiratoryRate
+      oxygenSaturation
+      tips {
+        lifestyleTip {
+          message
+          importance
+          link
+        }
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
 export const onCreateRegisteredInfo = /* GraphQL */ `
   subscription OnCreateRegisteredInfo {
     onCreateRegisteredInfo {
@@ -13,7 +148,6 @@ export const onCreateRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
-      bucketNumber
       createdAt
       updatedAt
       _version
@@ -34,7 +168,6 @@ export const onUpdateRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
-      bucketNumber
       createdAt
       updatedAt
       _version
@@ -55,7 +188,6 @@ export const onDeleteRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
-      bucketNumber
       createdAt
       updatedAt
       _version
@@ -119,8 +251,8 @@ export const onDeleteUserInfo = /* GraphQL */ `
   }
 `;
 export const onCreateGeoFence = /* GraphQL */ `
-  subscription OnCreateGeoFence($owner: String) {
-    onCreateGeoFence(owner: $owner) {
+  subscription OnCreateGeoFence {
+    onCreateGeoFence {
       id
       owner
       lon
@@ -135,8 +267,8 @@ export const onCreateGeoFence = /* GraphQL */ `
   }
 `;
 export const onUpdateGeoFence = /* GraphQL */ `
-  subscription OnUpdateGeoFence($owner: String) {
-    onUpdateGeoFence(owner: $owner) {
+  subscription OnUpdateGeoFence {
+    onUpdateGeoFence {
       id
       owner
       lon
@@ -151,8 +283,8 @@ export const onUpdateGeoFence = /* GraphQL */ `
   }
 `;
 export const onDeleteGeoFence = /* GraphQL */ `
-  subscription OnDeleteGeoFence($owner: String) {
-    onDeleteGeoFence(owner: $owner) {
+  subscription OnDeleteGeoFence {
+    onDeleteGeoFence {
       id
       owner
       lon

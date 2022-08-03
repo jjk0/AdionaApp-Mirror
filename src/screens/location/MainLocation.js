@@ -59,20 +59,20 @@ const MainLocation = () => {
             
             <View style={{position: "absolute", top:450, alignSelf:'center'}}>
                 <Box position='relative' bgColor='white' width='100%' p='4' borderRadius='2xl'>
-                    <Text bold fontSize={20} alignSelf='flex-start'>John is 14 minutes away</Text>
-                    <Text fontSize={20} width='50%' alignSelf='flex-start'>1234 Main Street, San Francisco, CA</Text>
+                    <Text style={{fontFamily:'Alata'}} bold fontSize={20} alignSelf='flex-start'>John is 14 minutes away</Text>
+                    <Text style={{fontFamily:'Alata'}} fontSize={20} width='50%' alignSelf='flex-start'>1234 Main Street, San Francisco, CA</Text>
                     <Pressable mx='4'>
                         <Box my='2' p='2' bgColor='info.200' width='100%' borderRadius='2xl'>
                             <HStack alignSelf='center'>
                             <Icon name='phone' size={24}/>
-                            <Text ml='2' color='black' fontSize={16}>Call John</Text>
+                            <Text style={{fontFamily:'Alata'}} ml='2' color='black' fontSize={16}>Call John</Text>
                             </HStack>
                         </Box>
                     </Pressable>
                     <Pressable mx='4'>
                         <Box p='2' bgColor='info.200' width='100%' borderRadius='2xl'>
                             <HStack alignSelf='center'>
-                            <Text ml='2' color='black' fontSize={16}>Manage Geofences</Text>
+                            <Text style={{fontFamily:'Alata'}} ml='2' color='black' fontSize={16}>Manage Geofences</Text>
                             </HStack>
                         </Box>
                     </Pressable>
@@ -80,7 +80,7 @@ const MainLocation = () => {
                         <Box p='3' width='100%' borderRadius='2xl' bgColor='info.500'>
                             <HStack alignSelf='center'>
                                 <Icon color='white' name='car-outline' size={30}/>
-                                <Text ml='2' color='white' fontSize={20}>Get directions to John</Text>
+                                <Text style={{fontFamily:'Alata'}} ml='2' color='white' fontSize={20}>Get directions to John</Text>
                             </HStack>
 
                         </Box>

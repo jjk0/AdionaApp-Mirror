@@ -44,10 +44,10 @@ const SvgComponent = (props) => (
         <VStack>
             <HStack>
                 <Icon name="alert-circle-outline" size={30} color="white" alignSelf='start' />
-                <Text fontSize={25} alignSelf='center' ml='3' color='white'>Alert</Text>
+                <Text style={{fontFamily:'Alata'}} fontSize={25} alignSelf='center' ml='3' color='white'>Alert</Text>
             </HStack>
 
-            <Text fontSize={20} color='white'>John might get agitated soon. Tap to see our recommendations</Text>
+            <Text style={{fontFamily:'Alata'}} fontSize={20} color='white'>John might get agitated soon. Tap to see our recommendations</Text>
         </VStack>
     </Box> */}
   </View>

@@ -8,6 +8,7 @@ type RegisteredInfo @model @auth(rules: [{allow: public}]) {
   patientName: String
   caregiverName: String
   caregiverRelationship: String
+
 }
 
 type PatientWatchData @model {
@@ -19,7 +20,35 @@ type PatientWatchData @model {
   respiratoryRate: Int
   oxygenSaturation: Int
   createdAt: String!
+
 }
+
+type Tip {
+  message: String
+  importance: Int
+  link: String
+}
+
+type PatientTip {
+  lifestyleTip: Tip
+  sleepTip: Tip
+  hrTip: Tip
+  respiratoryTip: Tip
+  generalTip: Tip
+}
+
+type PatientWatchData @model {
+  time: AWSDateTime! @primaryKey
+  patientId: ID! @index(name: "getDataByPatient", sortKeyFields: ["createdAt"], queryField: "getDataByPatient")
+  steps: Int
+  calories: Int
+  heart_rate: Int
+  respiratoryRate: Int
+  oxygenSaturation: Int
+  tips: PatientTip
+  createdAt: String!
+}
+
 
 type UserInfo @model @auth(rules: [{allow: public}]) {
   id: ID!
@@ -37,9 +66,8 @@ enum GeoFenceRadius {
   FT_200
 }
  
-type GeoFence @model @auth(rules: [
-  {allow: owner, operations: [create, read, update, delete]}
-]) {
+type GeoFence @model @auth(rules: [{allow: public}])
+ {
   id: ID!
   owner: String! @index(name: "geoFenceByUser", queryField: "geoFenceByUser")
   lon: Float

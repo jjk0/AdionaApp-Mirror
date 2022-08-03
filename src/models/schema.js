@@ -167,6 +167,16 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "tips": {
+                    "name": "tips",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "PatientTip"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -384,16 +394,13 @@ export const schema = {
                     "properties": {
                         "rules": [
                             {
-                                "provider": "userPools",
-                                "ownerField": "owner",
-                                "allow": "owner",
+                                "allow": "public",
                                 "operations": [
                                     "create",
-                                    "read",
                                     "update",
-                                    "delete"
-                                ],
-                                "identityClaim": "cognito:username"
+                                    "delete",
+                                    "read"
+                                ]
                             }
                         ]
                     }
@@ -411,6 +418,84 @@ export const schema = {
             ]
         }
     },
-    "nonModels": {},
-    "version": "f6acfa204722371fbdee494227ba6f20"
+    "nonModels": {
+        "Tip": {
+            "name": "Tip",
+            "fields": {
+                "message": {
+                    "name": "message",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "importance": {
+                    "name": "importance",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "link": {
+                    "name": "link",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        },
+        "PatientTip": {
+            "name": "PatientTip",
+            "fields": {
+                "lifestyleTip": {
+                    "name": "lifestyleTip",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "Tip"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "sleepTip": {
+                    "name": "sleepTip",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "Tip"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "hrTip": {
+                    "name": "hrTip",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "Tip"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "respiratoryTip": {
+                    "name": "respiratoryTip",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "Tip"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "generalTip": {
+                    "name": "generalTip",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "Tip"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        }
+    },
+    "version": "0217b720358effe5892c79fa9911328b"
+
 };

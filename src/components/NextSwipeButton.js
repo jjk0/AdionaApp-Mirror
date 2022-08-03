@@ -15,7 +15,7 @@ const SwipeButton = ({onNextPressed}) => {
         <Pressable m='2' onPress={onNextPressed}>
             <Center>
                 <Box borderRadius='2xl' bgColor='white' height="50" width="80%">
-                    <Text alignSelf="center" justifyContent="center" fontSize={26} m='1' bold color="black">Next</Text>
+                    <Text style={{fontFamily:'Alata'}} alignSelf="center" justifyContent="center" fontSize={26} m='1' bold color="black">Next</Text>
                 </Box>
             </Center>
         </Pressable>

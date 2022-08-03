@@ -20,10 +20,10 @@ import {Auth} from "aws-amplify"
     return(
         <Box flex bgColor="#517FF3">
             <Center>
-            <Text>Are you sure you want to sign out?</Text>
+            <Text style={{fontFamily:'Alata'}}>Are you sure you want to sign out?</Text>
             <Pressable onPress={() => signOut()}>
                 <Box borderRadius='2xl' bgColor='white' p='4'>
-                    <Text color='black'>Sign out </Text>
+                    <Text style={{fontFamily:'Alata'}} color='black'>Sign out </Text>
                 </Box>
             </Pressable>
             </Center>
