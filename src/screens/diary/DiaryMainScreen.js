@@ -28,14 +28,14 @@ const DiaryMainScreen = ({navigation}) => {
     
 
     return (
-        <ScrollView>
+        <ScrollView pb='5'>
                 <ScreenTop backgroundColor='#517FF3' screenTitle='Daily Diary' bottomText='Diary' iconName='book-reader'/>
 
             <VStack mt='10'>
                 <Box mx='10'>
                     <Text style={{fontFamily:'Alata'}} alignSelf='center' fontSize={24}> Log important info about John. This can help you and your doctor. It can also help Adiona better support you. </Text>
                 </Box>
-                <Pressable>
+                <Pressable onPress={() => navigation.navigate("Diary Entry")}>
                     <Box borderRadius='16' bgColor='info.200' p='4' mt='8' mx='10'>
                         <HStack alignSelf='center'>
                             <Text style={{fontFamily:'Alata'}} fontSize={24}>Add new entry</Text>

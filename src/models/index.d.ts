@@ -65,6 +65,14 @@ export declare class RegisteredInfo {
 export declare class PatientWatchData {
   readonly id: string;
   readonly time: string;
+
+  readonly patientId: string;
+  readonly steps?: number | null;
+  readonly calories?: number | null;
+  readonly heart_rate?: number | null;
+  readonly respiratoryRate?: number | null;
+  readonly oxygenSaturation?: number | null;
+  readonly createdAt: string;
   readonly steps?: number | null;
   readonly calories?: number | null;
   readonly heartRate?: number | null;
