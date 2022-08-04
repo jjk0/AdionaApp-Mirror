@@ -11,18 +11,6 @@ type RegisteredInfo @model @auth(rules: [{allow: public}]) {
 
 }
 
-type PatientWatchData @model {
-  time: AWSDateTime! @primaryKey
-  patientId: ID! @index(name: "getDataByPatient", sortKeyFields: ["createdAt"], queryField: "getDataByPatient")
-  steps: Int
-  calories: Int
-  heart_rate: Int
-  respiratoryRate: Int
-  oxygenSaturation: Int
-  createdAt: String!
-
-}
-
 type Tip {
   message: String
   importance: Int
