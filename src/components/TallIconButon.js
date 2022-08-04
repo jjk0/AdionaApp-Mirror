@@ -21,7 +21,7 @@ const TallIconButton = (props) => {
         <Pressable onPress={() => navigation.navigate(props.navigateToPage)} w='40%' borderRadius='2xl' bg='white' shadow='1' height='200' m='2' p='5'>
             <Center>
                 <Icon alignSelf='center'name={props.iconTitle} size={60} color="#517FF3" />
-                <Text fontSize={16} color='black'>{props.buttonText}</Text>
+                <Text style={{fontFamily:'Alata'}} fontSize={16} color='black'>{props.buttonText}</Text>
              </Center>
         </Pressable>
     )

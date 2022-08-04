@@ -54,16 +54,16 @@ import {
                     <Modal.Body>
                         <Center my='4'>
                             <HStack>
-                                <Text bold width='80%' fontSize={24}>Want to log a behavioral episode?</Text>
+                                <Text style={{fontFamily:'Alata'}} bold width='80%' fontSize={24}>Want to log a behavioral episode?</Text>
                             </HStack>
                         </Center>
                         <Center>
                             <VStack justifyContent='center' width='80%'>
                                 <Button m='2' py='2' borderRadius='2xl' bgColor='warning.200' onPress={() => showSecondModal()}>
-                                    <Text bold alignSelf='center' fontSize={20}>Yes</Text>
+                                    <Text style={{fontFamily:'Alata'}} bold alignSelf='center' fontSize={20}>Yes</Text>
                                 </Button>
                                 <Button variant='outline' m='2' py='2' borderRadius='2xl' borderWidth='3' borderColor='warning.200' onPress={() => (showThirdModal())}>
-                                    <Text bold alignSelf='center' fontSize={20}>No</Text>
+                                    <Text style={{fontFamily:'Alata'}} bold alignSelf='center' fontSize={20}>No</Text>
                                 </Button>
                                 
                             </VStack>
@@ -77,25 +77,25 @@ import {
             <Modal.Body>
                 <Center my='4'>
                     <HStack>
-                        <Text bold width='80%' fontSize={24}>When did the episode happen?</Text>
+                        <Text style={{fontFamily:'Alata'}} bold width='80%' fontSize={24}>When did the episode happen?</Text>
                     </HStack>
                 </Center>
                 <Center>
                     <VStack justifyContent='center' width='80%'>
                         <Button m='2' py='2' borderRadius='2xl' bgColor='warning.200' onPress={() => (showThirdModal())}>
-                            <Text bold alignSelf='center' fontSize={20}>Just now</Text>
+                            <Text style={{fontFamily:'Alata'}} bold alignSelf='center' fontSize={20}>Just now</Text>
                         </Button>
                         <Button variant='outline' m='2' py='2' borderRadius='2xl' borderWidth='3' borderColor='warning.200' onPress={() => (showThirdModal())}>
-                            <Text bold alignSelf='center' fontSize={20}>5 minutes ago</Text>
+                            <Text style={{fontFamily:'Alata'}} bold alignSelf='center' fontSize={20}>5 minutes ago</Text>
                         </Button>
                         <Button m='2' py='2' borderRadius='2xl' bgColor='warning.200' onPress={() => (showThirdModal())}>
-                            <Text bold alignSelf='center' fontSize={20}>10 minutes ago</Text>
+                            <Text style={{fontFamily:'Alata'}} bold alignSelf='center' fontSize={20}>10 minutes ago</Text>
                         </Button>
                         <Button variant='outline' m='2' py='2' borderRadius='2xl' borderWidth='3' borderColor='warning.200' onPress={() => (showThirdModal())}>
-                            <Text bold alignSelf='center' fontSize={20}>15 minutes ago</Text>
+                            <Text style={{fontFamily:'Alata'}} bold alignSelf='center' fontSize={20}>15 minutes ago</Text>
                         </Button>
                         <Button m='2' py='2' borderRadius='2xl' bgColor='warning.200' onPress={() => (showThirdModal())}>
-                            <Text bold alignSelf='center' fontSize={20}>Other</Text>
+                            <Text style={{fontFamily:'Alata'}} bold alignSelf='center' fontSize={20}>Other</Text>
                         </Button>
                         
                     </VStack>
@@ -109,13 +109,13 @@ import {
             <Modal.Body>
                 <Center my='4'>
                     <HStack>
-                        <Text bold width='80%' fontSize={24}>All done!</Text>
+                        <Text style={{fontFamily:'Alata'}} bold width='80%' fontSize={24}>All done!</Text>
                     </HStack>
                 </Center>
                 <Center>
                     <VStack justifyContent='center' width='80%'>
                         <Button m='2' py='2' borderRadius='2xl' bgColor='warning.200'>
-                            <Text bold alignSelf='center' fontSize={20}>Tap here for more info!</Text>
+                            <Text style={{fontFamily:'Alata'}} bold alignSelf='center' fontSize={20}>Tap here for more info!</Text>
                         </Button>
                         
                     </VStack>

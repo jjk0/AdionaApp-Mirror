@@ -16,7 +16,6 @@ export const createRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
-      bucketNumber
       createdAt
       updatedAt
       _version
@@ -40,7 +39,6 @@ export const updateRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
-      bucketNumber
       createdAt
       updatedAt
       _version
@@ -64,7 +62,243 @@ export const deleteRegisteredInfo = /* GraphQL */ `
       patientName
       caregiverName
       caregiverRelationship
-      bucketNumber
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const createPatientWatchData = /* GraphQL */ `
+  mutation CreatePatientWatchData(
+    $input: CreatePatientWatchDataInput!
+    $condition: ModelPatientWatchDataConditionInput
+  ) {
+    createPatientWatchData(input: $input, condition: $condition) {
+      id
+      time
+      steps
+      calories
+      heartRate
+      respiratoryRate
+      oxygenSaturation
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const updatePatientWatchData = /* GraphQL */ `
+  mutation UpdatePatientWatchData(
+    $input: UpdatePatientWatchDataInput!
+    $condition: ModelPatientWatchDataConditionInput
+  ) {
+    updatePatientWatchData(input: $input, condition: $condition) {
+      id
+      time
+      steps
+      calories
+      heartRate
+      respiratoryRate
+      oxygenSaturation
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const deletePatientWatchData = /* GraphQL */ `
+  mutation DeletePatientWatchData(
+    $input: DeletePatientWatchDataInput!
+    $condition: ModelPatientWatchDataConditionInput
+  ) {
+    deletePatientWatchData(input: $input, condition: $condition) {
+      id
+      time
+      steps
+      calories
+      heartRate
+      respiratoryRate
+      oxygenSaturation
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const createPatientAgitation = /* GraphQL */ `
+  mutation CreatePatientAgitation(
+    $input: CreatePatientAgitationInput!
+    $condition: ModelPatientAgitationConditionInput
+  ) {
+    createPatientAgitation(input: $input, condition: $condition) {
+      id
+      time
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const updatePatientAgitation = /* GraphQL */ `
+  mutation UpdatePatientAgitation(
+    $input: UpdatePatientAgitationInput!
+    $condition: ModelPatientAgitationConditionInput
+  ) {
+    updatePatientAgitation(input: $input, condition: $condition) {
+      id
+      time
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const deletePatientAgitation = /* GraphQL */ `
+  mutation DeletePatientAgitation(
+    $input: DeletePatientAgitationInput!
+    $condition: ModelPatientAgitationConditionInput
+  ) {
+    deletePatientAgitation(input: $input, condition: $condition) {
+      id
+      time
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const createPatientTips = /* GraphQL */ `
+  mutation CreatePatientTips(
+    $input: CreatePatientTipsInput!
+    $condition: ModelPatientTipsConditionInput
+  ) {
+    createPatientTips(input: $input, condition: $condition) {
+      id
+      tips {
+        lifestyleTip {
+          message
+          importance
+          link
+        }
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const updatePatientTips = /* GraphQL */ `
+  mutation UpdatePatientTips(
+    $input: UpdatePatientTipsInput!
+    $condition: ModelPatientTipsConditionInput
+  ) {
+    updatePatientTips(input: $input, condition: $condition) {
+      id
+      tips {
+        lifestyleTip {
+          message
+          importance
+          link
+        }
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const deletePatientTips = /* GraphQL */ `
+  mutation DeletePatientTips(
+    $input: DeletePatientTipsInput!
+    $condition: ModelPatientTipsConditionInput
+  ) {
+    deletePatientTips(input: $input, condition: $condition) {
+      id
+      tips {
+        lifestyleTip {
+          message
+          importance
+          link
+        }
+        sleepTip {
+          message
+          importance
+          link
+        }
+        hrTip {
+          message
+          importance
+          link
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+        }
+        generalTip {
+          message
+          importance
+          link
+        }
+      }
       createdAt
       updatedAt
       _version
@@ -143,7 +377,6 @@ export const createGeoFence = /* GraphQL */ `
   ) {
     createGeoFence(input: $input, condition: $condition) {
       id
-      owner
       lon
       lat
       radius
@@ -162,7 +395,6 @@ export const updateGeoFence = /* GraphQL */ `
   ) {
     updateGeoFence(input: $input, condition: $condition) {
       id
-      owner
       lon
       lat
       radius
@@ -181,7 +413,6 @@ export const deleteGeoFence = /* GraphQL */ `
   ) {
     deleteGeoFence(input: $input, condition: $condition) {
       id
-      owner
       lon
       lat
       radius
