@@ -244,7 +244,7 @@ const UserRegistration = ({navigation}) => {
                                 </Stack>
                                 <Stack mx='5'>
                                     <FormControl.Label>
-                                        <Text style={{fontFamily:'Alata'}} color='white' fontSize={20}>Diagnosis Date</Text></FormControl.Label>
+                                        <Text style={{fontFamily:'Alata'}} color='white' fontSize={20}>Diagnosis Year</Text></FormControl.Label>
                                     <Input size={20} value={values.diagnosisDate} bgColor='white' onChangeText={handleChange('diagnosisDate')} variant="underlined" p={2} placeholder="yyyy" />
                                     {errors.diagnosisDate &&
                                     <Text style={{fontFamily:'Alata'}} color='white' fontSize={12}>Please fill out the correct year of diagnosis</Text>
