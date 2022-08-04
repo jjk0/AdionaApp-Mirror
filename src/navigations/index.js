@@ -26,7 +26,9 @@ import UserRegistration from '../screens/registration/UserRegistration';
 import WatchRegistration from '../screens/registration/WatchRegistration';
 import FallWarning from '../screens/warning/FallWarning';
 import ProfilePage from '../screens/registration/ProfilePage';
-import DiaryEntry from '../screens/diary/DiaryEntry'
+import DiaryEntry from '../screens/diary/DiaryEntry';
+import DiaryPageTwo from '../screens/diary/DiaryPageTwo';
+import DiaryPageThree from '../screens/diary/DiaryPageThree';
 import {useUserContext} from '../contexts/UserContext';
 
 import {
@@ -102,97 +104,31 @@ function App() {
       </VStack>
     );
   }
-  return (
-    <NavigationContainer>
-      <Stack.Navigator
-        name="Stack"
-        initialRouteName={"Root"}
-        options={{title: 'Overview'}}
-        screenOptions={{
-          headerShown: false,
-          gestureEnabled: false,
-        }}>
-        <Stack.Screen
-          screenOptions={{headerShown: false}}
-          name="Root"
-          component={Root}
-        />
-        <Stack.Screen
-          screenOptions={{headerShown: false}}
-          name="Register"
-          component={UserRegistration}
-        />
-        <Stack.Screen
-          screenOptions={{headerShown: false}}
-          name="Home"
-          component={HomeScreen}
-        />
-        <Stack.Screen
-          screenOptions={{headerShown: false}}
-          name="Overall Trends"
-          component={OverallTrends}
-        />
-        <Stack.Screen
-          screenOptions={{headerShown: false}}
-          name="Activity Screen"
-          component={ActivityScreen}
-        />
-        <Stack.Screen
-          screenOptions={{headerShown: false}}
-          name="Heart Screen"
-          component={HeartScreen}
-        />
-        <Stack.Screen
-          screenOptions={{headerShown: false}}
-          name="Diary Main Screen"
-          component={DiaryMainScreen}
-        />
-        <Stack.Screen
-          screenOptions={{headerShown: false}}
-          name="General Tips"
-          component={GeneralTips}
-        />
-        <Stack.Screen
-          screenOptions={{headerShown: false}}
-          name="Activity Tips"
-          component={ActivityTips}
-        />
-        <Stack.Screen
-          screenOptions={{headerShown: false}}
-          name="Respiratory Tips"
-          component={RespiratoryTips}
-        />
-        <Stack.Screen
-          screenOptions={{headerShown: false}}
-          name="Heart Tips"
-          component={HeartTips}
-        />
-        <Stack.Screen
-          screenOptions={{headerShown: false}}
-          name="Mobility Tips"
-          component={MobilityTips}
-        />
-        <Stack.Screen
-          screenOptions={{headerShown: false}}
-          name="Sleep Tips"
-          component={SleepTips}
-        />
-        <Stack.Screen
-          screenOptions={{headerShown: false}}
-          name="Cognition Tips"
-          component={CognitionTips}
-        />
-        <Stack.Screen
-          screenOptions={{headerShown: false}}
-          name="Agitation Tips"
-          component={AgitationTips}
-        />
-        <Stack.Screen
-          options={{headerShown: false}}
-          name="Main Location"
-          component={MainLocation}
-        />
-        <Stack.Screen
+  return (  
+
+  <NavigationContainer>
+    <Stack.Navigator name="Stack" initialRouteName={initialRoute} options={{ title: 'Overview' }}>
+      <Stack.Screen screenOptions={{headerShown: false}} name="Root" component={Root}/>
+      <Stack.Screen screenOptions={{headerShown: false}} name="Register" component={UserRegistration} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Watch Setup" component={WatchRegistration} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Home" component={HomeScreen} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Overall Trends" component={OverallTrends} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Activity Screen" component={ActivityScreen} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Heart Screen" component={HeartScreen} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Diary Main Screen" component={DiaryMainScreen} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Diary Entry" component={DiaryEntry} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Diary Page Two" component={DiaryPageTwo} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Diary Page Three" component={DiaryPageThree} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="General Tips" component={GeneralTips} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Activity Tips" component={ActivityTips} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Respiratory Tips" component={RespiratoryTips} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Heart Tips" component={HeartTips} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Mobility Tips" component={MobilityTips} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Sleep Tips" component={SleepTips} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Cognition Tips" component={CognitionTips} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Agitation Tips" component={AgitationTips} />
+      <Stack.Screen screenOptions={{headerShown: false}} name="Main Location" component={MainLocation} />
+      <Stack.Screen
           options={{headerShown: false}}
           name="Manage GeoFence"
           component={ManageGeoFence}
@@ -202,14 +138,9 @@ function App() {
           name="Add GeoFence"
           component={AddGeoFence}
         />
-        <Stack.Screen
-          screenOptions={{headerShown: false}}
-          name="Respiratory Screen"
-          component={RespiratoryScreen}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+      <Stack.Screen screenOptions={{headerShown: false}} name="Respiratory Screen" component={RespiratoryScreen} />
+    </Stack.Navigator>
+  </NavigationContainer>
+)}
 
 export default App;
