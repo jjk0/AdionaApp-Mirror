@@ -27,6 +27,10 @@ import WatchRegistration from '../screens/registration/WatchRegistration';
 import {useUserContext} from '../contexts/UserContext';
 import FallWarning from '../screens/warning/FallWarning';
 import ProfilePage from '../screens/registration/ProfilePage';
+<<<<<<< HEAD
+=======
+import {useUserContext} from '../contexts/UserContext'
+>>>>>>> 47eb1bcb39ddd37f903fb216d5ac97ded0fdd03c
 
 import {
   createDrawerNavigator,
@@ -52,30 +56,27 @@ const backToHomeRoutes = [
 ];
 
 function Root() {
-  return (
-    <Drawer.Navigator
-      name="Drawer"
-      drawerContent={props => {
-        return (
-          <DrawerContentScrollView {...props}>
-            <DrawerItemList {...props} />
-            <DrawerItem
-              label="Logout"
-              onPress={() => props.navigation.navigate('Logout')}
-            />
-          </DrawerContentScrollView>
-        );
-      }}>
-      <Drawer.Screen name="Home Screen" component={HomeScreen} />
-      <Drawer.Screen name="Logout" component={Logout} />
-      <Drawer.Screen name="Profile" component={ActivityScreen} />
-      <Drawer.Screen name="Settings" component={HeartScreen} />
-      <Drawer.Screen name="Register" component={UserRegistration} />
-      <Drawer.Screen name="Watch Setup" component={WatchRegistration} />
-      {/* <Stack.Screen screenOptions={{headerShown: false}} name="Root" component={Root} /> */}
-    </Drawer.Navigator>
-  );
-}
+    return (
+        <Drawer.Navigator name='Drawer' screenOptions={{
+          headerShown: false,
+          headerTransparent:true
+        }}
+        drawerContent={props => {
+          return (
+            <DrawerContentScrollView {...props}>
+              <DrawerItemList {...props} />
+              <DrawerItem label="Logout" onPress={() => props.navigation.navigate("Logout")} />
+            </DrawerContentScrollView>
+          )
+        }}>
+            <Drawer.Screen name="Home Screen" component={HomeScreen} />
+            <Drawer.Screen name="Logout" component={Logout} />
+            <Drawer.Screen name="Register" component={UserRegistration} />
+            <Drawer.Screen name="Watch Setup" component={WatchRegistration} />
+            <Drawer.Screen name="Profile Page" component={ProfilePage} />
+        </Drawer.Navigator>
+    );
+    }
 
 function App() {
   const {user, userChecked} = useUserContext();
