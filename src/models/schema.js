@@ -125,13 +125,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "patientId": {
-                    "name": "patientId",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
                 "steps": {
                     "name": "steps",
                     "isArray": false,
@@ -146,8 +139,8 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "heart_rate": {
-                    "name": "heart_rate",
+                "heartRate": {
+                    "name": "heartRate",
                     "isArray": false,
                     "type": "Int",
                     "isRequired": false,
@@ -167,21 +160,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "tips": {
-                    "name": "tips",
-                    "isArray": false,
-                    "type": {
-                        "nonModel": "PatientTip"
-                    },
-                    "isRequired": false,
-                    "attributes": []
-                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
                 },
                 "updatedAt": {
                     "name": "updatedAt",
@@ -203,18 +188,161 @@ export const schema = {
                     "type": "key",
                     "properties": {
                         "fields": [
+                            "id",
                             "time"
                         ]
                     }
                 },
                 {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "PatientAgitation": {
+            "name": "PatientAgitation",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "time": {
+                    "name": "time",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "PatientAgitations",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
                     "type": "key",
                     "properties": {
-                        "name": "getDataByPatient",
-                        "queryField": "getDataByPatient",
                         "fields": [
-                            "patientId",
-                            "createdAt"
+                            "id",
+                            "time"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "PatientTips": {
+            "name": "PatientTips",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "tips": {
+                    "name": "tips",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "PatientTip"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "PatientTips",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "fields": [
+                            "id"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
                         ]
                     }
                 }
@@ -324,13 +452,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "owner": {
-                    "name": "owner",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
                 "lon": {
                     "name": "lon",
                     "isArray": false,
@@ -377,16 +498,6 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
-                },
-                {
-                    "type": "key",
-                    "properties": {
-                        "name": "geoFenceByUser",
-                        "queryField": "geoFenceByUser",
-                        "fields": [
-                            "owner"
-                        ]
-                    }
                 },
                 {
                     "type": "auth",
@@ -495,5 +606,5 @@ export const schema = {
             }
         }
     },
-    "version": "0217b720358effe5892c79fa9911328b"
+    "version": "3757c6916ce01681da4ebf9abb617d31"
 };

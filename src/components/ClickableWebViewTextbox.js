@@ -17,7 +17,7 @@ const App = (props) => {
   };
  
   return (
-        <View>
+        <SafeAreaView>
         <BeautyWebView
           visible={visible} // Reguired for open and close
           onPressClose={() => setVisible(false)} // Reguired for closing the modal
@@ -26,7 +26,7 @@ const App = (props) => {
           backgroundColor='#557FC3'
         />
         <ClickableTextBox textColor={props.textColor} backgroundColor={props.backgroundColor} mainText={props.mainText} secondaryText={props.secondaryText} onPress={onButtonPress}/>
-        </View>
+        </SafeAreaView>
   );
 };
  

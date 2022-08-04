@@ -8,16 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* AdionaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AdionaAppTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-AdionaApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-AdionaApp.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		68C28111288714A100461EEC /* Alata-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68C28110288714A000461EEC /* Alata-Regular.ttf */; };
-		68C28112288714A100461EEC /* Alata-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68C28110288714A000461EEC /* Alata-Regular.ttf */; };
-		68C2811528873A1E00461EEC /* Alata-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68C2811428873A1E00461EEC /* Alata-Regular.ttf */; };
-		68C2811628873A1E00461EEC /* Alata-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68C2811428873A1E00461EEC /* Alata-Regular.ttf */; };
-		7699B88040F8A987B510C191 /* libPods-AdionaApp-AdionaAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-AdionaApp-AdionaAppTests.a */; };
+		48DEDABA77DCB5F8F1160E12 /* libPods-AdionaApp-AdionaAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6272B06A97B576CFCBD64EC /* libPods-AdionaApp-AdionaAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		EF260165460138CAFB5133F6 /* libPods-AdionaApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC363396F0F9A220705369E /* libPods-AdionaApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,11 +36,8 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = AdionaApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AdionaApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = AdionaApp/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-AdionaApp-AdionaAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdionaApp-AdionaAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B4392A12AC88292D35C810B /* Pods-AdionaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdionaApp.debug.xcconfig"; path = "Target Support Files/Pods-AdionaApp/Pods-AdionaApp.debug.xcconfig"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-AdionaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdionaApp.release.xcconfig"; path = "Target Support Files/Pods-AdionaApp/Pods-AdionaApp.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-AdionaApp-AdionaAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdionaApp-AdionaAppTests.debug.xcconfig"; path = "Target Support Files/Pods-AdionaApp-AdionaAppTests/Pods-AdionaApp-AdionaAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-AdionaApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdionaApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		60AC826E3988C76C49FBE351 /* Pods-AdionaApp-AdionaAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdionaApp-AdionaAppTests.debug.xcconfig"; path = "Target Support Files/Pods-AdionaApp-AdionaAppTests/Pods-AdionaApp-AdionaAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6355C9141190D2C52B8F450D /* Pods-AdionaApp-AdionaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdionaApp-AdionaAppTests.release.xcconfig"; path = "Target Support Files/Pods-AdionaApp-AdionaAppTests/Pods-AdionaApp-AdionaAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		6858D7CF282B0E040032DFC7 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
 		6858D7D0282B0E040032DFC7 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
 		6858D7D1282B0E040032DFC7 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
@@ -61,10 +54,11 @@
 		6858D7DC282B0E040032DFC7 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		6858D7DD282B0E040032DFC7 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
 		6858D7DE282B0E040032DFC7 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
-		68C28110288714A000461EEC /* Alata-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Alata-Regular.ttf"; path = "../../src/assets/fonts/Alata-Regular.ttf"; sourceTree = "<group>"; };
-		68C2811428873A1E00461EEC /* Alata-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Alata-Regular.ttf"; path = "../src/assets/fonts/Alata-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AdionaApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-AdionaApp-AdionaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdionaApp-AdionaAppTests.release.xcconfig"; path = "Target Support Files/Pods-AdionaApp-AdionaAppTests/Pods-AdionaApp-AdionaAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		8FC363396F0F9A220705369E /* libPods-AdionaApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdionaApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C76AC2616F354F61532EFEF4 /* Pods-AdionaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdionaApp.release.xcconfig"; path = "Target Support Files/Pods-AdionaApp/Pods-AdionaApp.release.xcconfig"; sourceTree = "<group>"; };
+		E6272B06A97B576CFCBD64EC /* libPods-AdionaApp-AdionaAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdionaApp-AdionaAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E69F79F1D91B93F9F2D65D86 /* Pods-AdionaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdionaApp.debug.xcconfig"; path = "Target Support Files/Pods-AdionaApp/Pods-AdionaApp.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -73,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-AdionaApp-AdionaAppTests.a in Frameworks */,
+				48DEDABA77DCB5F8F1160E12 /* libPods-AdionaApp-AdionaAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-AdionaApp.a in Frameworks */,
+				EF260165460138CAFB5133F6 /* libPods-AdionaApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +102,7 @@
 		13B07FAE1A68108700A75B9A /* AdionaApp */ = {
 			isa = PBXGroup;
 			children = (
+				E5ACAE472880652B007D38CF /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -122,8 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-AdionaApp.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-AdionaApp-AdionaAppTests.a */,
+				8FC363396F0F9A220705369E /* libPods-AdionaApp.a */,
+				E6272B06A97B576CFCBD64EC /* libPods-AdionaApp-AdionaAppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -131,7 +126,6 @@
 		6858D7CE282B0E040032DFC7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				68C28110288714A000461EEC /* Alata-Regular.ttf */,
 				6858D7CF282B0E040032DFC7 /* FontAwesome5_Regular.ttf */,
 				6858D7D0282B0E040032DFC7 /* Ionicons.ttf */,
 				6858D7D1282B0E040032DFC7 /* MaterialIcons.ttf */,
@@ -162,15 +156,13 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				68C2811428873A1E00461EEC /* Alata-Regular.ttf */,
 				6858D7CE282B0E040032DFC7 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* AdionaApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* AdionaAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				BBD78D7AC51CEA395F1C20DB /* Pods */,
-				F4E3350199674AA5ABA81B4C /* Resources */,
+				A81275BD25F87A0B1FEEE946 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -186,23 +178,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
+		A81275BD25F87A0B1FEEE946 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-AdionaApp.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-AdionaApp.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-AdionaApp-AdionaAppTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-AdionaApp-AdionaAppTests.release.xcconfig */,
+				E69F79F1D91B93F9F2D65D86 /* Pods-AdionaApp.debug.xcconfig */,
+				C76AC2616F354F61532EFEF4 /* Pods-AdionaApp.release.xcconfig */,
+				60AC826E3988C76C49FBE351 /* Pods-AdionaApp-AdionaAppTests.debug.xcconfig */,
+				6355C9141190D2C52B8F450D /* Pods-AdionaApp-AdionaAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		F4E3350199674AA5ABA81B4C /* Resources */ = {
+		E5ACAE472880652B007D38CF /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Resources;
-			path = "";
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,11 +203,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "AdionaAppTests" */;
 			buildPhases = (
-				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
+				B1182DDA481E8B042AE57082 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
+				067C60E369A0A9C999943E01 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,13 +223,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "AdionaApp" */;
 			buildPhases = (
-				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				1B5CF8864F55C56EBF01F0F1 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				7A321D3BE11CA4E0E6F48BC9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -255,7 +246,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
@@ -290,8 +281,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68C28112288714A100461EEC /* Alata-Regular.ttf in Resources */,
-				68C2811628873A1E00461EEC /* Alata-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,10 +288,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68C28111288714A100461EEC /* Alata-Regular.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				68C2811528873A1E00461EEC /* Alata-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,29 +310,24 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
+		067C60E369A0A9C999943E01 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdionaApp-AdionaAppTests/Pods-AdionaApp-AdionaAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AdionaApp-AdionaAppTests-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-AdionaApp-AdionaAppTests/Pods-AdionaApp-AdionaAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdionaApp-AdionaAppTests/Pods-AdionaApp-AdionaAppTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+		1B5CF8864F55C56EBF01F0F1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -367,7 +349,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
+		7A321D3BE11CA4E0E6F48BC9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -384,21 +366,26 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdionaApp/Pods-AdionaApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
+		B1182DDA481E8B042AE57082 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AdionaApp-AdionaAppTests/Pods-AdionaApp-AdionaAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AdionaApp-AdionaAppTests/Pods-AdionaApp-AdionaAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AdionaApp-AdionaAppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdionaApp-AdionaAppTests/Pods-AdionaApp-AdionaAppTests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -453,7 +440,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-AdionaApp-AdionaAppTests.debug.xcconfig */;
+			baseConfigurationReference = 60AC826E3988C76C49FBE351 /* Pods-AdionaApp-AdionaAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 5BY4WL56KH;
@@ -462,7 +449,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = AdionaAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -481,13 +468,13 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-AdionaApp-AdionaAppTests.release.xcconfig */;
+			baseConfigurationReference = 6355C9141190D2C52B8F450D /* Pods-AdionaApp-AdionaAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 5BY4WL56KH;
 				INFOPLIST_FILE = AdionaAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -506,7 +493,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-AdionaApp.debug.xcconfig */;
+			baseConfigurationReference = E69F79F1D91B93F9F2D65D86 /* Pods-AdionaApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -533,7 +520,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-AdionaApp.release.xcconfig */;
+			baseConfigurationReference = C76AC2616F354F61532EFEF4 /* Pods-AdionaApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -605,7 +592,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -669,7 +656,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",

@@ -25,7 +25,7 @@ import * as Yup from 'yup';
 
 
 import {RegisteredInfo, UserInfo} from '../../models';
-import { DataStore, Auth, Hub, Logger, Storage } from 'aws-amplify';
+import { DataStore, Auth, Hub, Logger } from 'aws-amplify';
 //Amplify.Logger.LOG_LEVEL = 'DEBUG';
 import Swiper from 'react-native-swiper'
 import NextSwipeButton from '../../components/NextSwipeButton';
