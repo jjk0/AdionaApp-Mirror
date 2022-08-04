@@ -10,6 +10,7 @@ const GeoFenceRadius = {
 
 const { RegisteredInfo, PatientWatchData, PatientAgitation, PatientTips, UserInfo, GeoFence, Tip, PatientTip } = initSchema(schema);
 
+
 export {
   RegisteredInfo,
   PatientWatchData,
