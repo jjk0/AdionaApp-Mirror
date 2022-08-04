@@ -298,7 +298,6 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -607,6 +606,5 @@ export const schema = {
             }
         }
     },
-    "version": "0217b720358effe5892c79fa9911328b"
-
+    "version": "3757c6916ce01681da4ebf9abb617d31"
 };
