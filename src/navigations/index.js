@@ -27,10 +27,6 @@ import WatchRegistration from '../screens/registration/WatchRegistration';
 import {useUserContext} from '../contexts/UserContext';
 import FallWarning from '../screens/warning/FallWarning';
 import ProfilePage from '../screens/registration/ProfilePage';
-<<<<<<< HEAD
-=======
-import {useUserContext} from '../contexts/UserContext'
->>>>>>> 47eb1bcb39ddd37f903fb216d5ac97ded0fdd03c
 
 import {
   createDrawerNavigator,
