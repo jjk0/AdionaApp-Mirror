@@ -27,9 +27,9 @@ import WatchRegistration from '../screens/registration/WatchRegistration';
 import DiaryEntry from '../screens/diary/DiaryEntry';
 import DiaryPageTwo from '../screens/diary/DiaryPageTwo';
 import DiaryPageThree from '../screens/diary/DiaryPageThree';
-import {useUserContext} from '../contexts/UserContext';
 import FallWarning from '../screens/warning/FallWarning';
 import ProfilePage from '../screens/registration/ProfilePage';
+import {useUserContext} from '../contexts/UserContext';
 
 import {
   createDrawerNavigator,
@@ -58,6 +58,7 @@ function Root() {
   return (
     <Drawer.Navigator
       name="Drawer"
+      screenOptions={{headerShown:false}}
       drawerContent={props => {
         return (
           <DrawerContentScrollView {...props}>
@@ -70,11 +71,9 @@ function Root() {
         );
       }}>
       <Drawer.Screen name="Home Screen" component={HomeScreen} />
-      <Drawer.Screen name="Logout" component={Logout} />
-      <Drawer.Screen name="Profile" component={ActivityScreen} />
-      <Drawer.Screen name="Settings" component={HeartScreen} />
       <Drawer.Screen name="Register" component={UserRegistration} />
       <Drawer.Screen name="Watch Setup" component={WatchRegistration} />
+      <Drawer.Screen name="Profile Page" component={ProfilePage} />
       {/* <Stack.Screen screenOptions={{headerShown: false}} name="Root" component={Root} /> */}
     </Drawer.Navigator>
   );
@@ -110,7 +109,7 @@ function App() {
   return (  
 
   <NavigationContainer>
-    <Stack.Navigator name="Stack" initialRouteName={initialRoute} options={{ title: 'Overview' }}>
+    <Stack.Navigator name="Stack" initialRouteName={initialRoute} screenOptions={{ headerShown: false }}>
       <Stack.Screen screenOptions={{headerShown: false}} name="Root" component={Root}/>
       <Stack.Screen screenOptions={{headerShown: false}} name="Register" component={UserRegistration} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Watch Setup" component={WatchRegistration} />
@@ -145,6 +144,5 @@ function App() {
     </Stack.Navigator>
   </NavigationContainer>
 )}
-
 
 export default App;
