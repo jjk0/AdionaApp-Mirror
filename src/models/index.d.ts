@@ -27,7 +27,15 @@ type RegisteredInfoMetaData = {
 }
 
 type PatientWatchDataMetaData = {
-  readOnlyFields: 'updatedAt';
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
+type PatientAgitationMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
+type PatientTipsMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
 type UserInfoMetaData = {
@@ -57,17 +65,33 @@ export declare class RegisteredInfo {
 export declare class PatientWatchData {
   readonly id: string;
   readonly time: string;
-  readonly patientId: string;
   readonly steps?: number | null;
   readonly calories?: number | null;
-  readonly heart_rate?: number | null;
+  readonly heartRate?: number | null;
   readonly respiratoryRate?: number | null;
   readonly oxygenSaturation?: number | null;
-  readonly tips?: PatientTip | null;
-  readonly createdAt: string;
+  readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<PatientWatchData, PatientWatchDataMetaData>);
   static copyOf(source: PatientWatchData, mutator: (draft: MutableModel<PatientWatchData, PatientWatchDataMetaData>) => MutableModel<PatientWatchData, PatientWatchDataMetaData> | void): PatientWatchData;
+}
+
+export declare class PatientAgitation {
+  readonly id: string;
+  readonly time: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<PatientAgitation, PatientAgitationMetaData>);
+  static copyOf(source: PatientAgitation, mutator: (draft: MutableModel<PatientAgitation, PatientAgitationMetaData>) => MutableModel<PatientAgitation, PatientAgitationMetaData> | void): PatientAgitation;
+}
+
+export declare class PatientTips {
+  readonly id: string;
+  readonly tips?: PatientTip | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<PatientTips, PatientTipsMetaData>);
+  static copyOf(source: PatientTips, mutator: (draft: MutableModel<PatientTips, PatientTipsMetaData>) => MutableModel<PatientTips, PatientTipsMetaData> | void): PatientTips;
 }
 
 export declare class UserInfo {
@@ -86,7 +110,6 @@ export declare class UserInfo {
 
 export declare class GeoFence {
   readonly id: string;
-  readonly owner: string;
   readonly lon?: number | null;
   readonly lat?: number | null;
   readonly radius?: GeoFenceRadius | keyof typeof GeoFenceRadius | null;
