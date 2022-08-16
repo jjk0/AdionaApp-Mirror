@@ -8,30 +8,15 @@ type RegisteredInfo @model @auth(rules: [{allow: public}]) {
   patientName: String
   caregiverName: String
   caregiverRelationship: String
-
 }
 
-<<<<<<< HEAD
-=======
-type PatientWatchData @model {
-  time: AWSDateTime! @primaryKey
-  patientId: ID! @index(name: "getDataByPatient", sortKeyFields: ["createdAt"], queryField: "getDataByPatient")
-  steps: Int
-  calories: Int
-  heart_rate: Int
-  respiratoryRate: Int
-  oxygenSaturation: Int
-  createdAt: String!
-}
-
->>>>>>> b09df297cb8f36201b16df07820f63c0b772baf8
-type Tip {
+type Tip @model @auth(rules: [{allow: public}]) {
   message: String
   importance: Int
   link: String
 }
 
-type PatientTip {
+type SinglePatientTip @model @auth(rules: [{allow: public}]) {
   lifestyleTip: Tip
   sleepTip: Tip
   hrTip: Tip
@@ -39,11 +24,9 @@ type PatientTip {
   generalTip: Tip
 }
 
-
-
-type PatientWatchData @model {
+type PatientWatchData @model @auth(rules: [{allow: public}]) {
   time: AWSDateTime! @primaryKey
-  patientId: ID! @index(name: "getDataByPatient", sortKeyFields: ["createdAt"], queryField: "getDataByPatient")
+  id: ID! @index(name: "getDataByPatient", sortKeyFields: ["createdAt"], queryField: "getDataByPatient")
   steps: Int
   calories: Int
   heart_rate: Int
@@ -52,18 +35,15 @@ type PatientWatchData @model {
   createdAt: String!
 }
 
-
 type PatientAgitation @model @auth(rules: [{allow: public}]) {
   id: ID! @primaryKey(sortKeyFields: ["time"])
   time: AWSDateTime!
 }
 
-
 type PatientTips @model @auth(rules: [{allow: public}]) {
   id: ID! @primaryKey
-  tips: PatientTip
+  tips: SinglePatientTip
 }
-
 
 type UserInfo @model @auth(rules: [{allow: public}]) {
   id: ID!
@@ -80,11 +60,11 @@ enum GeoFenceRadius {
   FT_100
   FT_200
 }
- 
-type GeoFence @model @auth(rules: [{allow: public}])
- {
+
+type GeoFence @model @auth(rules: [{allow: public}]) {
   id: ID!
   lon: Float
-  lat:  Float
+  lat: Float
   radius: GeoFenceRadius
 }
+ 

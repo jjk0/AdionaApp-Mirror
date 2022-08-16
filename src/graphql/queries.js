@@ -83,14 +83,308 @@ export const syncRegisteredInfos = /* GraphQL */ `
     }
   }
 `;
-export const getPatientWatchData = /* GraphQL */ `
-  query GetPatientWatchData($id: ID!, $time: AWSDateTime!) {
-    getPatientWatchData(id: $id, time: $time) {
+export const getTip = /* GraphQL */ `
+  query GetTip($id: ID!) {
+    getTip(id: $id) {
+      message
+      importance
+      link
       id
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listTips = /* GraphQL */ `
+  query ListTips(
+    $filter: ModelTipFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTips(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncTips = /* GraphQL */ `
+  query SyncTips(
+    $filter: ModelTipFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncTips(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getSinglePatientTip = /* GraphQL */ `
+  query GetSinglePatientTip($id: ID!) {
+    getSinglePatientTip(id: $id) {
+      lifestyleTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      sleepTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      hrTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      respiratoryTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      generalTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      id
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listSinglePatientTips = /* GraphQL */ `
+  query ListSinglePatientTips(
+    $filter: ModelSinglePatientTipFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listSinglePatientTips(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        lifestyleTip {
+          message
+          importance
+          link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        sleepTip {
+          message
+          importance
+          link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        hrTip {
+          message
+          importance
+          link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        generalTip {
+          message
+          importance
+          link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncSinglePatientTips = /* GraphQL */ `
+  query SyncSinglePatientTips(
+    $filter: ModelSinglePatientTipFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncSinglePatientTips(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        lifestyleTip {
+          message
+          importance
+          link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        sleepTip {
+          message
+          importance
+          link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        hrTip {
+          message
+          importance
+          link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        respiratoryTip {
+          message
+          importance
+          link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        generalTip {
+          message
+          importance
+          link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getPatientWatchData = /* GraphQL */ `
+  query GetPatientWatchData($time: AWSDateTime!) {
+    getPatientWatchData(time: $time) {
       time
+      id
       steps
       calories
-      heartRate
+      heart_rate
       respiratoryRate
       oxygenSaturation
       createdAt
@@ -103,15 +397,13 @@ export const getPatientWatchData = /* GraphQL */ `
 `;
 export const listPatientWatchData = /* GraphQL */ `
   query ListPatientWatchData(
-    $id: ID
-    $time: ModelStringKeyConditionInput
+    $time: AWSDateTime
     $filter: ModelPatientWatchDataFilterInput
     $limit: Int
     $nextToken: String
     $sortDirection: ModelSortDirection
   ) {
     listPatientWatchData(
-      id: $id
       time: $time
       filter: $filter
       limit: $limit
@@ -119,11 +411,11 @@ export const listPatientWatchData = /* GraphQL */ `
       sortDirection: $sortDirection
     ) {
       items {
-        id
         time
+        id
         steps
         calories
-        heartRate
+        heart_rate
         respiratoryRate
         oxygenSaturation
         createdAt
@@ -151,11 +443,47 @@ export const syncPatientWatchData = /* GraphQL */ `
       lastSync: $lastSync
     ) {
       items {
-        id
         time
+        id
         steps
         calories
-        heartRate
+        heart_rate
+        respiratoryRate
+        oxygenSaturation
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getDataByPatient = /* GraphQL */ `
+  query GetDataByPatient(
+    $id: ID!
+    $createdAt: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelPatientWatchDataFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    getDataByPatient(
+      id: $id
+      createdAt: $createdAt
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        time
+        id
+        steps
+        calories
+        heart_rate
         respiratoryRate
         oxygenSaturation
         createdAt
@@ -249,27 +577,63 @@ export const getPatientTips = /* GraphQL */ `
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         sleepTip {
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         hrTip {
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         respiratoryTip {
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         generalTip {
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
       }
       createdAt
       updatedAt
@@ -297,31 +661,12 @@ export const listPatientTips = /* GraphQL */ `
       items {
         id
         tips {
-          lifestyleTip {
-            message
-            importance
-            link
-          }
-          sleepTip {
-            message
-            importance
-            link
-          }
-          hrTip {
-            message
-            importance
-            link
-          }
-          respiratoryTip {
-            message
-            importance
-            link
-          }
-          generalTip {
-            message
-            importance
-            link
-          }
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         createdAt
         updatedAt
@@ -350,31 +695,12 @@ export const syncPatientTips = /* GraphQL */ `
       items {
         id
         tips {
-          lifestyleTip {
-            message
-            importance
-            link
-          }
-          sleepTip {
-            message
-            importance
-            link
-          }
-          hrTip {
-            message
-            importance
-            link
-          }
-          respiratoryTip {
-            message
-            importance
-            link
-          }
-          generalTip {
-            message
-            importance
-            link
-          }
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         createdAt
         updatedAt

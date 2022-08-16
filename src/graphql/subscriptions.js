@@ -61,14 +61,260 @@ export const onDeleteRegisteredInfo = /* GraphQL */ `
     }
   }
 `;
+export const onCreateTip = /* GraphQL */ `
+  subscription OnCreateTip {
+    onCreateTip {
+      message
+      importance
+      link
+      id
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onUpdateTip = /* GraphQL */ `
+  subscription OnUpdateTip {
+    onUpdateTip {
+      message
+      importance
+      link
+      id
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onDeleteTip = /* GraphQL */ `
+  subscription OnDeleteTip {
+    onDeleteTip {
+      message
+      importance
+      link
+      id
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onCreateSinglePatientTip = /* GraphQL */ `
+  subscription OnCreateSinglePatientTip {
+    onCreateSinglePatientTip {
+      lifestyleTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      sleepTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      hrTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      respiratoryTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      generalTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      id
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onUpdateSinglePatientTip = /* GraphQL */ `
+  subscription OnUpdateSinglePatientTip {
+    onUpdateSinglePatientTip {
+      lifestyleTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      sleepTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      hrTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      respiratoryTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      generalTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      id
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onDeleteSinglePatientTip = /* GraphQL */ `
+  subscription OnDeleteSinglePatientTip {
+    onDeleteSinglePatientTip {
+      lifestyleTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      sleepTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      hrTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      respiratoryTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      generalTip {
+        message
+        importance
+        link
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      id
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
 export const onCreatePatientWatchData = /* GraphQL */ `
   subscription OnCreatePatientWatchData {
     onCreatePatientWatchData {
-      id
       time
+      id
       steps
       calories
-      heartRate
+      heart_rate
       respiratoryRate
       oxygenSaturation
       createdAt
@@ -82,11 +328,11 @@ export const onCreatePatientWatchData = /* GraphQL */ `
 export const onUpdatePatientWatchData = /* GraphQL */ `
   subscription OnUpdatePatientWatchData {
     onUpdatePatientWatchData {
-      id
       time
+      id
       steps
       calories
-      heartRate
+      heart_rate
       respiratoryRate
       oxygenSaturation
       createdAt
@@ -100,11 +346,11 @@ export const onUpdatePatientWatchData = /* GraphQL */ `
 export const onDeletePatientWatchData = /* GraphQL */ `
   subscription OnDeletePatientWatchData {
     onDeletePatientWatchData {
-      id
       time
+      id
       steps
       calories
-      heartRate
+      heart_rate
       respiratoryRate
       oxygenSaturation
       createdAt
@@ -163,27 +409,63 @@ export const onCreatePatientTips = /* GraphQL */ `
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         sleepTip {
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         hrTip {
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         respiratoryTip {
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         generalTip {
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
       }
       createdAt
       updatedAt
@@ -202,27 +484,63 @@ export const onUpdatePatientTips = /* GraphQL */ `
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         sleepTip {
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         hrTip {
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         respiratoryTip {
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         generalTip {
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
       }
       createdAt
       updatedAt
@@ -241,27 +559,63 @@ export const onDeletePatientTips = /* GraphQL */ `
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         sleepTip {
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         hrTip {
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         respiratoryTip {
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         generalTip {
           message
           importance
           link
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
+        id
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
       }
       createdAt
       updatedAt

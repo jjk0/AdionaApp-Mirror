@@ -20,6 +20,7 @@ export default function UserContextProvider ({children}) {
           if (user) {
             const person = await DataStore.query(UserInfo, c => c.username("eq", user.attributes.sub));
             // set the user in state
+            console.log('person from user context',person)
             setUser(person);
             setUserChcked(true)
           }

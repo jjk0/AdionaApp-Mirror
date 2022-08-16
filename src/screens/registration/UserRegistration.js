@@ -65,6 +65,7 @@ const UserRegistration = ({navigation}) => {
         try {
             await DataStore.save(new RegisteredInfo({ 'userId':user.attributes.sub, ...values }))
             await updateFlag()
+            console.log('postRoute',postRoute)
             navigation.navigate(postRoute);
             console.log('submitted!')
             
@@ -102,10 +103,10 @@ const UserRegistration = ({navigation}) => {
     const updateFlag = async () => {
         try {
             //await DataStore.start()
-            const user = await Auth.currentAuthenticatedUser();
-            console.log('user in registration:',user.attributes.sub)
-            const original = await DataStore.query(UserInfo, user.attributes.sub)
-            console.log('original',original)
+            const patient = await Auth.currentAuthenticatedUser();
+            console.log('user in registration:',patient.attributes.sub)
+            const original = await DataStore.query(UserInfo, patient.attributes.sub)
+            console.log('original',user)
             await DataStore.save(
             UserInfo.copyOf(original, updated => {
                 updated.hasPatientInfo = true;

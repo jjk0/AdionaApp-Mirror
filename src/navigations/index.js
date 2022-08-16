@@ -71,6 +71,7 @@ function Root() {
         );
       }}>
       <Drawer.Screen name="Home Screen" component={HomeScreen} />
+      <Drawer.Screen name="Log Out" component={Logout} />
       <Drawer.Screen name="Register" component={UserRegistration} />
       <Drawer.Screen name="Watch Setup" component={WatchRegistration} />
       <Drawer.Screen name="Profile Page" component={ProfilePage} />
@@ -109,7 +110,7 @@ function App() {
   return (  
 
   <NavigationContainer>
-    <Stack.Navigator name="Stack" initialRouteName={initialRoute} screenOptions={{ headerShown: false }}>
+    <Stack.Navigator name="Stack" initialRouteName={"Root"} screenOptions={{ headerShown: false }}>
       <Stack.Screen screenOptions={{headerShown: false}} name="Root" component={Root}/>
       <Stack.Screen screenOptions={{headerShown: false}} name="Register" component={UserRegistration} />
       <Stack.Screen screenOptions={{headerShown: false}} name="Watch Setup" component={WatchRegistration} />

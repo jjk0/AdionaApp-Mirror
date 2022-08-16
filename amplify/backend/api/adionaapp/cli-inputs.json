@@ -3,25 +3,31 @@
   "serviceConfiguration": {
     "apiName": "adionaapp",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/Users/laxmansharma/Work/AdionaApp/amplify/backend/api/adionaapp/schema.graphql",
     "defaultAuthType": {
-      "mode": "API_KEY",
-      "keyDescription": "api key description",
-      "expirationTime": 30
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authadionaappbdf26d35"
     },
     "conflictResolution": {
       "defaultResolutionStrategy": {
-        "type": "AUTOMERGE"
-      }
+        "type": "OPTIMISTIC_CONCURRENCY"
+      },
+      "perModelResolutionStrategy": [
+        {
+          "resolutionStrategy": {
+            "type": "OPTIMISTIC_CONCURRENCY"
+          },
+          "entityName": "RegisteredInfo"
+        }
+      ]
     },
     "additionalAuthTypes": [
       {
-        "mode": "AWS_IAM"
-      },
-      {
-        "mode": "AMAZON_COGNITO_USER_POOLS",
-        "cognitoUserPoolId": "authadionaappbdf26d35"
+        "mode": "API_KEY",
+        "expirationTime": 32,
+        "apiKeyExpirationDate": "2022-09-12T05:06:36.909Z",
+        "keyDescription": "newer description"
       }
-    ]
+    ],
+    "gqlSchemaPath": "/Users/varunpatel/Desktop/AdionaApp/amplify/backend/api/adionaapp/schema.graphql"
   }
 }
