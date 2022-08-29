@@ -461,42 +461,6 @@ export const syncPatientWatchData = /* GraphQL */ `
     }
   }
 `;
-export const getDataByPatient = /* GraphQL */ `
-  query GetDataByPatient(
-    $id: ID!
-    $createdAt: ModelStringKeyConditionInput
-    $sortDirection: ModelSortDirection
-    $filter: ModelPatientWatchDataFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    getDataByPatient(
-      id: $id
-      createdAt: $createdAt
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        time
-        id
-        steps
-        calories
-        heart_rate
-        respiratoryRate
-        oxygenSaturation
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
 export const getPatientAgitation = /* GraphQL */ `
   query GetPatientAgitation($id: ID!, $time: AWSDateTime!) {
     getPatientAgitation(id: $id, time: $time) {
@@ -845,6 +809,42 @@ export const syncGeoFences = /* GraphQL */ `
         lon
         lat
         radius
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getDataByPatient = /* GraphQL */ `
+  query GetDataByPatient(
+    $id: ID!
+    $createdAt: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelPatientWatchDataFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    getDataByPatient(
+      id: $id
+      createdAt: $createdAt
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        time
+        id
+        steps
+        calories
+        heart_rate
+        respiratoryRate
+        oxygenSaturation
         createdAt
         updatedAt
         _version

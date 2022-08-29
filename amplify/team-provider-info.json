@@ -20,6 +20,10 @@
         "UserInfoFunction": {
           "deploymentBucketName": "amplify-adionaapp-dev-210455-deployment",
           "s3Key": "amplify-builds/UserInfoFunction-316c5654674e362f4733-build.zip"
+        },
+        "S3ToDynamoDBFunction": {
+          "deploymentBucketName": "amplify-adionaapp-dev-210455-deployment",
+          "s3Key": "amplify-builds/S3ToDynamoDBFunction-57374956372b43582b4e-build.zip"
         }
       },
       "storage": {

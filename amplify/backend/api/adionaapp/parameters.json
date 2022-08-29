@@ -1,12 +1,5 @@
 {
   "AppSyncApiName": "adionaapp",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2022-08-11T05:06:44.563Z",
-  "AuthCognitoUserPoolId": {
-    "Fn::GetAtt": [
-      "authadionaappbdf26d35",
-      "Outputs.UserPoolId"
-    ]
-  }
+  "DynamoDBEnableServerSideEncryption": false
 }

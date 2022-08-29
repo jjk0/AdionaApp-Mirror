@@ -44,20 +44,20 @@ import { VictoryBar, VictoryChart, VictoryTheme,VictoryLine,VictoryScatter,Victo
 
 
 
-  // Amplify.configure({
-  //   Auth: {
-  //       identityPoolId: 'us-east-1:948efe99-6034-4432-9423-90e156d1cc55', //REQUIRED - Amazon Cognito Identity Pool ID
-  //       region: 'us-east-1', // REQUIRED - Amazon Cognito Region
-  //       userPoolId: 'us-east-1_HZcKykJbc', //OPTIONAL - Amazon Cognito User Pool ID
-  //       userPoolWebClientId: 'oo5jo4t8g05e202e06940fg84', //OPTIONAL - Amazon Cognito Web Client ID
-  //   },
-  //   Storage: {
-  //       AWSS3: {
-  //           bucket: 'processed-adiona-watch-app-data', //REQUIRED -  Amazon S3 bucket name
-  //           region: 'us-east-1', //OPTIONAL -  Amazon service region
-  //       }
-  //       }
-  //   });
+  Amplify.configure({
+    Auth: {
+        identityPoolId: 'us-east-1:948efe99-6034-4432-9423-90e156d1cc55', //REQUIRED - Amazon Cognito Identity Pool ID
+        region: 'us-east-1', // REQUIRED - Amazon Cognito Region
+        userPoolId: 'us-east-1_HZcKykJbc', //OPTIONAL - Amazon Cognito User Pool ID
+        userPoolWebClientId: 'oo5jo4t8g05e202e06940fg84', //OPTIONAL - Amazon Cognito Web Client ID
+    },
+    Storage: {
+        AWSS3: {
+            bucket: 'processed-adiona-watch-app-data', //REQUIRED -  Amazon S3 bucket name
+            region: 'us-east-1', //OPTIONAL -  Amazon service region
+        }
+        }
+    });
 
     
     
